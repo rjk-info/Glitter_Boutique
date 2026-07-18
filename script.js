@@ -235,3 +235,171 @@ document.addEventListener('DOMContentLoaded', () => {
     // System Startup Execution Thread Call
     activateAutoRotation();
 });
+/* ======================================================
+   WHY CHOOSE GLITTER BOUTIQUE
+====================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    'use strict';
+
+    // Verify Lucide asset parser is active on page run
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
+
+    const revealElements = document.querySelectorAll('.gb-why-reveal');
+    
+    if (revealElements.length === 0) return;
+
+    // Premium GPU-Accelerated Scroll-Reveal Observer Configurations
+    const observerOptions = {
+        root: null, // Viewport tracking reference
+        rootMargin: '0px 0px -60px 0px', // Animates slightly before crossing element baseline threshold
+        threshold: 0.12 // Trigger once 12% of the card surfaces onto active screen
+    };
+
+    const handleRevealIntersection = (entries, observer) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Introduce staggered architectural pacing delay loops for premium UX flow
+                setTimeout(() => {
+                    entry.target.classList.add('gb-why-visible');
+                }, index * 60); 
+
+                // Unobserve card asset node permanently once locked visible to enhance client rendering cycles
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const revealObserver = new IntersectionObserver(handleRevealIntersection, observerOptions);
+
+    revealElements.forEach(element => {
+        revealObserver.observe(element);
+    });
+});
+
+/* ======================================================
+   SHOP BY COLLECTION
+====================================================== */
+/**
+ * Note: The Shop By Collection layout is systematically driven by advanced, 
+ * performance-tuned CSS Grid flex structures and aspect-ratio parameters. 
+ * This ensures perfect geometric heights and micro-level text centering 
+ * natively on all display layers without script parsing overhead.
+ *
+ * No extra interactive calculations or document transformations are required here,
+ * protecting your lighthouse rendering scores and avoiding redundant DOM cycles.
+ */
+
+/* ======================================================
+   BEST SELLERS / FEATURED PRODUCTS
+====================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    'use strict';
+
+    // Synchronize newly added Lucide dynamic icon nodes safely
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
+
+    // Capture product context boundaries safely
+    const productGrid = document.querySelector('.gb-product-grid');
+    if (!productGrid) return;
+
+    /**
+     * Optional Symmetrical Quick View Event Dispatcher Matrix
+     * Binds downstream interactive click listeners to trigger visual operations
+     */
+    productGrid.addEventListener('click', (event) => {
+        const quickViewBtn = event.target.closest('.gb-product-quickview-trigger');
+        const wishlistBtn = event.target.closest('.gb-product-wishlist-btn');
+
+        if (quickViewBtn) {
+            const productTitle = quickViewBtn.closest('.gb-product-card').querySelector('.gb-product-title').textContent;
+            // Production Hook Place: Wire custom corporate overlay modals directly here
+            console.log(`Open Quick View Overlay Interface context for: ${productTitle}`);
+        }
+
+        if (wishlistBtn) {
+            event.preventDefault();
+            const productTitle = wishlistBtn.closest('.gb-product-card').querySelector('.gb-product-title').textContent;
+            
+            // Toggle local presentation logic for wishlist actioning tracking states
+            const heartIcon = wishlistBtn.querySelector('i');
+            const isActive = wishlistBtn.getAttribute('aria-pressed') === 'true';
+            
+            wishlistBtn.setAttribute('aria-pressed', !isActive);
+            console.log(`Toggle wishlist database reference parameter updates for: ${productTitle}`);
+        }
+    });
+});
+
+/* ======================================================
+   FOOTER
+====================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    'use strict';
+
+    // Synchronize newly embedded Lucide vector nodes securely inside the footer stack
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
+
+    const newsletterForm = document.getElementById('gb-footer-newsletter-form');
+    const emailInput = document.getElementById('gb-footer-newsletter-email');
+    const statusMessage = document.getElementById('gb-footer-status-message');
+
+    if (!newsletterForm || !emailInput || !statusMessage) return;
+
+    /**
+     * Symmetrical Luxury Newsletter Form Processing Subroutine
+     * Custom lightweight validation regex protects UX integrity without library dependencies
+     */
+    newsletterForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        
+        const rawEmailValue = emailInput.value.trim();
+        // Rigid high-spec regular expression mapping rule for formal e-mail contexts
+        const emailValidationRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        // Clear current visual classification markers
+        statusMessage.textContent = '';
+        statusMessage.className = 'gb-footer-status-msg';
+
+        if (rawEmailValue === '') {
+            statusMessage.textContent = 'Please provide an email address.';
+            statusMessage.classList.add('error');
+            emailInput.focus();
+            return;
+        }
+
+        if (!emailValidationRegex.test(rawEmailValue)) {
+            statusMessage.textContent = 'Please provide a valid luxury email address.';
+            statusMessage.classList.add('error');
+            emailInput.focus();
+            return;
+        }
+
+        // Simulating high-speed secure API checkout handshake sequence
+        statusMessage.textContent = 'Processing your connection securely...';
+        statusMessage.classList.add('success');
+        newsletterForm.style.pointerEvents = 'none';
+        newsletterForm.style.opacity = '0.7';
+
+        setTimeout(() => {
+            statusMessage.textContent = 'Welcome to the inner circle. Check your inbox for sparkles.';
+            emailInput.value = '';
+            newsletterForm.style.pointerEvents = '';
+            newsletterForm.style.opacity = '';
+            
+            // Auto disappear success messages block smoothly after short buffer timeframe
+            setTimeout(() => {
+                if(statusMessage.classList.contains('success')) {
+                    statusMessage.textContent = '';
+                    statusMessage.className = 'gb-footer-status-msg';
+                }
+            }, 6000);
+
+        }, 1500);
+    });
+});

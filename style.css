@@ -683,3 +683,1384 @@
         gap: 10px;
     }
 }
+
+/* ======================================================
+   WHY CHOOSE GLITTER BOUTIQUE
+====================================================== */
+
+.gb-why {
+    position: relative;
+    width: 100%;
+    background-color: #FFFFFF;
+    /* padding: 140px 0; */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+/* Crystal glow subtle background design asset */
+.gb-why-glow-element {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(47, 107, 255, 0.03) 0%, rgba(138, 61, 255, 0.02) 40%, rgba(255, 255, 255, 0) 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gb-why-container {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 60px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Header structural zone */
+.gb-why-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 90px auto;
+}
+
+.gb-why-tagline {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #0057FF;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.gb-why-main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #0D0D0D;
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+}
+
+.gb-why-lead-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #555555;
+}
+
+/* Feature Grid Matrix - 3 Columns × 2 Rows */
+.gb-why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* Premium Glassmorphism Feature Card Structure */
+.gb-why-card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(232, 232, 232, 0.7);
+    border-radius: 20px;
+    padding: 45px 35px;
+    box-shadow: 0 10px 30px rgba(13, 13, 13, 0.02);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+                border-color 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Circular Gradient Icon Container */
+.gb-why-icon-box {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(47, 107, 255, 0.06) 0%, rgba(138, 61, 255, 0.06) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gb-why-icon {
+    width: 24px;
+    height: 24px;
+    color: #2F6BFF;
+    stroke-width: 1.5px;
+    transition: color 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gb-why-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #0D0D0D;
+    margin-bottom: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gb-why-card-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #666666;
+}
+
+/* Premium Interaction Hover Modifications */
+.gb-why-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(47, 107, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 87, 255, 0.06), 0 1px 3px rgba(138, 61, 255, 0.02);
+}
+
+.gb-why-card:hover .gb-why-icon-box {
+    transform: scale(1.08);
+    background: linear-gradient(135deg, #2F6BFF 0%, #8A3DFF 100%);
+}
+
+.gb-why-card:hover .gb-why-icon {
+    color: #FFFFFF;
+}
+
+/* Performance Scroll Reveal Core Animation States */
+.gb-why-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+                border-color 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+                background-color 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gb-why-reveal.gb-why-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ======================================================
+   RESPONSIVE DESIGN INTERCEPT LAYOUT GRID
+====================================================== */
+@media (max-width: 1200px) {
+    .gb-why {
+        padding: 100px 0;
+    }
+    .gb-why-grid {
+        gap: 30px;
+    }
+    .gb-why-main-title {
+        font-size: 44px;
+    }
+}
+
+@media (max-width: 992px) {
+    .gb-why-container {
+        padding: 0 40px;
+    }
+    /* Shift matrix to 2 columns */
+    .gb-why-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    .gb-why-header {
+        margin-bottom: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gb-why-main-title {
+        font-size: 36px;
+    }
+    .gb-why-lead-description {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .gb-why-container {
+        padding: 0 24px;
+    }
+    .gb-why {
+        padding: 80px 0;
+    }
+    /* Shift matrix to linear single column layout stack */
+    .gb-why-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .gb-why-card {
+        padding: 35px 25px;
+    }
+    .gb-why-header {
+        margin-bottom: 45px;
+    }
+    .gb-why-main-title br {
+        display: none; /* Strip manual breaks on narrow screens */
+    }
+}
+/* ======================================================
+   SHOP BY COLLECTION
+====================================================== */
+
+:root {
+    --gb-col-transition: cubic-bezier(0.25, 1, 0.5, 1);
+    --gb-col-duration: 0.35s;
+    --gb-col-radius: 24px;
+    --gb-col-glow: rgba(0, 87, 255, 0.08);
+}
+
+.gb-collection {
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 0px 0;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.gb-collection-wrapper {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Enforces absolute center orientation for the content runway */
+    box-sizing: border-box;
+}
+
+/* Header Context: Rigorous Centering Strategy */
+.gb-collection-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 90px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gb-collection-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #0057FF;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.gb-collection-main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #0D0D0D;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+    text-align: center;
+}
+
+.gb-collection-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #666666;
+    text-align: center;
+}
+
+/* Symmetrical Grid Implementation: Balanced 3-Column Base Layout */
+.gb-collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px 40px; /* High breathing margin boundaries */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Premium White Card Structure */
+.gb-collection-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E8E8E8;
+    border-radius: var(--gb-col-radius);
+    padding: 20px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Forces nested title and text into dead center */
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(13, 13, 13, 0.02);
+    transition: transform var(--gb-col-duration) var(--gb-col-transition),
+                border-color var(--gb-col-duration) var(--gb-col-transition),
+                box-shadow var(--gb-col-duration) var(--gb-col-transition);
+    will-change: transform, box-shadow;
+    box-sizing: border-box;
+}
+
+/* Rigid Proportional Image Container */
+.gb-collection-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5; /* Preserves absolute uniform equal height among card assets */
+    border-radius: 16px; /* Slightly tighter curves inside the primary frame border */
+    overflow: hidden;
+    margin-bottom: 28px;
+    background-color: #F8F8F8;
+}
+
+.gb-collection-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s var(--gb-col-transition);
+    will-change: transform;
+}
+
+/* Microscopic Premium Contrast Mask */
+.gb-collection-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 13, 13, 0.02);
+    pointer-events: none;
+}
+
+/* Inner Copy Block Alignment Architecture */
+.gb-collection-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px 10px 10px;
+    box-sizing: border-box;
+}
+
+.gb-collection-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #0D0D0D;
+    margin-bottom: 10px;
+    letter-spacing: -0.2px;
+    transition: color var(--gb-col-duration) var(--gb-col-transition);
+    text-align: center;
+}
+
+.gb-collection-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #666666;
+    text-align: center;
+}
+
+/* ======================================================
+   HARDWARE-ACCELERATED KINETIC HOVER CONFIGURATIONS
+====================================================== */
+.gb-collection-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(47, 107, 255, 0.25);
+    box-shadow: 0 20px 40px var(--gb-col-glow), 0 1px 3px rgba(138, 61, 255, 0.02);
+}
+
+.gb-collection-card:hover .gb-collection-image {
+    transform: scale(1.06);
+}
+
+.gb-collection-card:hover .gb-collection-title {
+    color: #0057FF;
+}
+
+/* Focus Outline System for Keyboard Users */
+.gb-collection-card:focus-visible {
+    outline: 2px dashed #8A3DFF;
+    outline-offset: 4px;
+    transform: translateY(-5px);
+}
+
+/* ======================================================
+   RESPONSIVE SYMMETRY GRID TUNING
+====================================================== */
+@media (max-width: 1200px) {
+    .gb-collection {
+        padding: 120px 0;
+    }
+    .gb-collection-wrapper {
+        padding: 0 40px;
+    }
+    .gb-collection-grid {
+        gap: 32px 24px;
+    }
+    .gb-collection-main-title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    /* Transition Grid Runway seamlessly into 2 Columns */
+    .gb-collection-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    .gb-collection-header {
+        margin-bottom: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gb-collection {
+        padding: 90px 0;
+    }
+    .gb-collection-main-title {
+        font-size: 34px;
+    }
+    .gb-collection-image-wrapper {
+        aspect-ratio: 4 / 5; /* Maintains rigid frame shape proportions intact */
+    }
+}
+
+@media (max-width: 576px) {
+    .gb-collection-wrapper {
+        padding: 0 24px;
+    }
+    /* Transition Grid Runway into absolute centered single stack lines */
+    .gb-collection-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+    .gb-collection-card {
+        padding: 16px;
+    }
+    .gb-collection-image-wrapper {
+        margin-bottom: 20px;
+    }
+    .gb-collection-header {
+        margin-bottom: 45px;
+    }
+    .gb-collection-main-title {
+        font-size: 28px;
+    }
+}
+/* ======================================================
+   BEST SELLERS / FEATURED PRODUCTS
+====================================================== */
+
+.gb-product {
+    position: relative;
+    width: 100%;
+    background-color: #F8F8F8; /* Distinct light gray foundation variant away from pure white sections */
+    /* padding: 180px 0 140px 0; Heavy top breath margin space to seamlessly let absolute cards breathe */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Cosmic Ambient Soft Glow Layering */
+.gb-product-ambient-glow {
+    position: absolute;
+    top: 0;
+    left: 80%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(138, 61, 255, 0.04) 0%, rgba(96, 165, 250, 0.02) 50%, rgba(255, 255, 255, 0) 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gb-product-wrapper {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 60px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header Text Align Centering */
+.gb-product-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 120px auto; /* Expanded separation gap to handle floating image structural offsets */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gb-product-tagline {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #8A3DFF;
+    margin-bottom: 20px;
+}
+
+.gb-product-main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    font-weight: 400;
+    line-height: 1.25;
+    background: linear-gradient(135deg, #0057FF 0%, #D946EF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+
+.gb-product-lead-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #6B7280;
+}
+
+/* Symmetrical 4-Column Responsive Runway Grid Layout */
+.gb-product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 80px 30px; /* Expansive top row separation to absorb floating element parameters safely */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Luxury Floating Card Structure */
+.gb-product-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.85);
+    /* Dual gradient boundary micro border architecture */
+    border: 1px solid rgba(243, 238, 255, 0.8); 
+    border-radius: 22px;
+    padding: 0 24px 35px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(31, 41, 55, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+                border-color 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform, box-shadow;
+    box-sizing: border-box;
+}
+
+/* Overlapping Floating Product Image Container */
+.gb-product-image-container {
+    position: relative;
+    width: calc(100% - 12px);
+    aspect-ratio: 1 / 1;
+    border-radius: 18px;
+    overflow: hidden;
+    margin-top: -50px; /* Shifts image upward to structurally overlap top border line */
+    margin-bottom: 24px;
+    box-shadow: 0 12px 30px rgba(31, 41, 55, 0.08);
+    background-color: #F8F8F8;
+    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform, box-shadow;
+    z-index: 3;
+}
+
+.gb-product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Elegant Quick View Overlay Architecture */
+.gb-product-quickview-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 13, 13, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gb-product-quickview-trigger {
+    background-color: #FFFFFF;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #1F2937;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(10px);
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                background-color 0.25s linear;
+}
+
+.gb-product-quickview-trigger i {
+    width: 14px;
+    height: 14px;
+    stroke-width: 2px;
+}
+
+.gb-product-quickview-trigger:hover {
+    background-color: #F3EEFF;
+    color: #0057FF;
+}
+
+/* Floating Functional Badges */
+.gb-product-badge {
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    padding: 5px 12px;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    z-index: 5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.gb-product-badge-gradient-1 { background: linear-gradient(135deg, #2F6BFF 0%, #8A3DFF 100%); }
+.gb-product-badge-gradient-2 { background: linear-gradient(135deg, #8A3DFF 0%, #D946EF 100%); }
+.gb-product-badge-gradient-3 { background: linear-gradient(135deg, #2F6BFF 0%, #60A5FA 100%); }
+
+/* Luxury Heart Utility Trigger Button */
+.gb-product-wishlist-btn {
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    border: 1px solid #F3EEFF;
+    color: #6B7280;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+    transition: color 0.3s linear, background-color 0.3s linear, transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    outline: none;
+}
+
+.gb-product-action-icon {
+    width: 16px;
+    height: 16px;
+    stroke-width: 1.8px;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gb-product-wishlist-btn:hover {
+    background-color: #F3EEFF;
+    color: #D946EF;
+    border-color: rgba(219, 70, 239, 0.2);
+}
+
+.gb-product-wishlist-btn:hover .gb-product-action-icon {
+    transform: scale(1.15);
+    fill: currentColor;
+}
+
+/* Copywriting Details Matrix Mapping */
+.gb-product-meta-zone {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gb-product-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1F2937;
+    margin-bottom: 8px;
+    letter-spacing: -0.1px;
+}
+
+.gb-product-short-desc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #6B7280;
+    margin-bottom: 14px;
+    padding: 0 8px;
+}
+
+/* Elegant Sparkle Gold Ratings Ring */
+.gb-product-rating-box {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 16px;
+}
+
+.gb-product-star-icon {
+    width: 13px;
+    height: 13px;
+    fill: #FBBF24;
+    color: #FBBF24;
+    stroke-width: 1px;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Pricing System Architecture */
+.gb-product-price-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.gb-product-price-current {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #0057FF; /* Royal Blue */
+}
+
+.gb-product-price-old {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: line-through;
+    color: #9CA3AF;
+}
+
+/* ======================================================
+   HARDWARE-ACCELERATED KINETIC HOVER CONFIGURATIONS
+====================================================== */
+.gb-product-card:hover {
+    transform: translateY(6px); /* Floating drop offset dynamics opposite of traditional lift sections */
+    border-color: rgba(47, 107, 255, 0.25);
+    box-shadow: 0 20px 45px rgba(0, 87, 255, 0.08), 0 1px 4px rgba(138, 61, 255, 0.03);
+}
+
+.gb-product-card:hover .gb-product-image-container {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(31, 41, 55, 0.16);
+}
+
+.gb-product-card:hover .gb-product-image {
+    transform: scale(1.06);
+}
+
+.gb-product-card:hover .gb-product-quickview-mask {
+    opacity: 1;
+}
+
+.gb-product-card:hover .gb-product-quickview-trigger {
+    transform: translateY(0);
+}
+
+/* Sparkle dynamic shift animation on loop hover */
+.gb-product-card:hover .gb-product-star-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Accessibility Focus Visual Rings */
+.gb-product-card:focus-visible, 
+.gb-product-quickview-trigger:focus-visible, 
+.gb-product-wishlist-btn:focus-visible {
+    outline: 2px dashed #8A3DFF;
+    outline-offset: 4px;
+}
+
+/* ======================================================
+   RESPONSIVE GRID TUNING DICTIONARY
+====================================================== */
+@media (max-width: 1200px) {
+    .gb-product {
+        padding: 140px 0 100px 0;
+    }
+    .gb-product-wrapper {
+        padding: 0 40px;
+    }
+    .gb-product-grid {
+        gap: 70px 24px;
+    }
+    .gb-product-main-title {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 992px) {
+    /* Switch Grid Runway Framework into clean 2-column configurations */
+    .gb-product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 80px 30px;
+    }
+    .gb-product-header {
+        margin-bottom: 90px;
+    }
+}
+
+@media (max-width: 576px) {
+    .gb-product-wrapper {
+        padding: 0 24px;
+    }
+    .gb-product {
+        padding: 120px 0 80px 0;
+    }
+    /* Collapse down to clean 1-column layout matrix flows */
+    .gb-product-grid {
+        grid-template-columns: 1fr;
+        gap: 75px 0;
+    }
+    .gb-product-card {
+        padding: 0 20px 30px 20px;
+    }
+    .gb-product-header {
+        margin-bottom: 80px;
+    }
+    .gb-product-main-title {
+        font-size: 28px;
+    }
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+:root {
+    --gb-footer-bg-main: #0D1028;
+    --gb-footer-bg-deep: #1B1240;
+    --gb-footer-glow-point: #2F6BFF;
+    --gb-footer-text-light: #FFFFFF;
+    --gb-footer-text-mute: #D1D5DB;
+    --gb-footer-font-header: 'Playfair Display', serif;
+    --gb-footer-font-body: 'Poppins', sans-serif;
+    --gb-footer-ease: cubic-bezier(0.25, 1, 0.5, 1);
+    --gb-footer-duration: 0.35s;
+}
+
+.gb-footer {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(180deg, var(--gb-footer-bg-main) 0%, var(--gb-footer-bg-deep) 60%, #060817 100%);
+    border-radius: 30px 30px 0 0;
+    padding: 120px 0 40px 0;
+    overflow: hidden;
+    color: var(--gb-footer-text-light);
+    box-sizing: border-box;
+}
+
+/* Luxury Vector Ambient Overlay Enhancements */
+.gb-footer-ambient-mesh {
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 400px;
+    background: radial-gradient(ellipse at center, rgba(47, 107, 255, 0.08) 0%, rgba(138, 61, 255, 0.03) 50%, rgba(255, 255, 255, 0) 80%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gb-footer-sparkle-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.02;
+    background-image: radial-gradient(#FFFFFF 1px, transparent 1px), radial-gradient(#FFFFFF 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gb-footer-wrapper {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 60px;
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+/* ======================================================
+   PREMIUM GLASSMORPHISM NEWSLETTER REGION
+====================================================== */
+.gb-footer-newsletter-zone {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto 100px auto;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 24px;
+    padding: 60px 80px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+
+.gb-footer-newsletter-header {
+    margin-bottom: 35px;
+}
+
+.gb-footer-label {
+    font-family: var(--gb-footer-font-body);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #2F6BFF;
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.gb-footer-newsletter-title {
+    font-family: var(--gb-footer-font-header);
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #FFFFFF 40%, #D1D5DB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gb-footer-newsletter-desc {
+    font-family: var(--gb-footer-font-body);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--gb-footer-text-mute);
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+/* Modern High-End Input Field Form Matrix */
+.gb-footer-form {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: 640px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.gb-footer-input-wrapper {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.gb-footer-input-icon {
+    position: absolute;
+    left: 20px;
+    width: 18px;
+    height: 18px;
+    color: rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+    z-index: 3;
+}
+
+.gb-footer-input {
+    width: 100%;
+    height: 56px;
+    background: rgba(13, 16, 40, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 0 24px 0 54px;
+    font-family: var(--gb-footer-font-body);
+    font-size: 14px;
+    color: var(--gb-footer-text-light);
+    outline: none;
+    transition: border-color var(--gb-footer-duration) var(--gb-footer-ease),
+                box-shadow var(--gb-footer-duration) var(--gb-footer-ease);
+    z-index: 2;
+}
+
+.gb-footer-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.gb-footer-input:focus {
+    border-color: var(--gb-footer-glow-point);
+    box-shadow: 0 0 20px rgba(47, 107, 255, 0.2);
+}
+
+.gb-footer-submit-btn {
+    height: 56px;
+    padding: 0 32px;
+    background: linear-gradient(135deg, #0057FF 0%, #8A3DFF 100%);
+    border: none;
+    border-radius: 30px;
+    color: var(--gb-footer-text-light);
+    font-family: var(--gb-footer-font-body);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 20px rgba(0, 87, 255, 0.3);
+    transition: transform var(--gb-footer-duration) var(--gb-footer-ease),
+                box-shadow var(--gb-footer-duration) var(--gb-footer-ease),
+                filter 0.2s linear;
+}
+
+.gb-footer-btn-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform var(--gb-footer-duration) var(--gb-footer-ease);
+}
+
+.gb-footer-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 87, 255, 0.45), 0 0 15px rgba(138, 61, 255, 0.3);
+    filter: brightness(1.05);
+}
+
+.gb-footer-submit-btn:hover .gb-footer-btn-icon {
+    transform: translateX(4px);
+}
+
+/* Dynamic Inline Validation Messages Area */
+.gb-footer-status-msg {
+    font-family: var(--gb-footer-font-body);
+    font-size: 13px;
+    margin-top: 16px;
+    min-height: 20px;
+    transition: color 0.3s ease;
+}
+.gb-footer-status-msg.success { color: #10B981; }
+.gb-footer-status-msg.error { color: #EF4444; }
+
+/* ======================================================
+   MAIN STRUCTURAL NAVIGATION LINK MATRIX GRID
+====================================================== */
+.gb-footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr repeat(3, 0.9fr);
+    gap: 60px 40px;
+    width: 100%;
+    margin-bottom: 80px;
+    box-sizing: border-box;
+}
+
+.gb-footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Typography Identity Assets Brand */
+.gb-footer-logo-link {
+    text-decoration: none;
+    margin-bottom: 24px;
+    display: inline-block;
+}
+
+.gb-footer-logo-text {
+    font-family: var(--gb-footer-font-header);
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--gb-footer-text-light);
+}
+
+.gb-footer-logo-accent {
+    font-weight: 400;
+    font-style: italic;
+    background: linear-gradient(135deg, #2F6BFF 0%, #8A3DFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gb-footer-brand-desc {
+    font-family: var(--gb-footer-font-body);
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--gb-footer-text-mute);
+    margin-bottom: 30px;
+    max-width: 320px;
+}
+
+/* Unified Glowing Social Button Clusters */
+.gb-footer-social-cluster {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.gb-footer-social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--gb-footer-text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform var(--gb-footer-duration) var(--gb-footer-ease),
+                background var(--gb-footer-duration) var(--gb-footer-ease),
+                border-color var(--gb-footer-duration) var(--gb-footer-ease),
+                box-shadow var(--gb-footer-duration) var(--gb-footer-ease);
+}
+
+.gb-footer-social-btn i {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2px;
+}
+
+.gb-footer-social-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    background: linear-gradient(135deg, #0057FF 0%, #8A3DFF 100%);
+    border-color: rgba(47, 107, 255, 0.4);
+    box-shadow: 0 8px 20px rgba(0, 87, 255, 0.3);
+}
+
+/* Content Columns Header & Nav Layout Blocks */
+.gb-footer-column-title {
+    font-family: var(--gb-footer-font-body);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gb-footer-text-light);
+    margin-bottom: 28px;
+    position: relative;
+}
+
+.gb-footer-links-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.gb-footer-link {
+    font-family: var(--gb-footer-font-body);
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--gb-footer-text-mute);
+    text-decoration: none;
+    position: relative;
+    padding: 2px 0;
+    transition: color var(--gb-footer-duration) var(--gb-footer-ease);
+}
+
+/* Micro Interaction: Smooth Luxury Underline Track */
+.gb-footer-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--gb-footer-glow-point);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--gb-footer-duration) var(--gb-footer-ease);
+}
+
+.gb-footer-link:hover {
+    color: var(--gb-footer-text-light);
+}
+
+.gb-footer-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* ======================================================
+   BOTTOM LICENSE & PAYMENT SECURE VAULT BAR
+====================================================== */
+.gb-footer-bottom-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gb-footer-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.08) 20%, rgba(255, 255, 255, 0.08) 80%, transparent 100%);
+    margin-bottom: 30px;
+}
+
+.gb-footer-bottom-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gb-footer-copyright {
+    font-family: var(--gb-footer-font-body);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.gb-footer-payment-vault {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gb-footer-payment-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    transition: opacity var(--gb-footer-duration) var(--gb-footer-ease),
+                transform var(--gb-footer-duration) var(--gb-footer-ease);
+}
+
+.gb-footer-payment-card:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* Focus Visible Management Accessibility Rules */
+.gb-footer-link:focus-visible,
+.gb-footer-social-btn:focus-visible,
+.gb-footer-submit-btn:focus-visible,
+.gb-footer-logo-link:focus-visible {
+    outline: 2px dashed var(--gb-footer-glow-point);
+    outline-offset: 4px;
+}
+
+/* ======================================================
+   RESPONSIVE LAYOUT BREAKPOINTS INTERCEPT MATRIX
+====================================================== */
+@media (max-width: 1200px) {
+    .gb-footer {
+        padding: 90px 0 35px 0;
+    }
+    .gb-footer-wrapper {
+        padding: 0 40px;
+    }
+    .gb-footer-newsletter-zone {
+        padding: 50px 40px;
+        margin-bottom: 80px;
+    }
+    .gb-footer-newsletter-title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 992px) {
+    /* Main links layout adjusts seamlessly into symmetrical 2-column distribution mapping */
+    .gb-footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px 40px;
+        margin-bottom: 60px;
+    }
+    .gb-footer-column:first-child {
+        grid-column: span 2;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .gb-footer-brand-desc {
+        max-width: 520px;
+    }
+    .gb-footer-column {
+        align-items: center;
+        text-align: center;
+    }
+    .gb-footer-links-list {
+        align-items: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .gb-footer-form {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+    .gb-footer-input-wrapper {
+        width: 100%;
+    }
+    .gb-footer-submit-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .gb-footer-newsletter-title {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 576px) {
+    .gb-footer {
+        padding: 70px 0 30px 0;
+        border-radius: 24px 24px 0 0;
+    }
+    .gb-footer-wrapper {
+        padding: 0 24px;
+    }
+    /* Fall back entirely into a perfectly balanced single linear column thread stack */
+    .gb-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px 0;
+    }
+    .gb-footer-column:first-child {
+        grid-column: span 1;
+    }
+    .gb-footer-bottom-content {
+        flex-direction: column-reverse;
+        gap: 24px;
+        text-align: center;
+    }
+    .gb-footer-newsletter-zone {
+        padding: 40px 20px;
+    }
+}
