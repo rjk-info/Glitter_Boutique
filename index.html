@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glitter Boutique | Luxury Face & Body Gems</title>
+    
+    <!-- Google Fonts: Playfair Display for Headings, Poppins for Navigation -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Development CSS Link -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Lucide Icons Development Script -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- PREMIUM GLITTER BOUTIQUE HEADER -->
+    <header class="gb-navbar-header" id="gb-navbar-main">
+        <div class="gb-navbar-container">
+            
+            <!-- Brand Identity -->
+            <a href="/" class="gb-navbar-logo-link" aria-label="Glitter Boutique Home">
+                <span class="gb-navbar-logo-text">Glitter<span class="gb-navbar-logo-accent">Boutique</span></span>
+            </a>
+
+            <!-- Central Desktop Navigation Map -->
+            <nav class="gb-navbar-desktop-nav" aria-label="Main Desktop Navigation">
+                <ul class="gb-navbar-menu-list">
+                    <li class="gb-navbar-menu-item"><a href="/" class="gb-navbar-menu-link gb-navbar-active">Home</a></li>
+                    <li class="gb-navbar-menu-item"><a href="/about" class="gb-navbar-menu-link">About Us</a></li>
+                    <li class="gb-navbar-menu-item"><a href="/products" class="gb-navbar-menu-link">Products</a></li>
+                    <li class="gb-navbar-menu-item"><a href="/blog" class="gb-navbar-menu-link">Blog</a></li>
+                    <li class="gb-navbar-menu-item"><a href="/contact" class="gb-navbar-menu-link">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <!-- Utility Action Controls -->
+            <div class="gb-navbar-utilities">
+                <button class="gb-navbar-utility-btn" aria-label="Open Search Panel">
+                    <i data-lucide="search" class="gb-navbar-icon"></i>
+                </button>
+                <a href="/account" class="gb-navbar-utility-btn" aria-label="View Account Profile">
+                    <i data-lucide="user" class="gb-navbar-icon"></i>
+                </a>
+                <a href="/cart" class="gb-navbar-utility-btn gb-navbar-cart-trigger" aria-label="View Shopping Cart, 3 items inside">
+                    <i data-lucide="shopping-bag" class="gb-navbar-icon"></i>
+                    <span class="gb-navbar-cart-badge" aria-hidden="true">3</span>
+                </a>
+                
+                <!-- Hamburger Trigger Mechanism (Visible < 992px) -->
+                <button class="gb-navbar-hamburger-trigger" id="gb-navbar-menu-open" aria-expanded="false" aria-controls="gb-navbar-mobile-overlay" aria-label="Open Navigation Menu">
+                    <span class="gb-navbar-hamburger-line"></span>
+                    <span class="gb-navbar-hamburger-line"></span>
+                    <span class="gb-navbar-hamburger-line"></span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- FULL SCREEN MOBILE OVERLAY MENU -->
+    <div class="gb-navbar-mobile-overlay" id="gb-navbar-mobile-overlay" aria-hidden="true" role="dialog" aria-label="Mobile Navigation Menu">
+        
+        <!-- Glowing Ambient Elements for Festival Aesthetic -->
+        <div class="gb-navbar-mobile-glow-top"></div>
+        <div class="gb-navbar-mobile-glow-bottom"></div>
+        
+        <!-- Intercept / Dismiss Controls -->
+        <div class="gb-navbar-mobile-header">
+            <button class="gb-navbar-mobile-close-btn" id="gb-navbar-menu-close" aria-label="Close Navigation Menu">
+                <i data-lucide="x" class="gb-navbar-close-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dynamic Content Context -->
+        <div class="gb-navbar-mobile-content">
+            <nav class="gb-navbar-mobile-nav" aria-label="Main Mobile Navigation">
+                <ul class="gb-navbar-mobile-list">
+                    <li class="gb-navbar-mobile-item"><a href="/" class="gb-navbar-mobile-link gb-navbar-mobile-active">Home</a></li>
+                    <li class="gb-navbar-mobile-item"><a href="/about" class="gb-navbar-mobile-link">About Us</a></li>
+                    <li class="gb-navbar-mobile-item"><a href="/products" class="gb-navbar-mobile-link">Products</a></li>
+                    <li class="gb-navbar-mobile-item"><a href="/blog" class="gb-navbar-mobile-link">Blog</a></li>
+                    <li class="gb-navbar-mobile-item"><a href="/contact" class="gb-navbar-mobile-link">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="gb-navbar-mobile-divider"></div>
+
+            <!-- Mobile Utility Footer Matrix -->
+            <div class="gb-navbar-mobile-utilities">
+                <button class="gb-navbar-mobile-util-btn" aria-label="Search Catalog">
+                    <i data-lucide="search"></i>
+                    <span>Search</span>
+                </button>
+                <a href="/account" class="gb-navbar-mobile-util-btn" aria-label="My Profile">
+                    <i data-lucide="user"></i>
+                    <span>Account</span>
+                </a>
+                <a href="/cart" class="gb-navbar-mobile-util-btn" aria-label="Shopping Cart">
+                    <div class="gb-navbar-mobile-cart-wrapper">
+                        <i data-lucide="shopping-bag"></i>
+                        <span class="gb-navbar-mobile-badge">3</span>
+                    </div>
+                    <span>Bag</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================
+   HERO SECTION START
+===================================================== -->
+<section class="gb-hero" aria-roledescription="carousel" aria-label="Luxury Face & Body Gems Showcase">
+    <div class="gb-hero-wrapper" id="gb-hero-slider-wrapper">
+        
+        <!-- Slide 1 -->
+        <div class="gb-hero-slide gb-hero-slide-active" data-hero-slide="0" aria-hidden="false" role="group" aria-roledescription="slide" aria-label="1 of 4">
+            <div class="gb-hero-overlay"></div>
+            <picture class="gb-hero-picture">
+                <source media="(max-width: 576px)" srcset="assets/home_img/GbannerMobile1.jpg">
+                <img class="gb-hero-image" src="assets/home_img/Gbanner1.jpg" alt="Premium luxury festival face gems display" loading="eager" decoding="async">
+            </picture>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="gb-hero-slide" data-hero-slide="1" aria-hidden="true" role="group" aria-roledescription="slide" aria-label="2 of 4">
+            <div class="gb-hero-overlay"></div>
+            <picture class="gb-hero-picture">
+                <source media="(max-width: 576px)" srcset="assets/home_img/Gbanner2M.jpg">
+                <img class="gb-hero-image" src="assets/home_img/Gbanner2.jpg" alt="Exquisite crystal body embellishments collection" loading="lazy" decoding="async">
+            </picture>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="gb-hero-slide" data-hero-slide="2" aria-hidden="true" role="group" aria-roledescription="slide" aria-label="3 of 4">
+            <div class="gb-hero-overlay"></div>
+            <picture class="gb-hero-picture">
+                <source media="(max-width: 576px)" srcset="assets/home_img/gbanner3M.jpg">
+                <img class="gb-hero-image" src="assets/home_img/gbanner3.jpg" alt="Ethereal holographic cosmetic diamonds showcase" loading="lazy" decoding="async">
+            </picture>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="gb-hero-slide" data-hero-slide="3" aria-hidden="true" role="group" aria-roledescription="slide" aria-label="4 of 4">
+            <div class="gb-hero-overlay"></div>
+            <picture class="gb-hero-picture">
+                <!-- Add slide 4 mobile banner here after upload: <source media="(max-width: 576px)" srcset="assets/images/banner-4-mobile.jpg"> -->
+                <img class="gb-hero-image" src="assets/images/banner-4.jpg" alt="High-fashion body jewelry and cosmetics editorial" loading="lazy" decoding="async">
+            </picture>
+        </div>
+
+    </div>
+
+    <!-- Directional Navigation Matrix -->
+    <button class="gb-hero-arrow gb-hero-arrow-prev" id="gb-hero-btn-prev" aria-label="Previous slide" aria-controls="gb-hero-slider-wrapper">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <button class="gb-hero-arrow gb-hero-arrow-next" id="gb-hero-btn-next" aria-label="Next slide" aria-controls="gb-hero-slider-wrapper">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+
+    <!-- Positional Pagination Indicators -->
+    <div class="gb-hero-pagination" id="gb-hero-dots-container" role="tablist" aria-label="Select slide to display">
+        <button class="gb-hero-dot gb-hero-dot-active" role="tab" aria-selected="true" aria-label="Go to slide 1" data-hero-dot="0"></button>
+        <button class="gb-hero-dot" role="tab" aria-selected="false" aria-label="Go to slide 2" data-hero-dot="1" tabindex="-1"></button>
+        <button class="gb-hero-dot" role="tab" aria-selected="false" aria-label="Go to slide 3" data-hero-dot="2" tabindex="-1"></button>
+        <button class="gb-hero-dot" role="tab" aria-selected="false" aria-label="Go to slide 4" data-hero-dot="3" tabindex="-1"></button>
+    </div>
+</section>
+<!-- =====================================================
+   HERO SECTION END
+===================================================== -->
+    <!-- Component Logic Injection -->
+    <script src="script.js"></script>
+</body>
+</html>

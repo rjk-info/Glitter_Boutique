@@ -1,0 +1,685 @@
+/* ==========================================================================
+   GLITTER BOUTIQUE PREMIUM HEADER STYLESHEET
+   Target Framework: Vanilla Architecture (No Global Politeness Encroachment)
+   ========================================================================== */
+
+/* --- ROOT CORE ARCHITECTURE DICTIONARY --- */
+:root {
+    --gb-nav-font-headings: 'Playfair Display', serif;
+    --gb-nav-font-nav: 'Poppins', sans-serif;
+    
+    --gb-nav-color-primary: #2F6BFF;
+    --gb-nav-color-royal: #0057FF;
+    --gb-nav-color-black: #0D0D0D;
+    --gb-nav-color-white: #FFFFFF;
+    --gb-nav-color-light-gray: #F8F8F8;
+    --gb-nav-color-silver: #E8E8E8;
+    --gb-nav-color-accent: #8A3DFF;
+    --gb-nav-gradient-signature: linear-gradient(135deg, #2F6BFF 0%, #8A3DFF 100%);
+    
+    --gb-nav-blur-radius: 12px;
+    --gb-nav-transition-luxury: cubic-bezier(0.25, 1, 0.5, 1);
+    --gb-nav-transition-duration: 0.35s;
+    
+    --gb-nav-shadow-premium: 0 4px 30px rgba(13, 13, 13, 0.03);
+    --gb-nav-shadow-sticky: 0 10px 40px rgba(13, 13, 13, 0.08);
+}
+
+/* --- ANIMATION SEQUENCE KEYFRAMES --- */
+@keyframes gbNavFadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- HEADER CONTAINER & STRUCTURAL BODY OVERRIDES --- */
+.gb-navbar-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(var(--gb-nav-blur-radius));
+    -webkit-backdrop-filter: blur(var(--gb-nav-blur-radius));
+    border-bottom: 1px solid rgba(232, 232, 232, 0.4);
+    box-shadow: var(--gb-nav-shadow-premium);
+    display: flex;
+    align-items: center;
+    transition: height var(--gb-nav-transition-duration) var(--gb-nav-transition-luxury),
+                background-color var(--gb-nav-transition-duration) var(--gb-nav-transition-luxury),
+                box-shadow var(--gb-nav-transition-duration) var(--gb-nav-transition-luxury);
+    animation: gbNavFadeDown 0.8s var(--gb-nav-transition-luxury) forwards;
+    box-sizing: border-box;
+}
+
+/* Reset sub-element sizing bounds internally */
+.gb-navbar-header *,
+.gb-navbar-mobile-overlay * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.gb-navbar-container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* --- BRAND LOGO VECTOR TYPOGRAPHY --- */
+.gb-navbar-logo-link {
+    text-decoration: none;
+    display: inline-block;
+    user-select: none;
+}
+
+.gb-navbar-logo-text {
+    font-family: var(--gb-nav-font-headings);
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--gb-nav-color-black);
+    transition: opacity var(--gb-nav-transition-duration) var(--gb-nav-transition-luxury);
+}
+
+.gb-navbar-logo-accent {
+    font-weight: 400;
+    font-style: italic;
+    background: var(--gb-nav-gradient-signature);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gb-navbar-logo-link:hover .gb-navbar-logo-text {
+    opacity: 0.85;
+}
+
+/* --- CENTRAL RUNWAY DESKTOP NAVIGATIONAL LINER --- */
+.gb-navbar-desktop-nav {
+    display: block;
+}
+
+.gb-navbar-menu-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 48px; /* High breathing environment space */
+}
+
+.gb-navbar-menu-link {
+    font-family: var(--gb-nav-font-nav);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gb-nav-color-black);
+    text-decoration: none;
+    position: relative;
+    padding: 8px 0;
+    transition: color var(--gb-nav-transition-duration) var(--gb-nav-transition-luxury);
+}
+
+.gb-navbar-menu-link:hover {
+    color: var(--gb-nav-color-primary);
+}
+
+/* Interactive custom linear underline pseudo transformation */
+.gb-navbar-menu-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--gb-nav-color-primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--gb-nav-transition-duration) var(--gb-nav-transition-luxury);
+}
+
+.gb-navbar-menu-link:hover::after,
+.gb-navbar-menu-link.gb-navbar-active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* --- RIGHT UTILITIES CONSOLE MATRIX --- */
+.gb-navbar-utilities {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.gb-navbar-utility-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--gb-nav-color-black);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    text-decoration: none;
+    outline: none;
+    transition: color var(--gb-nav-transition-duration) var(--gb-nav-transition-luxury);
+}
+
+.gb-navbar-icon {
+    width: 20px;
+    height: 20px;
+    stroke-width: 1.8px;
+    transition: transform var(--gb-nav-transition-duration) var(--gb-nav-transition-luxury);
+}
+
+.gb-navbar-utility-btn:hover {
+    color: var(--gb-nav-color-primary);
+}
+
+.gb-navbar-utility-btn:hover .gb-navbar-icon {
+    transform: scale(1.1);
+}
+
+/* Elegant Notification Counter Ring */
+.gb-navbar-cart-badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background-color: var(--gb-nav-color-royal);
+    color: var(--gb-nav-color-white);
+    font-family: var(--gb-nav-font-nav);
+    font-size: 10px;
+    font-weight: 600;
+    min-width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+}
+
+/* --- KEYBOARD ACCESSIBILITY FOCUS DECORATOR --- */
+.gb-navbar-menu-link:focus-visible,
+.gb-navbar-utility-btn:focus-visible,
+.gb-navbar-logo-link:focus-visible {
+    outline: 2px dashed var(--gb-nav-color-accent);
+    outline-offset: 4px;
+}
+
+/* --- STICKY EVENT REDUCTION CONTRACTION STATE --- */
+.gb-navbar-header.gb-navbar-sticky-active {
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.94);
+    box-shadow: var(--gb-nav-shadow-sticky);
+    border-bottom: 1px solid rgba(232, 232, 232, 0.8);
+}
+
+/* --- RESPONSIVE INTERCEPT TOGGLE DISPATCHER --- */
+.gb-navbar-hamburger-trigger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10001;
+}
+
+.gb-navbar-hamburger-line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--gb-nav-color-black);
+    transition: transform var(--gb-nav-transition-duration) var(--gb-nav-transition-luxury),
+                opacity var(--gb-nav-transition-duration) var(--gb-nav-transition-luxury);
+}
+
+/* --- MOBILE FULL-SCREEN SLIDE MENU SYSTEM OVERLAY --- */
+.gb-navbar-mobile-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 480px;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: var(--gb-nav-color-black);
+    z-index: 10000;
+    transform: translateX(100%);
+    transition: transform 0.5s var(--gb-nav-transition-luxury);
+    display: flex;
+    flex-direction: column;
+    padding: 40px 40px 60px 40px;
+    overflow-y: auto;
+}
+
+.gb-navbar-mobile-overlay.gb-navbar-overlay-open {
+    transform: translateX(0);
+}
+
+/* Ambient Festival Glow Overlays */
+.gb-navbar-mobile-glow-top {
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(47,107,255,0.15) 0%, rgba(0,0,0,0) 70%);
+    pointer-events: none;
+}
+
+.gb-navbar-mobile-glow-bottom {
+    position: absolute;
+    bottom: -5%;
+    left: -10%;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(138,61,255,0.12) 0%, rgba(0,0,0,0) 70%);
+    pointer-events: none;
+}
+
+.gb-navbar-mobile-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.gb-navbar-mobile-close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--gb-nav-color-white);
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--gb-nav-transition-duration) var(--gb-nav-transition-luxury);
+}
+
+.gb-navbar-mobile-close-btn:hover {
+    transform: rotate(90deg);
+}
+
+.gb-navbar-close-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.gb-navbar-mobile-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.gb-navbar-mobile-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.gb-navbar-mobile-link {
+    font-family: var(--gb-nav-font-headings);
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--gb-nav-color-white);
+    text-decoration: none;
+    display: inline-block;
+    transition: transform var(--gb-nav-transition-duration) var(--gb-nav-transition-luxury),
+                padding-left var(--gb-nav-transition-duration) var(--gb-nav-transition-luxury);
+}
+
+.gb-navbar-mobile-link:hover,
+.gb-navbar-mobile-active {
+    background: var(--gb-nav-gradient-signature);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: translateX(8px);
+}
+
+.gb-navbar-mobile-divider {
+    height: 1px;
+    background: linear-gradient(90deg, rgba(232,232,232,0.1) 0%, rgba(232,232,232,0.02) 100%);
+    margin: 60px 0 40px 0;
+}
+
+/* Mobile Utilities Substructure Base */
+.gb-navbar-mobile-utilities {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.gb-navbar-mobile-util-btn {
+    background: none;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--gb-nav-font-nav);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color var(--gb-nav-transition-duration) var(--gb-nav-transition-luxury);
+}
+
+.gb-navbar-mobile-util-btn i {
+    width: 20px;
+    height: 20px;
+    stroke-width: 1.5px;
+}
+
+.gb-navbar-mobile-util-btn:hover {
+    color: var(--gb-nav-color-white);
+}
+
+.gb-navbar-mobile-cart-wrapper {
+    position: relative;
+}
+
+.gb-navbar-mobile-badge {
+    position: absolute;
+    top: -4px;
+    right: -6px;
+    background-color: var(--gb-nav-color-primary);
+    color: var(--gb-nav-color-white);
+    font-size: 9px;
+    font-weight: 600;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ==========================================================================
+   MEDIA QUERIES - BREAKPOINT INTERCEPT MATRIX (992px Grid Adaptive Mode)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .gb-navbar-container {
+        padding: 0 30px;
+    }
+    
+    .gb-navbar-header {
+        height: 75px;
+    }
+    
+    .gb-navbar-header.gb-navbar-sticky-active {
+        height: 65px;
+    }
+
+    .gb-navbar-desktop-nav {
+        display: none; /* Strip standard center link map stack */
+    }
+
+    .gb-navbar-hamburger-trigger {
+        display: flex; /* Elevate operational hamburger context */
+    }
+
+    /* Keep individual search/user buttons hidden on mid-range desktop breakpoints to isolate overlay targets */
+    .gb-navbar-utility-btn:not(.gb-navbar-cart-trigger) {
+        display: none;
+    }
+    
+    .gb-navbar-utilities {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gb-navbar-mobile-overlay {
+        max-width: 100%; /* Collapse completely into clean full width portrait profile */
+        padding: 30px 24px;
+    }
+    .gb-navbar-mobile-link {
+        font-size: 28px;
+    }
+}
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+
+@keyframes gbHeroZoomOut {
+    from {
+        transform: scale(1.015);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.gb-hero {
+    position: relative;
+    width: 100%;
+    height: min(650px, 33.8542vw);
+    margin-top: 90px; /* Counteracts desktop fixed luxury navbar clearance height */
+    overflow: hidden;
+    background-color: #0D0D0D;
+    user-select: none;
+}
+
+.gb-hero-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.gb-hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), 
+                visibility 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, visibility;
+}
+
+/* Luxury Cinematic Visual States */
+.gb-hero-slide-active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+.gb-hero-picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.gb-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transform: scale(1);
+    animation: none;
+    will-change: transform;
+}
+
+.gb-hero-slide-active .gb-hero-image {
+    animation: gbHeroZoomOut 6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Subtle Contrast Safety Mask */
+.gb-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(13, 13, 13, 0.15) 0%, rgba(13, 13, 13, 0.05) 50%, rgba(13, 13, 13, 0.2) 100%);
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Structural Interaction Controllers */
+.gb-hero-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    outline: none;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: background-color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                border-color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gb-hero-arrow svg {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gb-hero-arrow-prev { left: 40px; }
+.gb-hero-arrow-next { right: 40px; }
+
+/* Dynamic Premium Vector Shifts on Hover */
+.gb-hero-arrow:hover {
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
+    color: #0D0D0D;
+}
+
+.gb-hero-arrow-prev:hover svg { transform: translateX(-2px); }
+.gb-hero-arrow-next:hover svg { transform: translateX(2px); }
+
+/* Navigation Track Indicators */
+.gb-hero-pagination {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    z-index: 10;
+}
+
+.gb-hero-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    position: relative;
+    transition: background-color 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gb-hero-dot::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border: 1px solid #2F6BFF;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gb-hero-dot-active {
+    background-color: #2F6BFF;
+    transform: scale(1.15);
+}
+
+.gb-hero-dot-active::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Accessibility Focus States */
+.gb-hero-arrow:focus-visible,
+.gb-hero-dot:focus-visible {
+    outline: 2px solid #8A3DFF;
+    outline-offset: 4px;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN INTERCEPT GRID
+===================================================== */
+@media (max-width: 1199px) {
+    .gb-hero-arrow-prev { left: 24px; }
+    .gb-hero-arrow-next { right: 24px; }
+}
+
+@media (max-width: 992px) {
+    .gb-hero {
+        height: min(520px, 33.8542vw);
+        margin-top: 75px; /* Synchronizes with responsive header breakpoint adjustments */
+    }
+    .gb-hero-arrow {
+        width: 46px;
+        height: 46px;
+    }
+    .gb-hero-arrow svg {
+        width: 18px;
+        height: 18px;
+    }
+    .gb-hero-pagination {
+        bottom: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .gb-hero {
+        height: min(640px, 125vw);
+    }
+    .gb-hero-arrow {
+        display: none; /* Strip structural side buttons on mobile layouts to rely on touch gestures */
+    }
+    .gb-hero-pagination {
+        bottom: 20px;
+        gap: 10px;
+    }
+}
