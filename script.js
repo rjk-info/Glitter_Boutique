@@ -335,6 +335,104 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ======================================================
+   ABOUT GLITTER BOUTIQUE
+====================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    'use strict';
+
+    // Verify Lucide dynamic vectors are active on page run execution
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
+
+    /**
+     * Note: The About section layout leverages modern CSS Grid properties, 
+     * smooth translation animations via cubic-bezier parameters, and hardware-accelerated 
+     * structural fluid sizing architectures natively.
+     *
+     * This eliminates unnecessary script overhead and processing loops, keeping your 
+     * Lighthouse performance metrics pristine. No additional initialization scripts 
+     * are required here.
+     */
+});
+
+/* ======================================================
+   CUSTOMER REVIEWS
+====================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    'use strict';
+
+    // Parse Lucide SVG elements safely for the review vector nodes
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
+
+    /**
+     * Note: This Customer Reviews system implements layout heights naturally 
+     * driven by asymmetric flexible data vectors (CSS align-items: start). 
+     * 
+     * Micro-interactions like profile rotations, tag shifts, and star transformations
+     * run directly on hardware-accelerated CSS transition matrices. This preserves
+     * smooth, main-thread-free performance across all mobile browsers.
+     */
+});
+
+/* ======================================================
+   FAQ SECTION
+====================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    'use strict';
+
+    // Synchronize newly embedded Lucide vector nodes securely
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
+
+    const accordionHub = document.querySelector('.gb-faq-accordion-hub');
+    if (!accordionHub) return;
+
+    /**
+     * Symmetrical Single-Open Accordion State Transition Engine
+     * Monitors layout vectors dynamically utilizing clean element.scrollHeight mapping
+     */
+    accordionHub.addEventListener('click', (event) => {
+        const structuralTrigger = event.target.closest('.gb-faq-trigger');
+        if (!structuralTrigger) return;
+
+        const ongoingItem = structuralTrigger.closest('.gb-faq-item');
+        const ongoingPanel = ongoingItem.querySelector('.gb-faq-panel');
+        const isCurrentlyExpanded = structuralTrigger.getAttribute('aria-expanded') === 'true';
+
+        // Enforce boundary parameters: Locate and collapse alternative active items inside the node list
+        const parallelActiveItem = accordionHub.querySelector('.gb-faq-item-active');
+        if (parallelActiveItem && parallelActiveItem !== ongoingItem) {
+            const parallelTrigger = parallelActiveItem.querySelector('.gb-faq-trigger');
+            const parallelPanel = parallelActiveItem.querySelector('.gb-faq-panel');
+
+            parallelActiveItem.classList.remove('gb-faq-item-active');
+            parallelTrigger.setAttribute('aria-expanded', 'false');
+            parallelPanel.setAttribute('aria-hidden', 'true');
+            parallelPanel.style.maxHeight = null;
+        }
+
+        // Toggle state parameters for selected baseline item
+        if (!isCurrentlyExpanded) {
+            ongoingItem.classList.add('gb-faq-item-active');
+            structuralTrigger.setAttribute('aria-expanded', 'true');
+            ongoingPanel.setAttribute('aria-hidden', 'false');
+            
+            // Calculate absolute performance height bounds dynamically to trigger pure GPU layout sweeps
+            ongoingPanel.style.maxHeight = ongoingPanel.scrollHeight + 'px';
+        } else {
+            ongoingItem.classList.remove('gb-faq-item-active');
+            structuralTrigger.setAttribute('aria-expanded', 'false');
+            ongoingPanel.setAttribute('aria-hidden', 'true');
+            ongoingPanel.style.maxHeight = null;
+        }
+    });
+});
+
+/* ======================================================
    FOOTER
 ====================================================== */
 document.addEventListener('DOMContentLoaded', () => {

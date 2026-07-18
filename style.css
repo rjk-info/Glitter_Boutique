@@ -1557,6 +1557,1215 @@
 }
 
 /* ======================================================
+   ABOUT GLITTER BOUTIQUE
+====================================================== */
+
+.gb-about {
+    position: relative;
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 10px 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Luxury Editorial Backdrop Ambient Glow Blur Layer */
+.gb-about-ambient-glow {
+    position: absolute;
+    top: 30%;
+    left: -10%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(96, 165, 250, 0.04) 0%, rgba(243, 238, 255, 0.02) 60%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gb-about-wrapper {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 60px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Symmetrical Section Title Area Group */
+.gb-about-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 100px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gb-about-tagline {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #0057FF;
+    margin-bottom: 20px;
+}
+
+.gb-about-main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #1F2937;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+
+.gb-about-lead-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #6B7280;
+}
+
+/* Main Editorial 2-Column Balance Matrix Grid Layout */
+.gb-about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.3fr;
+    gap: 80px;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 120px;
+    box-sizing: border-box;
+}
+
+/* LEFT COLUMN: Floating Image Canvas Structure */
+.gb-about-image-column {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes gbAboutFloatEffect {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+
+.gb-about-image-frame {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 3 / 4;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(47, 107, 255, 0.08), 0 4px 12px rgba(31, 41, 55, 0.02);
+    animation: gbAboutFloatEffect 6s ease-in-out infinite;
+    will-change: transform;
+    background-color: #F8F8F8;
+}
+
+.gb-about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gb-about-image-frame:hover .gb-about-image {
+    transform: scale(1.04);
+}
+
+.gb-about-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 60%, rgba(31, 41, 55, 0.05) 100%);
+    pointer-events: none;
+}
+
+/* RIGHT COLUMN: Editorial Narrative Typography Base */
+.gb-about-content-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.gb-about-editorial-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #1F2937;
+    margin-bottom: 24px;
+    letter-spacing: -0.2px;
+}
+
+.gb-about-body-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.gb-about-body-text p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #6B7280;
+}
+
+/* Highlight Mini-Cards 2x2 Infrastructure Grid */
+.gb-about-highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.gb-about-highlight-card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(243, 238, 255, 0.8);
+    border-radius: 18px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 20px rgba(31, 41, 55, 0.01);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                border-color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gb-about-highlight-icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #F3EEFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gb-about-highlight-icon {
+    width: 18px;
+    height: 18px;
+    color: #8A3DFF;
+    stroke-width: 2px;
+    transition: color 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gb-about-highlight-info h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1F2937;
+    margin-bottom: 2px;
+}
+
+.gb-about-highlight-info p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #6B7280;
+}
+
+/* Highlight Items Luxury Hover Modifiers */
+.gb-about-highlight-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(47, 107, 255, 0.25);
+    box-shadow: 0 12px 25px rgba(0, 87, 255, 0.04);
+}
+
+.gb-about-highlight-card:hover .gb-about-highlight-icon-box {
+    background: linear-gradient(135deg, #2F6BFF 0%, #8A3DFF 100%);
+}
+
+.gb-about-highlight-card:hover .gb-about-highlight-icon {
+    color: #FFFFFF;
+}
+
+/* ======================================================
+   BOTTOM REGION: PREMIUM LUXURY STATISTICS CLUSTER
+====================================================== */
+.gb-about-stats-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    width: 100%;
+    border-top: 1px solid #F3EEFF;
+    padding-top: 0px;
+    box-sizing: border-box;
+}
+
+.gb-about-stat-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(232, 232, 232, 0.6);
+    border-radius: 22px;
+    padding: 35px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 6px 25px rgba(13, 13, 13, 0.01);
+    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+                border-color 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Modern Precision Split Gradients for Large Numbers */
+.gb-about-stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    letter-spacing: -1px;
+}
+
+.gb-about-stat-grad-1 {
+    background: linear-gradient(135deg, #0057FF 0%, #8A3DFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gb-about-stat-grad-2 {
+    background: linear-gradient(135deg, #8A3DFF 0%, #60A5FA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gb-about-stat-grad-3 {
+    background: linear-gradient(135deg, #0057FF 0%, #60A5FA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gb-about-stat-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #6B7280;
+}
+
+/* Statistics Cluster Hover Modifications */
+.gb-about-stat-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(96, 165, 250, 0.3);
+    box-shadow: 0 16px 35px rgba(0, 87, 255, 0.05);
+}
+
+/* ======================================================
+   RESPONSIVE LAYOUT BREAKPOINT TUNING
+====================================================== */
+@media (max-width: 1200px) {
+    .gb-about {
+        padding: 120px 0;
+    }
+    .gb-about-wrapper {
+        padding: 0 40px;
+    }
+    .gb-about-grid {
+        gap: 50px;
+        margin-bottom: 90px;
+    }
+    .gb-about-main-title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    /* Compress Editorial Grid Into Single Stream Column Stack */
+    .gb-about-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    
+    .gb-about-image-column {
+        order: 1; /* Retain image on top execution row placement */
+    }
+    
+    .gb-about-content-column {
+        order: 2;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .gb-about-body-text {
+        align-items: center;
+    }
+    
+    /* Regroup statistics cluster into double column layers */
+    .gb-about-stats-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        padding-top: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gb-about-main-title {
+        font-size: 34px;
+    }
+    .gb-about-highlight-grid {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .gb-about-wrapper {
+        padding: 0 24px;
+    }
+    .gb-about {
+        padding: 90px 0;
+    }
+    .gb-about-header {
+        margin-bottom: 60px;
+    }
+    .gb-about-main-title {
+        font-size: 28px;
+    }
+    /* Collapse highlight items into full stack lines */
+    .gb-about-highlight-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+    /* Collapse statistics rows down into standard linear format stack */
+    .gb-about-stats-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .gb-about-stat-card {
+        padding: 25px 15px;
+    }
+    .gb-about-stat-number {
+        font-size: 38px;
+    }
+}
+
+/* ======================================================
+   CUSTOMER REVIEWS
+====================================================== */
+
+.gb-review {
+    position: relative;
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 10px 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Luxury Background Light Projection Mesh */
+.gb-review-ambient {
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 800px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(138, 61, 255, 0.03) 0%, rgba(96, 165, 250, 0.02) 50%, rgba(255, 255, 255, 0) 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gb-review-wrapper {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 60px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Rigorous Central Header Alignment */
+.gb-review-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 90px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gb-review-tagline {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #8A3DFF;
+    margin-bottom: 20px;
+}
+
+.gb-review-main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #334155;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+
+.gb-review-lead-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #64748B;
+}
+
+/* Masonry Layout Baseline - Enforces Organic Variance in Grid Heights */
+.gb-review-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 30px;
+    width: 100%;
+    align-items: start; /* Permits dynamic content lines to map unique individual card forms */
+    margin-bottom: 90px;
+    box-sizing: border-box;
+}
+
+/* Premium White Glassmorphism Card Container Frame */
+.gb-review-card {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(243, 238, 255, 0.9);
+    border-radius: 28px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(13, 13, 13, 0.02);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+                border-color 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform, box-shadow;
+    box-sizing: border-box;
+}
+
+/* Top Meta Zone Profile Mapping */
+.gb-review-card-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.gb-review-profile-zone {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.gb-review-avatar-frame {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #F3EEFF;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0 4px 15px rgba(138, 61, 255, 0.1);
+    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gb-review-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.gb-review-user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.gb-review-user-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 2px;
+}
+
+.gb-review-user-status {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #60A5FA;
+}
+
+/* Verified Structural Gradient Icons */
+.gb-review-verified-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0057FF;
+}
+
+.gb-review-verified-icon {
+    width: 22px;
+    height: 22px;
+    stroke-width: 2px;
+    fill: rgba(0, 87, 255, 0.05);
+}
+
+/* Gold Gradient Vector Multi-Stars Rating Module */
+.gb-review-rating-stars {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 20px;
+}
+
+@keyframes gbStarShine {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.12); opacity: 0.9; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.gb-review-rating-stars i {
+    width: 15px;
+    height: 15px;
+    fill: #FBBF24;
+    color: #FBBF24;
+    stroke-width: 1px;
+}
+
+.gb-review-card:hover .gb-review-rating-stars i {
+    animation: gbStarShine 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Review Copy Typography Elements */
+.gb-review-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #64748B;
+    margin-bottom: 28px;
+    text-align: left;
+}
+
+/* Bottom Product Purchase Badge Markers */
+.gb-review-footer-tags {
+    margin-top: auto; /* Ensures tags align at the base of variable height items */
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.gb-review-tag-badge {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    background-color: #F3EEFF;
+    color: #8A3DFF;
+    padding: 6px 14px;
+    border-radius: 30px;
+    letter-spacing: 0.2px;
+    transition: background-color 0.3s linear, color 0.3s linear;
+}
+
+/* ======================================================
+   HARDWARE-ACCELERATED KINETIC HOVER MATRIX
+====================================================== */
+.gb-review-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(138, 61, 255, 0.2);
+    box-shadow: 0 20px 45px rgba(0, 87, 255, 0.05), 0 1px 4px rgba(219, 70, 239, 0.02);
+}
+
+.gb-review-card:hover .gb-review-avatar-frame {
+    transform: scale(1.06) rotate(3deg);
+}
+
+.gb-review-card:hover .gb-review-tag-badge {
+    background-color: #2F6BFF;
+    color: #FFFFFF;
+}
+
+/* ======================================================
+   EXTRA LOWER SECTION: GLOBAL TRUST BOX SYSTEM
+====================================================== */
+.gb-review-summary {
+    position: relative;
+    width: 100%;
+    max-width: 580px;
+    background: linear-gradient(135deg, #0D0D0D 0%, #1E1B4B 100%);
+    border-radius: 24px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(13, 13, 13, 0.15);
+    overflow: hidden;
+    display: none;
+}
+
+.gb-review-summary-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(47, 107, 255, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.gb-review-summary-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gb-review-summary-stars {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 14px;
+}
+
+.gb-review-summary-stars i {
+    width: 20px;
+    height: 20px;
+    fill: #FBBF24;
+    color: #FBBF24;
+    stroke-width: 1px;
+}
+
+.gb-review-summary-score-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.gb-review-summary-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 54px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1;
+}
+
+.gb-review-summary-slash {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 400;
+    margin-left: 2px;
+}
+
+.gb-review-summary-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 0.5px;
+}
+
+/* Keyboard Accessible Focus States */
+.gb-review-card:focus-visible {
+    outline: 2px dashed #8A3DFF;
+    outline-offset: 6px;
+    transform: translateY(-4px);
+}
+
+/* ======================================================
+   RESPONSIVE DESIGN GRID ADAPTIVE OVERRIDES
+====================================================== */
+@media (max-width: 1200px) {
+    .gb-review {
+        padding: 120px 0;
+    }
+    .gb-review-wrapper {
+        padding: 0 40px;
+    }
+    .gb-review-grid {
+        gap: 24px;
+    }
+    .gb-review-main-title {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 992px) {
+    /* Compress Masonry Stack Runway Framework Into 2 Columns */
+    .gb-review-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin-bottom: 70px;
+    }
+    .gb-review-header {
+        margin-bottom: 70px;
+    }
+}
+
+@media (max-width: 680px) {
+    /* Collapse down safely to a clean 1-column layout stream */
+    .gb-review-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .gb-review-card {
+        padding: 30px;
+    }
+    .gb-review-main-title {
+        font-size: 28px;
+    }
+    .gb-review-summary {
+        padding: 30px 20px;
+    }
+    .gb-review-summary-number {
+        font-size: 44px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gb-review-wrapper {
+        padding: 0 24px;
+    }
+}
+
+/* ======================================================
+   FAQ SECTION
+====================================================== */
+
+.gb-faq {
+    position: relative;
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 10px 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Luxury backdrop crystal atmospheric light mask */
+.gb-faq-ambient-glow {
+    position: absolute;
+    top: 50%;
+    right: -20%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(138, 61, 255, 0.03) 0%, rgba(96, 165, 250, 0.02) 60%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gb-faq-wrapper {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 60px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Symmetrical Centered Header Settings Block */
+.gb-faq-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 100px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gb-faq-tagline {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #0057FF;
+    margin-bottom: 20px;
+}
+
+.gb-faq-main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #334155;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+
+.gb-faq-lead-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #64748B;
+}
+
+/* Main Layout Grid - Split Structure Runway (40% Image / 60% Accordion Hub) */
+.gb-faq-grid {
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    gap: 60px;
+    width: 100%;
+    align-items: start;
+    margin-bottom: 120px;
+    box-sizing: border-box;
+}
+
+/* Left Canvas: Floating Layout Illustration Asset Frame */
+.gb-faq-image-column {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+@keyframes gbFaqFloat {
+    0% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-10px) scale(1.01); }
+    100% { transform: translateY(0px) scale(1); }
+}
+
+.gb-faq-image-frame {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    aspect-ratio: 4 / 5;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(47, 107, 255, 0.05), 0 4px 12px rgba(13, 13, 13, 0.01);
+    animation: gbFaqFloat 6s ease-in-out infinite;
+    will-change: transform;
+    background-color: #F8F8F8;
+}
+
+.gb-faq-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.gb-faq-image-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 70%, rgba(243, 238, 255, 0.1) 100%);
+    pointer-events: none;
+}
+
+/* Right Canvas: Premium Performance Glass Accordion Subsystem */
+.gb-faq-accordion-hub {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.gb-faq-item {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(243, 238, 255, 0.9);
+    border-radius: 22px;
+    box-shadow: 0 4px 25px rgba(13, 13, 13, 0.01);
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform, box-shadow;
+}
+
+/* Clickable Controller Zone Triggers */
+.gb-faq-trigger {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 26px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    outline: none;
+}
+
+.gb-faq-question-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #334155;
+    letter-spacing: -0.1px;
+    padding-right: 20px;
+    transition: color 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gb-faq-icon-wrapper {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #F3EEFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #8A3DFF;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                background-color 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gb-faq-icon-wrapper i {
+    width: 15px;
+    height: 15px;
+    stroke-width: 2.5px;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Panel Structural Layout Rules (Zero-Height Setup Variant Engine) */
+.gb-faq-panel {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                visibility 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: max-height, opacity;
+}
+
+.gb-faq-answer-inner {
+    padding: 0 35px 30px 35px;
+}
+
+.gb-faq-answer-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #64748B;
+}
+
+/* Active Expansion Modifiers Engine Block States */
+.gb-faq-item-active {
+    border-color: rgba(47, 107, 255, 0.25);
+    box-shadow: 0 15px 35px rgba(0, 87, 255, 0.04), 0 1px 3px rgba(138, 61, 255, 0.01);
+    transform: translateY(-2px);
+}
+
+.gb-faq-item-active .gb-faq-question-text {
+    color: #0057FF;
+}
+
+.gb-faq-item-active .gb-faq-icon-wrapper {
+    background-color: #0057FF;
+    color: #FFFFFF;
+    transform: rotate(135deg); /* Flips operational plus vector cleanly into a functional dismiss shape */
+}
+
+.gb-faq-item-active .gb-faq-panel {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Passive Interaction Layout Tweaks */
+.gb-faq-item:not(.gb-faq-item-active):hover {
+    transform: translateY(-3px);
+    border-color: rgba(138, 61, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(13, 13, 13, 0.02);
+}
+
+/* ======================================================
+   BOTTOM REGION: HIGH LUMINANCE SUPPORT COMPOSITE CARD
+====================================================== */
+.gb-faq-support {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    background: linear-gradient(135deg, #F3EEFF 0%, rgba(96, 165, 250, 0.15) 50%, rgba(219, 70, 239, 0.1) 100%);
+    border: 1px solid rgba(47, 107, 255, 0.1);
+    border-radius: 24px;
+    padding: 60px 40px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(138, 61, 255, 0.03);
+}
+
+.gb-faq-support-mesh {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.6) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gb-faq-support-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gb-faq-support-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 12px;
+    letter-spacing: -0.2px;
+}
+
+.gb-faq-support-desc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #64748B;
+    margin-bottom: 30px;
+    max-width: 520px;
+}
+
+/* Luxury Interactive Operational Action Button */
+.gb-faq-support-button {
+    text-decoration: none;
+    padding: 14px 34px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #0057FF 0%, #8A3DFF 100%);
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 6px 20px rgba(0, 87, 255, 0.25);
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                filter 0.2s linear;
+}
+
+.gb-faq-support-button i {
+    width: 14px;
+    height: 14px;
+    stroke-width: 2px;
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gb-faq-support-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 87, 255, 0.35), 0 0 15px rgba(138, 61, 255, 0.2);
+    filter: brightness(1.03);
+}
+
+.gb-faq-support-button:hover i {
+    transform: translate(2px, -2px);
+}
+
+/* Keyboard System Focus Ring Accessibility Parameters */
+.gb-faq-trigger:focus-visible,
+.gb-faq-support-button:focus-visible {
+    outline: 2px dashed #8A3DFF;
+    outline-offset: 4px;
+}
+
+.gb-faq-item:focus-within {
+    border-color: rgba(47, 107, 255, 0.4);
+}
+
+/* ======================================================
+   RESPONSIVE DESIGN INTERCEPT LAYOUT matrix
+====================================================== */
+@media (max-width: 1200px) {
+    .gb-faq {
+        padding: 120px 0;
+    }
+    .gb-faq-wrapper {
+        padding: 0 40px;
+    }
+    .gb-faq-grid {
+        gap: 40px;
+        margin-bottom: 90px;
+    }
+    .gb-faq-main-title {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 992px) {
+    /* Collapse main grid matrix runway into single vertical columns flows */
+    .gb-faq-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .gb-faq-image-column {
+        justify-content: center; /* Enforces absolute center layout on tablet profiles */
+    }
+    
+    .gb-faq-header {
+        margin-bottom: 70px;
+    }
+}
+
+@media (max-width: 680px) {
+    .gb-faq-trigger {
+        padding: 22px 25px;
+    }
+    .gb-faq-answer-inner {
+        padding: 0 25px 24px 25px;
+    }
+    .gb-faq-question-text {
+        font-size: 16px;
+    }
+    .gb-faq-main-title {
+        font-size: 28px;
+    }
+    .gb-faq-support {
+        padding: 45px 24px;
+    }
+    .gb-faq-support-title {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gb-faq-wrapper {
+        padding: 0 24px;
+    }
+}
+
+/* ======================================================
    FOOTER
 ====================================================== */
 
