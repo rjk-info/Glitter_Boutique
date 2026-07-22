@@ -23,7 +23,7 @@
         <div class="gb-navbar-container">
             
             <!-- Brand Identity -->
-            <a href="/" class="gb-navbar-logo-link" aria-label="Glitter Boutique Home">
+            <a href="index.html" class="gb-navbar-logo-link" aria-label="Glitter Boutique Home">
                 <img src="assets/home_img/logo/Glitter Beauty LOGO PNG.png" alt="Glitter Boutique Logo"
                     class="gb-navbar-logo-img">
             </a>
@@ -31,11 +31,11 @@
             <!-- Central Desktop Navigation Map -->
             <nav class="gb-navbar-desktop-nav" aria-label="Main Desktop Navigation">
                 <ul class="gb-navbar-menu-list">
-                    <li class="gb-navbar-menu-item"><a href="/" class="gb-navbar-menu-link gb-navbar-active">Home</a></li>
-                    <li class="gb-navbar-menu-item"><a href="/about_us.html" class="gb-navbar-menu-link">About Us</a></li>
-                    <li class="gb-navbar-menu-item"><a href="/products.html" class="gb-navbar-menu-link">Products</a></li>
-                    <li class="gb-navbar-menu-item"><a href="/blog.html" class="gb-navbar-menu-link">Blog</a></li>
-                    <li class="gb-navbar-menu-item"><a href="/contact.html" class="gb-navbar-menu-link">Contact Us</a></li>
+                    <li class="gb-navbar-menu-item"><a href="index.html" class="gb-navbar-menu-link gb-navbar-active">Home</a></li>
+                    <li class="gb-navbar-menu-item"><a href="about_us.html" class="gb-navbar-menu-link">About Us</a></li>
+                    <li class="gb-navbar-menu-item"><a href="products.html" class="gb-navbar-menu-link">Products</a></li>
+                    <li class="gb-navbar-menu-item"><a href="blog.html" class="gb-navbar-menu-link">Blog</a></li>
+                    <li class="gb-navbar-menu-item"><a href="contact.html" class="gb-navbar-menu-link">Contact Us</a></li>
                 </ul>
             </nav>
 
@@ -81,11 +81,11 @@
         <div class="gb-navbar-mobile-content">
             <nav class="gb-navbar-mobile-nav" aria-label="Main Mobile Navigation">
                 <ul class="gb-navbar-mobile-list">
-                    <li class="gb-navbar-mobile-item"><a href="/" class="gb-navbar-mobile-link gb-navbar-mobile-active">Home</a></li>
-                    <li class="gb-navbar-mobile-item"><a href="/about_us.html" class="gb-navbar-mobile-link">About Us</a></li>
-                    <li class="gb-navbar-mobile-item"><a href="/products" class="gb-navbar-mobile-link">Products</a></li>
-                    <li class="gb-navbar-mobile-item"><a href="/blog" class="gb-navbar-mobile-link">Blog</a></li>
-                    <li class="gb-navbar-mobile-item"><a href="/contact" class="gb-navbar-mobile-link">Contact Us</a></li>
+                    <li class="gb-navbar-mobile-item"><a href="index.html" class="gb-navbar-mobile-link gb-navbar-mobile-active">Home</a></li>
+                    <li class="gb-navbar-mobile-item"><a href="about_us.html" class="gb-navbar-mobile-link">About Us</a></li>
+                    <li class="gb-navbar-mobile-item"><a href="products.html" class="gb-navbar-mobile-link">Products</a></li>
+                    <li class="gb-navbar-mobile-item"><a href="blog.html" class="gb-navbar-mobile-link">Blog</a></li>
+                    <li class="gb-navbar-mobile-item"><a href="contact.html" class="gb-navbar-mobile-link">Contact Us</a></li>
                 </ul>
             </nav>
 
@@ -113,7 +113,292 @@
     </div>
 
 
-====================================================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Collections | Glitter Boutique</title>
+    
+    <!-- Premium Google Fonts Framework Synchronization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Isolated Structural Products Layout Sheet -->
+    <link rel="stylesheet" href="products.css">
+    
+    <!-- Lucide Dynamic SVGs Injection Engine -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="gb-products-body">
+
+    <!-- CORE PRODUCTS VIEWPORT WRAPPER -->
+    <div class="gb-products-page-wrapper">
+        
+        <!-- SECTION 1: STICKY AMBIENT CATEGORY FILTER CONTROLLER BAR -->
+        <nav class="gb-products-filter-bar" id="gb-products-sticky-bar" aria-label="Product Categories Dynamic Filter">
+            <div class="gb-products-filter-container">
+                <ul class="gb-products-filter-list" role="tablist">
+                    <li class="gb-products-filter-item">
+                        <button class="gb-products-filter-btn gb-products-filter-active" role="tab" aria-selected="true" data-category="all">All Masterpieces</button>
+                    </li>
+                    <li class="gb-products-filter-item">
+                        <button class="gb-products-filter-btn" role="tab" aria-selected="false" data-category="face">Face Gems</button>
+                    </li>
+                    <li class="gb-products-filter-item">
+                        <button class="gb-products-filter-btn" role="tab" aria-selected="false" data-category="body">Body Gems</button>
+                    </li>
+                    <li class="gb-products-filter-item">
+                        <button class="gb-products-filter-btn" role="tab" aria-selected="false" data-category="festival">Festival Collection</button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- MAIN LAYOUT MATRIX CONTENT PORT -->
+        <main class="gb-products-main-runway">
+            <div class="gb-products-ambient-mesh" aria-hidden="true"></div>
+
+            <!-- SECTION 2: EDITORIAL RUNWAY GRID ALPHA (FIRST 3 MASTERPIECES) -->
+            <section class="gb-products-section-padding" aria-label="Featured Dynamic Showcase Grid">
+                <div class="gb-products-grid-container">
+                    <div class="gb-products-grid gb-products-grid-3col">
+                        
+                        <!-- Masterpiece Card 1 -->
+                        <article class="gb-products-card gb-products-reveal" data-product-type="face festival">
+                            <div class="gb-products-card-border" aria-hidden="true"></div>
+                            <div class="gb-products-card-spotlight" aria-hidden="true"></div>
+                            
+                            <div class="gb-products-image-wrapper">
+                                <span class="gb-products-badge">Premium Festival</span>
+                                <a href="/product/crystal-face-gems" class="gb-products-image-link">
+                                    <img class="gb-products-image" src="https://m.media-amazon.com/images/I/814820OwScL._AC_UF350,350_QL80_.jpg" alt="Crystal Face Gems Luxury Editorial Presentation" loading="eager" decoding="async">
+                                </a>
+                                
+                                <div class="gb-products-card-actions">
+                                    <button class="gb-products-action-btn" aria-label="Add to Wishlist"><i data-lucide="heart"></i></button>
+                                    <button class="gb-products-action-btn" aria-label="Quick View Overlay Context"><i data-lucide="eye"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="gb-products-meta-zone">
+                                <h3 class="gb-products-card-title">Crystal Face Gems</h3>
+                                <p class="gb-products-card-desc">Multi-faceted bohemian forehead layout cluster.</p>
+                                
+                                <div class="gb-products-rating-row" aria-label="Rated 5 out of 5 stars">
+                                    <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+                                </div>
+                                
+                                <div class="gb-products-footer-row">
+                                    <span class="gb-products-price">₹499</span>
+                                    <div class="gb-products-footer-actions">
+                                        <button type="button" class="gb-products-add-btn">Add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Masterpiece Card 2 -->
+                        <article class="gb-products-card gb-products-reveal" data-product-type="body">
+                            <div class="gb-products-card-border" aria-hidden="true"></div>
+                            <div class="gb-products-card-spotlight" aria-hidden="true"></div>
+                            
+                            <div class="gb-products-image-wrapper">
+                                <span class="gb-products-badge">Luxury Glitter</span>
+                                <a href="/product/aurora-body-gems" class="gb-products-image-link">
+                                    <img class="gb-products-image" src="https://m.media-amazon.com/images/I/51jW1Mj1hxL._AC_UF1000,1000_QL80_.jpg" alt="Aurora Body Gems Luxury Editorial Presentation" loading="lazy" decoding="async">
+                                </a>
+                                
+                                <div class="gb-products-card-actions">
+                                    <button class="gb-products-action-btn" aria-label="Add to Wishlist"><i data-lucide="heart"></i></button>
+                                    <button class="gb-products-action-btn" aria-label="Quick View Overlay Context"><i data-lucide="eye"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="gb-products-meta-zone">
+                                <h3 class="gb-products-card-title">Aurora Body Gems</h3>
+                                <p class="gb-products-card-desc">Chromatic safe-adhesion shoulder and chest contours.</p>
+                                
+                                <div class="gb-products-rating-row" aria-label="Rated 5 out of 5 stars">
+                                    <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+                                </div>
+                                
+                                <div class="gb-products-footer-row">
+                                    <span class="gb-products-price">₹599</span>
+                                    <div class="gb-products-footer-actions">
+                                        <button type="button" class="gb-products-add-btn">Add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Masterpiece Card 3 -->
+                        <article class="gb-products-card gb-products-reveal" data-product-type="face">
+                            <div class="gb-products-card-border" aria-hidden="true"></div>
+                            <div class="gb-products-card-spotlight" aria-hidden="true"></div>
+                            
+                            <div class="gb-products-image-wrapper">
+                                <span class="gb-products-badge">Party Collection</span>
+                                <a href="/product/galaxy-shine-gems" class="gb-products-image-link">
+                                    <img class="gb-products-image" src="https://m.media-amazon.com/images/I/61PEVlXwkbL.jpg" alt="Galaxy Shine Gems Luxury Editorial Presentation" loading="lazy" decoding="async">
+                                </a>
+                                
+                                <div class="gb-products-card-actions">
+                                    <button class="gb-products-action-btn" aria-label="Add to Wishlist"><i data-lucide="heart"></i></button>
+                                    <button class="gb-products-action-btn" aria-label="Quick View Overlay Context"><i data-lucide="eye"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="gb-products-meta-zone">
+                                <h3 class="gb-products-card-title">Galaxy Shine Gems</h3>
+                                <p class="gb-products-card-desc">Deep cosmic violet micro-crystal constellation map.</p>
+                                
+                                <div class="gb-products-rating-row" aria-label="Rated 5 out of 5 stars">
+                                    <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+                                </div>
+                                
+                                <div class="gb-products-footer-row">
+                                    <span class="gb-products-price">₹549</span>
+                                    <div class="gb-products-footer-actions">
+                                        <button type="button" class="gb-products-add-btn">Add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: THE CINEMATIC HIGH-END PRODUCT EDITORIAL IMMERSION (APPLE/DIOR STYLE) -->
+            <section class="gb-products-featured-story gb-products-reveal" aria-label="Featured Collection Masterpiece Narrative">
+                <div class="gb-products-story-aurora" aria-hidden="true"></div>
+                <div class="gb-products-story-sparkles" aria-hidden="true"></div>
+                
+                <div class="gb-products-story-container">
+                    
+                    <!-- Left: Kinetic Overlapping Media Block -->
+                    <div class="gb-products-story-media">
+                        <img class="gb-products-story-img" id="gb-products-tilt-target" src="assets/home_img/products_img/cristal-removebg-preview.png" alt="Cinematic close-up portrait detail of Crystal Face Gems refraction" loading="lazy" decoding="async">
+                    </div>
+
+                    <!-- Right: Editorial Typography Grid Module -->
+                    <div class="gb-products-story-content">
+                        <span class="gb-products-story-label">Featured Collection</span>
+                        <h2 class="gb-products-story-title">Crystal Face Gems</h2>
+                        <p class="gb-products-story-desc">
+                            Redefining structural cosmetic ornamentation. Every individual arrangement is precision hand-carved with complex diamond-cut angular geometries to optimize standard mainstage lighting refraction parameters effortlessly.
+                        </p>
+                        
+                        <!-- Core Pillar Attributes Layout -->
+                        <ul class="gb-products-story-pillars" aria-label="Key Design Frameworks">
+                            <li class="gb-products-pillar-item"><i data-lucide="shield-check"></i><span>Skin Friendly Adhesive</span></li>
+                            <li class="gb-products-pillar-item"><i data-lucide="droplet"></i><span>Waterproof Resilience</span></li>
+                            <li class="gb-products-pillar-item"><i data-lucide="refresh-cw"></i><span>Infinite Reusable Cycle</span></li>
+                            <li class="gb-products-pillar-item"><i data-lucide="zap"></i><span>Instant Self-Stick Mount</span></li>
+                        </ul>
+
+                        <div class="gb-products-story-actions">
+                            <a href="/product/crystal-face-gems" class="gb-products-action-btn-lux gb-products-btn-gradient">
+                                <span>Explore Masterpiece</span><i data-lucide="chevron-right"></i>
+                            </a>
+                            <button class="gb-products-action-btn-lux gb-products-btn-outline" aria-label="Watch editorial cinema demo">
+                                <i data-lucide="play"></i><span>Watch Demo Studio</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- SECTION 4: EDITORIAL RUNWAY GRID BETA (REMAINING DEPLOYED INVENTORIES) -->
+            <section class="gb-products-section-padding" aria-label="Remaining Masterpiece Dynamic Grid Portfolio">
+                <div class="gb-products-grid-container">
+                    <div class="gb-products-grid gb-products-grid-2col">
+                        
+                        <!-- Masterpiece Card 4 -->
+                        <article class="gb-products-card gb-products-reveal" data-product-type="body festival">
+                            <div class="gb-products-card-border" aria-hidden="true"></div>
+                            <div class="gb-products-card-spotlight" aria-hidden="true"></div>
+                            
+                            <div class="gb-products-image-wrapper">
+                                <span class="gb-products-badge">Luxe Moonlight</span>
+                                <a href="/product/moonlight-gems" class="gb-products-image-link">
+                                    <img class="gb-products-image" src="https://www.gosupps.com/media/catalog/product/6/1/61sI-tvalRL.jpg" alt="Moonlight Gems Luxury Editorial Presentation" loading="lazy" decoding="async">
+                                </a>
+                                
+                                <div class="gb-products-card-actions">
+                                    <button class="gb-products-action-btn" aria-label="Add to Wishlist"><i data-lucide="heart"></i></button>
+                                    <button class="gb-products-action-btn" aria-label="Quick View Overlay Context"><i data-lucide="eye"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="gb-products-meta-zone">
+                                <h3 class="gb-products-card-title">Moonlight Gems</h3>
+                                <p class="gb-products-card-desc">Satin pearlescent body line stickers for elegant nightlife traces.</p>
+                                
+                                <div class="gb-products-rating-row" aria-label="Rated 5 out of 5 stars">
+                                    <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+                                </div>
+                                
+                                <div class="gb-products-footer-row">
+                                    <span class="gb-products-price">₹649</span>
+                                    <div class="gb-products-footer-actions">
+                                        <button type="button" class="gb-products-add-btn">Add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Masterpiece Card 5 -->
+                        <article class="gb-products-card gb-products-reveal" data-product-type="face body festival">
+                            <div class="gb-products-card-border" aria-hidden="true"></div>
+                            <div class="gb-products-card-spotlight" aria-hidden="true"></div>
+                            
+                            <div class="gb-products-image-wrapper">
+                                <span class="gb-products-badge">Elite Series</span>
+                                <a href="/product/festival-sparkle-kit" class="gb-products-image-link">
+                                    <img class="gb-products-image" src="https://m.media-amazon.com/images/I/81jjA5IrOeL._AC_UF894,1000_QL80_.jpg" alt="Festival Sparkle Kit Luxury Editorial Presentation" loading="lazy" decoding="async">
+                                </a>
+                                
+                                <div class="gb-products-card-actions">
+                                    <button class="gb-products-action-btn" aria-label="Add to Wishlist"><i data-lucide="heart"></i></button>
+                                    <button class="gb-products-action-btn" aria-label="Quick View Overlay Context"><i data-lucide="eye"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="gb-products-meta-zone">
+                                <h3 class="gb-products-card-title">Festival Sparkle Kit</h3>
+                                <p class="gb-products-card-desc">Complete high-volume face and neck cluster mapping vault.</p>
+                                
+                                <div class="gb-products-rating-row" aria-label="Rated 5 out of 5 stars">
+                                    <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+                                </div>
+                                
+                                <div class="gb-products-footer-row">
+                                    <span class="gb-products-price">₹799</span>
+                                    <div class="gb-products-footer-actions">
+                                        <button type="button" class="gb-products-add-btn">Add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Inject Logic Thread -->
+    <script src="products.js"></script>
+</body>
+</html>
+    
+<!-- FOOTER -->
+
 <footer class="gb-footer" aria-labelledby="gb-footer-community-heading">
     <!-- Luxury Ambient Gradient Mesh & Sparkle Effects -->
     <div class="gb-footer-ambient-mesh" aria-hidden="true"></div>

@@ -2,275 +2,48 @@
    ABOUT HERO SECTION
 ====================================================== */
 
-:root {
-    --gb-hero-font-display: 'Playfair Display', serif;
-    --gb-hero-font-text: 'Poppins', sans-serif;
-    
-    --gb-hero-c-blue: #EC1E79;
-    --gb-hero-c-royal: #9B4F96;
-    --gb-hero-c-purple: #9B4F96;
-    --gb-hero-c-white: #FFFFFF;
-    --gb-hero-c-light: #F5D6E0;
-    
-    --gb-hero-ease-lux: cubic-bezier(0.25, 1, 0.5, 1);
-    --gb-hero-duration: 0.5s;
-}
-
 .gb-abouthero {
     position: relative;
     width: 100%;
-    min-height: min(650px, 33.8542vw);
+    aspect-ratio: 1920 / 650;
     margin-top: 90px;
-    padding: 100px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     overflow: hidden;
     background-color: #2B2B2B;
     box-sizing: border-box;
 }
 
-/* Structural Reset Isolation Guard */
 .gb-abouthero *,
 .gb-abouthero *::before,
 .gb-abouthero *::after {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
-/* --- KINETIC ANIMATIONS DICTIONARY --- */
-@keyframes gbAboutFadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes gbAboutFloatSparkle {
-    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
-    50% { transform: translateY(-15px) rotate(180deg); opacity: 0.7; }
-}
-
-/* --- BACKGROUND CANVAS ARCHITECTURE --- */
 .gb-abouthero-image-canvas {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
 }
 
 .gb-abouthero-image {
+    display: block;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
-    transform: none;
-    animation: none;
-    will-change: auto;
 }
 
-/* Sophisticated Soft Translucent Light Mask Overlay */
-.gb-abouthero-gradient-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(43, 43, 43, 0.18) 0%, rgba(236, 30, 121, 0.12) 50%, rgba(43, 27, 46, 0.4) 100%);
-    z-index: 2;
-    pointer-events: none;
-}
-
-/* --- DECORATIVE GLITTER COMPOSITES --- */
-.gb-abouthero-glow-orb {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(155, 79, 150, 0.15) 0%, transparent 70%);
-    z-index: 3;
-    pointer-events: none;
-    filter: blur(40px);
-}
-
-.gb-abouthero-sparkle {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background-color: rgba(255, 255, 255, 0.4);
-    clip-path: polygon(50% 0%, 65% 35%, 100% 50%, 65% 65%, 50% 100%, 35% 65%, 0% 50%, 35% 35%);
-    z-index: 3;
-    pointer-events: none;
-}
-
-.gb-abouthero-sparkle-1 { top: 25%; left: 15%; animation: gbAboutFloatSparkle 5s ease-in-out infinite; }
-.gb-abouthero-sparkle-2 { top: 70%; right: 18%; animation: gbAboutFloatSparkle 6s ease-in-out infinite 1s; }
-.gb-abouthero-sparkle-3 { top: 35%; right: 12%; animation: gbAboutFloatSparkle 4s ease-in-out infinite 2s; width: 8px; height: 8px; }
-
-/* --- EDITORIAL CONTENT PACK HUB --- */
-.gb-abouthero-content-core {
-    position: relative;
-    z-index: 4;
-    width: min(100%, 860px);
-    max-width: 860px;
-    padding: 0 40px;
-    opacity: 0;
-    animation: gbAboutFadeUp var(--gb-hero-duration) var(--gb-hero-ease-lux) forwards;
-}
-
-.gb-abouthero-label {
-    font-family: var(--gb-hero-font-text);
-    font-size: 13px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    color: var(--gb-hero-c-white);
-    display: inline-block;
-    margin-bottom: 24px;
-    text-shadow: 0 2px 8px rgba(13, 13, 13, 0.2);
-}
-
-.gb-abouthero-heading {
-    font-family: var(--gb-hero-font-display);
-    font-size: 58px;
-    font-weight: 400;
-    line-height: 1.2;
-    margin-bottom: 28px;
-    letter-spacing: -0.5px;
-    background: linear-gradient(135deg, #FFFFFF 30%, var(--gb-hero-c-light) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 4px 12px rgba(13, 13, 13, 0.15));
-}
-
-.gb-abouthero-description {
-    font-family: var(--gb-hero-font-text);
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.8;
-    color: var(--gb-hero-c-light);
-    max-width: 680px;
-    margin: 0 auto 40px auto;
-    text-shadow: 0 2px 10px rgba(13, 13, 13, 0.3);
-}
-
-/* --- BREADCRUMB MATRIX PATHWAY --- */
-.gb-abouthero-breadcrumb-nav {
-    display: inline-flex;
-    justify-content: center;
-}
-
-.gb-abouthero-breadcrumb-list {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 12px;
-    padding: 8px 24px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-radius: 30px;
-}
-
-.gb-abouthero-breadcrumb-item {
-    font-family: var(--gb-hero-font-text);
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.5);
-    display: flex;
-    align-items: center;
-}
-
-.gb-abouthero-breadcrumb-item:not(:last-child)::after {
-    content: '/';
-    margin-left: 12px;
-    color: rgba(255, 255, 255, 0.3);
-}
-
-.gb-abouthero-breadcrumb-link {
-    color: rgba(255, 255, 255, 0.75);
-    text-decoration: none;
-    transition: color 0.3s var(--gb-hero-ease-lux);
-    outline: none;
-}
-
-.gb-abouthero-breadcrumb-link:hover {
-    color: var(--gb-hero-c-blue);
-}
-
-.gb-abouthero-breadcrumb-current {
-    color: var(--gb-hero-c-white);
-    pointer-events: none;
-}
-
-/* Keyboard System Accessible Ring Focus state */
-.gb-abouthero-breadcrumb-link:focus-visible {
-    outline: 2px dashed var(--gb-hero-c-blue);
-    outline-offset: 4px;
-    border-radius: 2px;
-}
-
-/* ======================================================
-   RESPONSIVE DESIGN INTERCEPT LAYOUTS MATRIX
-====================================================== */
 @media (max-width: 992px) {
     .gb-abouthero {
-        min-height: 520px;
         margin-top: 75px;
-        padding: 80px 0;
-    }
-    .gb-abouthero-content-core {
-        padding: 0 30px;
-    }
-    .gb-abouthero-heading {
-        font-size: 46px;
-    }
-    .gb-abouthero-description {
-        font-size: 15px;
-        margin-bottom: 35px;
     }
 }
 
 @media (max-width: 576px) {
     .gb-abouthero {
-        min-height: 440px;
         margin-top: 70px;
-        padding: 70px 0;
-    }
-    .gb-abouthero-content-core {
-        padding: 0 20px;
-    }
-    .gb-abouthero-heading {
-        font-size: 34px;
-        margin-bottom: 20px;
-    }
-    .gb-abouthero-description {
-        font-size: 13.5px;
-        line-height: 1.7;
-        margin-bottom: 30px;
-    }
-    .gb-abouthero-heading br {
-        display: none; /* Collapses text block line breaks on narrow screen views */
-    }
-    .gb-abouthero-label {
-        margin-bottom: 16px;
-        letter-spacing: 3.5px;
     }
 }
-
 /* ======================================================
    OUR STORY SECTION
 ====================================================== */
@@ -637,7 +410,7 @@
 
 @media (max-width: 480px) {
     .gb-story-wrapper { padding: 0 24px; }
-    .gb-story { padding: 90px 0; }
+    .gb-story { padding: 10px 0; }
     .gb-story-image-backdrop { display: none; } /* Drop overlay geometry offset tracking lines on mobile screens */
     .gb-story-heading br { display: none; }
     .gb-story-quote-card {
@@ -1045,7 +818,7 @@
 
 @media (max-width: 576px) {
     .gb-mission-wrapper { padding: 0 24px; }
-    .gb-mission { padding: 90px 0; }
+    .gb-mission { padding: 10px 0; }
     .gb-mission-header { margin-bottom: 55px; }
     .gb-mission-main-title { font-size: 28px; }
     .gb-mission-main-title br { display: none; }
@@ -1529,7 +1302,7 @@
 
 @media (max-width: 576px) {
     .gb-quality-wrapper { padding: 0 24px; }
-    .gb-quality { padding: 90px 0; }
+    .gb-quality { padding: 10px 0; }
     .gb-quality-header { margin-bottom: 55px; }
     .gb-quality-heading { font-size: 28px; }
     .gb-quality-heading br { display: none; }
@@ -1920,7 +1693,7 @@
 
 @media (max-width: 576px) {
     .gb-journey-wrapper { padding: 0 24px; }
-    .gb-journey { padding: 90px 0; }
+    .gb-journey { padding: 10px 0; }
     .gb-journey-axis-line { left: 10px; }
     .gb-journey-axis-marker { left: 10px; }
     .gb-journey-card { width: calc(100% - 32px); padding: 20px; }
@@ -2363,7 +2136,7 @@
 
 @media (max-width: 576px) {
     .gb-experience-wrapper { padding: 0 24px; }
-    .gb-experience { padding: 90px 0; }
+    .gb-experience { padding: 10px 0; }
     
     /* Collapse down to standard portrait linear gallery configurations */
     .gb-experience-masonry {
@@ -2785,7 +2558,7 @@
 @media (max-width: 576px) {
     .gb-stats-wrapper { padding: 0 24px; }
     .gb-stats-mesh-layer { background: #FFFFFF; } /* Strip gradient shapes on processing bounds for micro displays */
-    .gb-stats { padding: 90px 0; }
+    .gb-stats { padding: 10px 0; }
     
     /* Transition parameters straight down to single stacking vertical flows */
     .gb-stats-grid {
@@ -3339,7 +3112,7 @@
 
 @media (max-width: 576px) {
     .gb-team-wrapper { padding: 0 24px; }
-    .gb-team { padding: 90px 0; }
+    .gb-team { padding: 10px 0; }
     
     /* Collapse parameters entirely down into clean full width portrait threads */
     .gb-team-grid {
@@ -3977,7 +3750,7 @@
 
 @media (max-width: 576px) {
     .gb-awards-wrapper { padding: 0 24px; }
-    .gb-awards { padding: 90px 0; }
+    .gb-awards { padding: 10px 0; }
     .gb-awards-main-title { font-size: 28px; }
     .gb-awards-main-title br { display: none; }
     .gb-awards-featured-card { padding: 35px 24px; border-radius: 22px; }

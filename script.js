@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuOpenTrigger = document.getElementById('gb-navbar-menu-open');
     const menuCloseTrigger = document.getElementById('gb-navbar-menu-close');
     const mobileOverlay = document.getElementById('gb-navbar-mobile-overlay');
+    const mobileLinks = Array.from(document.querySelectorAll('.gb-navbar-mobile-link'));
     
     // Interactive State Parameter Values
     const scrollThreshold = 40;
@@ -80,6 +81,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Input Link Bindings Matrix
     menuOpenTrigger.addEventListener('click', openMobileMenu);
     menuCloseTrigger.addEventListener('click', closeMobileMenu);
+
+    // Close mobile overlay whenever a mobile navigation link is clicked
+    mobileLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            if (isMenuOpen) {
+                closeMobileMenu();
+            }
+        });
+    });
 
     // Escape Key System Trapper for Accessibility compliance
     document.addEventListener('keydown', (event) => {
@@ -693,8 +703,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (hrefFile === current) {
                     link.classList.add('gb-navbar-active');
+                    if (link.classList.contains('gb-navbar-mobile-link')) {
+                        link.classList.add('gb-navbar-mobile-active');
+                    }
                 } else {
                     link.classList.remove('gb-navbar-active');
+                    if (link.classList.contains('gb-navbar-mobile-link')) {
+                        link.classList.remove('gb-navbar-mobile-active');
+                    }
                 }
             } catch (e) {
                 // ignore malformed hrefs

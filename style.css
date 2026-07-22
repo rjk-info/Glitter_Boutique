@@ -26,6 +26,15 @@
     --gb-nav-shadow-sticky: 0 10px 40px rgba(13, 13, 13, 0.08);
 }
 
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
 /* --- ANIMATION SEQUENCE KEYFRAMES --- */
 @keyframes gbNavFadeDown {
     from {
@@ -89,7 +98,7 @@
 
 .gb-navbar-logo-img {
     display: block;
-    height: 54px;
+    height: 90px;
     width: auto;
     max-width: 220px;
     object-fit: contain;
@@ -1144,7 +1153,7 @@
 
 @media (max-width: 768px) {
     .gb-collection {
-        padding: 90px 0;
+        padding: 10px 0;
     }
     .gb-collection-main-title {
         font-size: 34px;
@@ -1948,7 +1957,7 @@
         padding: 0 24px;
     }
     .gb-about {
-        padding: 90px 0;
+        padding: 10px 0;
     }
     .gb-about-header {
         margin-bottom: 60px;

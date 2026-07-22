@@ -1,0 +1,735 @@
+/* =====================================================
+   PRODUCTS PAGE COMPOSITE LAYER STYLESHEET
+   Architectural System: Section-Isolated Vanilla Matrix
+===================================================== */
+
+:root {
+    --gb-prod-f-head: 'Playfair Display', serif;
+    --gb-prod-f-text: 'Poppins', sans-serif;
+    
+    --gb-prod-c-blue: #9B4F96;
+    --gb-prod-c-royal: #7B2E7B;
+    --gb-prod-c-purple: #7F3D9A;
+    --gb-prod-c-pink: #EC1E79;
+    --gb-prod-c-white: #FFFFFF;
+    --gb-prod-c-bg-gray: #F8FAFC;
+    
+    --gb-prod-text-prime: #334155;
+    --gb-prod-text-second: #64748B;
+    --gb-prod-text-mute: #7C8AA5;
+    
+    --gb-prod-ease-lux: cubic-bezier(0.25, 1, 0.5, 1);
+    --gb-prod-duration: 0.35s;
+    --gb-prod-radius-lux: 28px;
+    --gb-prod-shadow-lux: 0 10px 40px rgba(13, 16, 40, 0.02);
+}
+
+.gb-products-body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--gb-prod-c-white);
+    font-family: var(--gb-prod-f-text);
+    color: var(--gb-prod-text-prime);
+    -webkit-font-smoothing: antialiased;
+}
+
+.gb-products-page-wrapper *,
+.gb-products-page-wrapper *::before,
+.gb-products-page-wrapper *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.gb-products-main-runway {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Compact Premium Section Bounds Matrix */
+.gb-products-section-padding {
+    padding: 60px 0;
+}
+
+/* Global Section Atmospheric Backdrop Layer */
+.gb-products-ambient-mesh {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 20% 15%, rgba(155, 79, 150, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 80% 65%, rgba(236, 30, 121, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* =====================================================
+   SECTION 1: CATEGORY FILTER ARCHITECTURE (STICKY PILL)
+===================================================== */
+.gb-products-filter-bar {
+    position: sticky;
+    top: 90px; /* Aligns smoothly right beneath your desktop fixed luxury header clearance bounds */
+    width: 100%;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(232, 232, 232, 0.4);
+    padding: 20px 0;
+    z-index: 999;
+    transition: top var(--gb-prod-duration) var(--gb-prod-ease-lux), 
+                background-color var(--gb-prod-duration) var(--gb-prod-ease-lux),
+                box-shadow var(--gb-prod-duration) var(--gb-prod-ease-lux);
+}
+
+/* Dynamic Scroll Class added via JS */
+.gb-products-filter-bar.gb-products-sticky-active {
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 10px 30px rgba(13, 16, 40, 0.04);
+}
+
+.gb-products-filter-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.gb-products-filter-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 14px;
+    overflow-x: auto;
+    scrollbar-width: none; /* Strip scrollbar on Firefox views */
+}
+
+.gb-products-filter-list::-webkit-scrollbar {
+    display: none; /* Strip scrollbar on Webkit engine views */
+}
+
+.gb-products-filter-btn {
+    background: var(--gb-prod-c-bg-gray);
+    border: 1px solid rgba(232, 232, 232, 0.6);
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-family: var(--gb-prod-f-text);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gb-prod-text-second);
+    cursor: pointer;
+    white-space: nowrap;
+    outline: none;
+    transition: color var(--gb-prod-duration) var(--gb-prod-ease-lux),
+                border-color var(--gb-prod-duration) var(--gb-prod-ease-lux),
+                background var(--gb-prod-duration) var(--gb-prod-ease-lux),
+                transform var(--gb-prod-duration) var(--gb-prod-ease-lux);
+}
+
+.gb-products-filter-btn:hover {
+    border-color: rgba(47, 107, 255, 0.3);
+    color: var(--gb-prod-c-blue);
+    transform: translateY(-1px);
+}
+
+.gb-products-filter-btn.gb-products-filter-active {
+    background: linear-gradient(135deg, var(--gb-prod-c-blue) 0%, var(--gb-prod-c-purple) 100%);
+    border-color: transparent;
+    color: var(--gb-prod-c-white);
+    box-shadow: 0 4px 15px rgba(0, 87, 255, 0.2);
+}
+
+/* =====================================================
+   SECTIONS 2 & 4: PREMIUM PROPORTIONAL PRODUCT MATRIX CARDS
+===================================================== */
+.gb-products-grid-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.gb-products-grid {
+    display: grid;
+    gap: 30px;
+    width: 100%;
+}
+
+.gb-products-grid-3col { grid-template-columns: repeat(3, 1fr); }
+.gb-products-grid-2col { grid-template-columns: repeat(2, 1fr); }
+
+/* Luxury White Glassmorphism Card Frame Structure */
+.gb-products-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: var(--gb-prod-radius-lux);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--gb-prod-shadow-lux);
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: transform var(--gb-prod-duration) var(--gb-prod-ease-lux),
+                box-shadow var(--gb-prod-duration) var(--gb-prod-ease-lux);
+    will-change: transform, box-shadow;
+}
+
+.gb-products-card-border {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border: 1px solid rgba(243, 238, 255, 0.9);
+    border-radius: var(--gb-prod-radius-lux);
+    pointer-events: none;
+    z-index: 5;
+    transition: border-color var(--gb-prod-duration) var(--gb-prod-ease-lux);
+}
+
+.gb-products-card-spotlight {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle 120px at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(47, 107, 255, 0.04) 0%, transparent 80%);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gb-products-card:hover .gb-products-card-spotlight { opacity: 1; }
+
+/* Image Framework Elements Group */
+.gb-products-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: var(--gb-prod-c-bg-gray);
+    transform: translateZ(0); /* Lock layer boundaries safely onto hardware compositor */
+}
+
+.gb-products-image-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.gb-products-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s var(--gb-prod-ease-lux);
+    will-change: transform;
+}
+
+.gb-products-badge {
+    position: absolute;
+    top: 14px; left: 14px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(232, 232, 232, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-family: var(--gb-prod-f-text);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gb-prod-c-purple);
+    z-index: 3;
+}
+
+/* Symmetrical Invisible Utility Actions Matrix overlays */
+.gb-products-card-actions {
+    position: absolute;
+    top: 14px; right: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transform: translateX(10px);
+    opacity: 0;
+    z-index: 3;
+    transition: transform var(--gb-prod-duration) var(--gb-prod-ease-lux),
+                opacity var(--gb-prod-duration) var(--gb-prod-ease-lux);
+}
+
+.gb-products-card:hover .gb-products-card-actions {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.gb-products-action-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--gb-prod-c-white);
+    border: none;
+    color: var(--gb-prod-text-second);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(13, 16, 40, 0.05);
+    transition: background var(--gb-prod-duration) var(--gb-prod-ease-lux),
+                color var(--gb-prod-duration) var(--gb-prod-ease-lux),
+                transform var(--gb-prod-duration) var(--gb-prod-ease-lux);
+}
+
+.gb-products-action-btn i { width: 15px; height: 15px; stroke-width: 2px; }
+
+.gb-products-action-btn:hover {
+    background: var(--gb-prod-c-purple);
+    color: var(--gb-prod-c-white);
+    transform: scale(1.05);
+}
+
+/* MetaZone Context Formats Mapping */
+.gb-products-meta-zone {
+    padding: 20px 8px 6px 8px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.gb-products-card-title {
+    font-family: var(--gb-prod-f-display);
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--gb-prod-text-prime);
+    margin-bottom: 6px;
+    letter-spacing: -0.2px;
+}
+
+.gb-products-card-desc {
+    font-family: var(--gb-prod-f-text);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--gb-prod-text-second);
+    margin-bottom: 14px;
+}
+
+.gb-products-rating-row {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 20px;
+}
+
+.gb-products-rating-row i {
+    width: 13px;
+    height: 13px;
+    fill: #FBBF24;
+    color: #FBBF24;
+    stroke-width: 1px;
+}
+
+/* Pricing Base Alignment Row Matrix */
+.gb-products-footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    width: 100%;
+    gap: 14px;
+}
+
+.gb-products-footer-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gb-products-add-btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--gb-prod-c-blue) 0%, var(--gb-prod-c-purple) 100%);
+    color: var(--gb-prod-c-white);
+    font-family: var(--gb-prod-f-text);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 12px 25px rgba(47, 107, 255, 0.18);
+    transition: transform var(--gb-prod-duration) var(--gb-prod-ease-lux),
+                box-shadow var(--gb-prod-duration) var(--gb-prod-ease-lux),
+                opacity var(--gb-prod-duration) var(--gb-prod-ease-lux);
+}
+
+.gb-products-add-btn:hover,
+.gb-products-add-btn:focus-visible {
+    transform: translateY(-1px);
+    opacity: 0.95;
+}
+
+.gb-products-price {
+    font-family: var(--gb-prod-f-text);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--gb-prod-c-royal);
+}
+
+/* Minimal Luxury Trigger Links */
+.gb-products-button-link {
+    text-decoration: none;
+    font-family: var(--gb-prod-f-text);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gb-prod-text-prime);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 0;
+    position: relative;
+    outline: none;
+    transition: color var(--gb-prod-duration) var(--gb-prod-ease-lux);
+}
+
+.gb-products-button-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; width: 100%; height: 1px;
+    background-color: var(--gb-prod-c-blue);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--gb-prod-duration) var(--gb-prod-ease-lux);
+}
+
+.gb-products-button-link i {
+    width: 13px;
+    height: 13px;
+    stroke-width: 2.5px;
+    transition: transform var(--gb-prod-duration) var(--gb-prod-ease-lux);
+}
+
+.gb-products-button-link:hover { color: var(--gb-prod-c-blue); }
+.gb-products-button-link:hover::after { transform: scaleX(1); transform-origin: left; }
+.gb-products-button-link:hover i { transform: translate(1px, -1px); }
+
+/* --- HARDWARE-ACCELERATED KINETIC CARD HOVER ACTIVATIONS --- */
+.gb-products-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(0, 87, 255, 0.05), 0 0 25px rgba(138, 61, 255, 0.01);
+}
+
+.gb-products-card:hover .gb-products-card-border { border-color: rgba(47, 107, 255, 0.35); }
+.gb-products-card:hover .gb-products-image { transform: scale(1.05); }
+
+/* Keyboard Focus Indicators Framework */
+.gb-products-card:focus-visible,
+.gb-products-button-link:focus-visible,
+.gb-products-action-btn:focus-visible {
+    outline: 2px dashed var(--gb-prod-c-purple);
+    outline-offset: 4px;
+}
+
+/* =====================================================
+   SECTION 3: APPLE STYLE RECTILINEAR CINEMATIC SHOWCASE
+===================================================== */
+.gb-products-featured-story {
+    position: relative;
+    width: 100%;
+    background-color: #0D0D0D; /* Injects distinct dark luxury block space contrast elements */
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+/* Translucent Aurora Projector Layers */
+.gb-products-story-aurora {
+    position: absolute;
+    top: 50%; left: -10%;
+    transform: translateY(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(47, 107, 255, 0.18) 0%, rgba(138, 61, 255, 0.12) 50%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(40px);
+}
+
+.gb-products-story-sparkles {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0.03;
+    background-image: radial-gradient(#FFFFFF 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gb-products-story-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 60px;
+    display: grid;
+    grid-template-columns: 5.5fr 6.5fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.gb-products-story-media {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.gb-products-story-img {
+    max-width: 100%;
+    max-height: 480px;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.5));
+    transition: transform var(--gb-prod-duration) var(--gb-prod-ease-lux);
+    will-change: transform;
+}
+
+.gb-products-story-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--gb-prod-c-white);
+}
+
+.gb-products-story-label {
+    font-family: var(--gb-prod-f-text);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--gb-prod-c-blue);
+    margin-bottom: 16px;
+}
+
+.gb-products-story-title {
+    font-family: var(--gb-prod-f-display);
+    font-size: 46px;
+    font-weight: 400;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #FFFFFF 40%, var(--gb-prod-text-mute) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.gb-products-story-desc {
+    font-family: var(--gb-prod-f-text);
+    font-size: 14.5px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: #94A3B8;
+    margin-bottom: 30px;
+}
+
+/* Core Pillar Attributes Substructure Layout List */
+.gb-products-story-pillars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 24px;
+    list-style: none;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.gb-products-pillar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--gb-prod-f-text);
+    font-size: 13.5px;
+    font-weight: 400;
+    color: #E2E8F0;
+}
+
+.gb-products-pillar-item i {
+    width: 16px;
+    height: 16px;
+    color: var(--gb-prod-c-blue);
+    stroke-width: 2px;
+    flex-shrink: 0;
+}
+
+/* Micro Action Buttons Hub Matrix */
+.gb-products-story-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.gb-products-action-btn-lux {
+    text-decoration: none;
+    height: 50px;
+    padding: 0 28px;
+    border-radius: 30px;
+    font-family: var(--gb-prod-f-text);
+    font-size: 13px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    outline: none;
+    transition: transform var(--gb-prod-duration) var(--gb-prod-ease-lux),
+                box-shadow var(--gb-prod-duration) var(--gb-prod-ease-lux),
+                filter 0.2s linear;
+}
+
+.gb-products-btn-gradient {
+    background: linear-gradient(135deg, var(--gb-prod-c-royal) 0%, var(--gb-prod-c-purple) 100%);
+    color: var(--gb-prod-c-white);
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 87, 255, 0.25);
+}
+
+.gb-products-btn-gradient i { width: 14px; height: 14px; stroke-width: 2.5px; transition: transform var(--gb-prod-duration) var(--gb-prod-ease-lux); }
+.gb-products-btn-gradient:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0, 87, 255, 0.35); filter: brightness(1.03); }
+.gb-products-btn-gradient:hover i { transform: translateX(3px); }
+
+.gb-products-btn-outline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--gb-prod-c-white);
+}
+
+.gb-products-btn-outline i { width: 13px; height: 13px; fill: currentColor; }
+.gb-products-btn-outline:hover { background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.3); }
+
+/* --- PERFORMANCE LAZY VIEWPORT SECTIONS REVEAL STATES --- */
+.gb-products-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.85s var(--gb-prod-ease-lux), transform 0.85s var(--gb-prod-ease-lux);
+    will-change: opacity, transform;
+}
+
+.gb-products-visible.gb-products-reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN BREAKPOINT INTERCEPTS MATRIX
+===================================================== */
+@media (max-width: 1200px) {
+    .gb-products-filter-container,
+    .gb-products-grid-container,
+    .gb-products-story-container {
+        padding: 0 40px;
+    }
+    .gb-products-grid { gap: 24px; }
+    .gb-products-card { padding: 14px; }
+}
+
+@media (max-width: 992px) {
+    /* Pivot filter navigation sticky clearing coordinates */
+    .gb-products-filter-bar { top: 75px; }
+
+    /* Downscale Multi-Column Runway Grids Layout Dimensions */
+    .gb-products-grid-3col { grid-template-columns: repeat(2, 1fr); }
+    .gb-products-grid-2col { grid-template-columns: repeat(2, 1fr); }
+    
+    /* Collapse Cinematic Apple Product Section Into Single Stack Formats */
+    .gb-products-story-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+    
+    .gb-products-story-content { align-items: center; }
+    .gb-products-story-pillars { max-width: 520px; text-align: left; }
+    .gb-products-story-actions { justify-content: center; }
+    .gb-products-story-img { max-height: 380px; }
+    
+    .gb-products-section-padding { padding: 50px 0; }
+    .gb-products-featured-story { padding: 80px 0; }
+}
+
+@media (max-width: 768px) {
+    /* Collapse inventories layouts grids down entirely to perfect full row single listings */
+    .gb-products-grid-3col,
+    .gb-products-grid-2col {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+        margin: 0 auto;
+    }
+    
+    .gb-products-filter-bar { padding: 14px 0; }
+    .gb-products-story-title { font-size: 36px; }
+}
+
+@media (max-width: 520px) {
+    .gb-products-filter-container,
+    .gb-products-grid-container,
+    .gb-products-story-container {
+        padding: 0 24px;
+    }
+    
+    .gb-products-filter-list { justify-content: flex-start; width: 100%; }
+    .gb-products-card { border-radius: 22px; }
+    .gb-products-card-border { border-radius: 22px; }
+    .gb-products-image-wrapper { border-radius: 16px; }
+    
+    .gb-products-story-title { font-size: 28px; }
+    .gb-products-story-pillars { grid-template-columns: 1fr; gap: 12px; }
+    .gb-products-story-actions { flex-direction: column; width: 100%; gap: 12px; }
+    .gb-products-action-btn-lux { width: 100%; }
+}
+/* Requested products page heading and button color */
+.gb-products-page-wrapper :is(h1, h2, h3, h4, h5, h6),
+.gb-products-card-title,
+.gb-products-story-title {
+    color: #f00783;
+    background: none;
+    -webkit-text-fill-color: #f00783;
+}
+
+.gb-products-filter-btn,
+.gb-products-action-btn,
+.gb-products-button-link,
+.gb-products-btn-outline {
+    color: #f00783;
+    border-color: rgba(240, 7, 131, 0.35);
+}
+
+.gb-products-filter-btn:hover,
+.gb-products-button-link:hover {
+    color: #f00783;
+    border-color: #f00783;
+}
+
+.gb-products-filter-btn.gb-products-filter-active,
+.gb-products-add-btn,
+.gb-products-action-btn:hover,
+.gb-products-btn-gradient {
+    background: #f00783;
+    border-color: #f00783;
+    color: var(--gb-prod-c-white);
+    box-shadow: 0 12px 25px rgba(240, 7, 131, 0.2);
+}
+
+.gb-products-btn-gradient:hover {
+    box-shadow: 0 6px 20px rgba(240, 7, 131, 0.35);
+}
+
+.gb-products-btn-outline:hover {
+    background: rgba(240, 7, 131, 0.08);
+    border-color: #f00783;
+    color: #f00783;
+}
+
+.gb-products-button-link::after {
+    background-color: #f00783;
+}
+
+.gb-products-card:focus-visible,
+.gb-products-button-link:focus-visible,
+.gb-products-action-btn:focus-visible {
+    outline-color: #f00783;
+}
