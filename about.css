@@ -2898,6 +2898,10 @@
 
 /* --- SECTION HEADER GROUP --- */
 .gb-team-header {
+    position: relative;
+    z-index: 3;
+    opacity: 1 !important;
+    visibility: visible !important;
     text-align: center;
     max-width: 740px;
     margin: 0 auto 100px auto;
@@ -2906,24 +2910,36 @@
     align-items: center;
 }
 
+.gb-team-tagline,
+.gb-team-main-title,
+.gb-team-lead-text {
+    position: relative;
+    z-index: 3;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
 .gb-team-tagline {
     font-family: var(--gb-tm-f-display);
-    font-size: 28px;
+    font-size: 36px;
     font-weight: 700;
     text-transform: none;
     letter-spacing: -0.5px;
-    color: var(--gb-team-c-purple);
+    color: #C9408D;
     margin-bottom: 16px;
 }
 
 .gb-team-main-title {
+    position: relative;
+    z-index: 4;
     font-family: var(--gb-tm-f-display);
     font-size: 48px;
     font-weight: 400;
     line-height: 1.25;
-    background: var(--gb-team-grad-heading);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #2B2B2B !important;
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
+    -webkit-background-clip: border-box !important;
     margin-bottom: 24px;
     letter-spacing: -0.5px;
 }
@@ -2952,13 +2968,22 @@
     width: 100%;
     position: relative;
     transition: transform var(--gb-tm-dur) var(--gb-tm-ease-lux);
+    aspect-ratio: 4 / 5;
+    margin-top: 0;
+}
+
+.gb-team-h-tall,
+.gb-team-h-medium,
+.gb-team-h-short {
+    aspect-ratio: 4 / 5 !important;
+    margin-top: 0 !important;
 }
 
 /* Custom Editorial Height Parameters Sets */
 @media (min-width: 993px) {
-    .gb-team-h-tall { aspect-ratio: 3.2 / 5.2; margin-top: 0; }
-    .gb-team-h-medium { aspect-ratio: 3.2 / 4.7; margin-top: 40px; }
-    .gb-team-h-short { aspect-ratio: 3.2 / 4.2; margin-top: 80px; }
+    .gb-team-h-tall { aspect-ratio: 4 / 5 !important; margin-top: 0 !important; }
+    .gb-team-h-medium { aspect-ratio: 4 / 5 !important; margin-top: 0 !important; }
+    .gb-team-h-short { aspect-ratio: 4 / 5 !important; margin-top: 0 !important; }
 }
 
 /* Luxury Card Core Structure */
@@ -3040,6 +3065,9 @@
     overflow: hidden;
     background-color: #F8FAFC;
     transform: translateZ(0); /* Lock layer boundaries safely onto hardware compositor */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .gb-team-image {
@@ -3049,6 +3077,7 @@
     object-position: center;
     transition: transform 0.65s var(--gb-tm-ease-lux);
     will-change: transform;
+    min-height: 100%;
 }
 
 .gb-team-gradient-mask {
