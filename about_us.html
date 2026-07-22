@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glitter Boutique | Luxury Face & Body Gems</title>
+    
+    <!-- Google Fonts: Playfair Display for Headings, Poppins for Navigation -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Development CSS Link -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+    
+    <!-- Lucide Icons Development Script -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- PREMIUM GLITTER BOUTIQUE HEADER -->
+    <header class="gb-navbar-header" id="gb-navbar-main">
+        <div class="gb-navbar-container">
+            
+            <!-- Brand Identity -->
+            <a href="/" class="gb-navbar-logo-link" aria-label="Glitter Boutique Home">
+                <img src="assets/home_img/logo/Glitter Beauty LOGO PNG.png" alt="Glitter Boutique Logo"
+                    class="gb-navbar-logo-img">
+            </a>
+
+            <!-- Central Desktop Navigation Map -->
+            <nav class="gb-navbar-desktop-nav" aria-label="Main Desktop Navigation">
+                <ul class="gb-navbar-menu-list">
+                    <li class="gb-navbar-menu-item"><a href="/" class="gb-navbar-menu-link gb-navbar-active">Home</a></li>
+                    <li class="gb-navbar-menu-item"><a href="/about_us.html" class="gb-navbar-menu-link">About Us</a></li>
+                    <li class="gb-navbar-menu-item"><a href="/products.html" class="gb-navbar-menu-link">Products</a></li>
+                    <li class="gb-navbar-menu-item"><a href="/blog.html" class="gb-navbar-menu-link">Blog</a></li>
+                    <li class="gb-navbar-menu-item"><a href="/contact.html" class="gb-navbar-menu-link">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <!-- Utility Action Controls -->
+            <div class="gb-navbar-utilities">
+                <button class="gb-navbar-utility-btn" aria-label="Open Search Panel">
+                    <i data-lucide="search" class="gb-navbar-icon"></i>
+                </button>
+                <a href="/account" class="gb-navbar-utility-btn" aria-label="View Account Profile">
+                    <i data-lucide="user" class="gb-navbar-icon"></i>
+                </a>
+                <a href="/cart" class="gb-navbar-utility-btn gb-navbar-cart-trigger" aria-label="View Shopping Cart, 3 items inside">
+                    <i data-lucide="shopping-bag" class="gb-navbar-icon"></i>
+                    <span class="gb-navbar-cart-badge" aria-hidden="true">3</span>
+                </a>
+                
+                <!-- Hamburger Trigger Mechanism (Visible < 992px) -->
+                <button class="gb-navbar-hamburger-trigger" id="gb-navbar-menu-open" aria-expanded="false" aria-controls="gb-navbar-mobile-overlay" aria-label="Open Navigation Menu">
+                    <span class="gb-navbar-hamburger-line"></span>
+                    <span class="gb-navbar-hamburger-line"></span>
+                    <span class="gb-navbar-hamburger-line"></span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- FULL SCREEN MOBILE OVERLAY MENU -->
+    <div class="gb-navbar-mobile-overlay" id="gb-navbar-mobile-overlay" aria-hidden="true" role="dialog" aria-label="Mobile Navigation Menu">
+        
+        <!-- Glowing Ambient Elements for Festival Aesthetic -->
+        <div class="gb-navbar-mobile-glow-top"></div>
+        <div class="gb-navbar-mobile-glow-bottom"></div>
+        
+        <!-- Intercept / Dismiss Controls -->
+        <div class="gb-navbar-mobile-header">
+            <button class="gb-navbar-mobile-close-btn" id="gb-navbar-menu-close" aria-label="Close Navigation Menu">
+                <i data-lucide="x" class="gb-navbar-close-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dynamic Content Context -->
+        <div class="gb-navbar-mobile-content">
+            <nav class="gb-navbar-mobile-nav" aria-label="Main Mobile Navigation">
+                <ul class="gb-navbar-mobile-list">
+                    <li class="gb-navbar-mobile-item"><a href="/" class="gb-navbar-mobile-link gb-navbar-mobile-active">Home</a></li>
+                    <li class="gb-navbar-mobile-item"><a href="/about_us.html" class="gb-navbar-mobile-link">About Us</a></li>
+                    <li class="gb-navbar-mobile-item"><a href="/products" class="gb-navbar-mobile-link">Products</a></li>
+                    <li class="gb-navbar-mobile-item"><a href="/blog" class="gb-navbar-mobile-link">Blog</a></li>
+                    <li class="gb-navbar-mobile-item"><a href="/contact" class="gb-navbar-mobile-link">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="gb-navbar-mobile-divider"></div>
+
+            <!-- Mobile Utility Footer Matrix -->
+            <div class="gb-navbar-mobile-utilities">
+                <button class="gb-navbar-mobile-util-btn" aria-label="Search Catalog">
+                    <i data-lucide="search"></i>
+                    <span>Search</span>
+                </button>
+                <a href="/account" class="gb-navbar-mobile-util-btn" aria-label="My Profile">
+                    <i data-lucide="user"></i>
+                    <span>Account</span>
+                </a>
+                <a href="/cart" class="gb-navbar-mobile-util-btn" aria-label="Shopping Cart">
+                    <div class="gb-navbar-mobile-cart-wrapper">
+                        <i data-lucide="shopping-bag"></i>
+                        <span class="gb-navbar-mobile-badge">3</span>
+                    </div>
+                    <span>Bag</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<!-- ======================================================
+   ABOUT HERO SECTION START
+====================================================== -->
+<section class="gb-abouthero" aria-labelledby="gb-abouthero-title">
+    <!-- Cinematic Canvas & Luxury Gradient Overlays -->
+    <div class="gb-abouthero-image-canvas">
+        <img class="gb-abouthero-image" src="assets/home_img/Gbanner1.jpg" alt="Luxury fashion cosmetics editorial background" loading="eager" decoding="async">
+    </div>
+    <div class="gb-abouthero-gradient-overlay" aria-hidden="true"></div>
+    
+    <!-- Micro-Sparkle & Ambient Glow Decorative Elements -->
+    <div class="gb-abouthero-glow-orb" aria-hidden="true"></div>
+    <div class="gb-abouthero-sparkle gb-abouthero-sparkle-1" aria-hidden="true"></div>
+    <div class="gb-abouthero-sparkle gb-abouthero-sparkle-2" aria-hidden="true"></div>
+    <div class="gb-abouthero-sparkle gb-abouthero-sparkle-3" aria-hidden="true"></div>
+    
+    <!-- Editorial Center-Aligned Content Core -->
+    <div class="gb-abouthero-content-core">
+        <span class="gb-abouthero-label">About Glitter Boutique</span>
+        <h1 id="gb-abouthero-title" class="gb-abouthero-heading">Crafting Beauty <br>That Sparkles</h1>
+        <p class="gb-abouthero-description">
+            At Glitter Boutique, we create premium Face Gems and Body Gems designed to help you express your unique style with confidence. Every collection is inspired by fashion, festivals and unforgettable moments.
+        </p>
+        
+        <!-- Symmetrical Navigation Breadcrumb Matrix -->
+        <nav class="gb-abouthero-breadcrumb-nav" aria-label="Breadcrumb Navigation">
+            <ol class="gb-abouthero-breadcrumb-list">
+                <li class="gb-abouthero-breadcrumb-item">
+                    <a href="index.html" class="gb-abouthero-breadcrumb-link">Home</a>
+                </li>
+                <li class="gb-abouthero-breadcrumb-item gb-abouthero-breadcrumb-current" aria-current="page">
+                    About Us
+                </li>
+            </ol>
+        </nav>
+    </div>
+</section>
+<!-- ======================================================
+   ABOUT HERO SECTION END
+====================================================== -->
+
+
+<!-- ======================================================
+   OUR STORY SECTION START
+====================================================== -->
+<section class="gb-story" aria-labelledby="gb-story-main-heading">
+    <!-- Abstract luxury background light elements -->
+    <div class="gb-story-ambient-glow" aria-hidden="true"></div>
+    <div class="gb-story-blob" aria-hidden="true"></div>
+
+    <div class="gb-story-wrapper">
+        <div class="gb-story-layout-grid">
+            
+            <!-- LEFT COLUMN: Editorial Lifestyle Image Showcase -->
+            <div class="gb-story-image-column gb-story-reveal-left">
+                <!-- Decorative background geometric backdrop element -->
+                <div class="gb-story-image-backdrop" aria-hidden="true"></div>
+                <div class="gb-story-image-frame">
+                    <img class="gb-story-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcZy9fbpHN3bc8kV0vKF2Pk-BqAiXNE98qWkWeXTBgWg&s=10" alt="Editorial fashion shoot displaying luxury crystal application styling" loading="lazy" decoding="async">
+                    <div class="gb-story-image-overlay" aria-hidden="true"></div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Symmetrical Luxury Content Runway -->
+            <div class="gb-story-content-column gb-story-reveal-right">
+                <header class="gb-story-header">
+                    <span class="gb-story-tagline">Our Story</span>
+                    <h2 id="gb-story-main-heading" class="gb-story-heading">Inspired by Creativity, <br>Designed to Sparkle.</h2>
+                </header>
+
+                <div class="gb-story-body-text">
+                    <p class="gb-story-text">
+                        At Glitter Boutique, we believe beauty is all about expressing your unique personality. Every Face Gem and Body Gem is thoughtfully designed to add confidence, creativity and elegance to your special moments.
+                    </p>
+                    <p class="gb-story-text">
+                        From festivals and concerts to weddings and celebrations, our collections are crafted with premium materials, comfort and style in mind. We build bridges between raw avant-garde art formats and refined cosmetic standards.
+                    </p>
+                </div>
+
+                <!-- Glassmorphism Pull-Quote Card Component -->
+                <blockquote class="gb-story-quote-card">
+                    <div class="gb-story-quote-border-mask" aria-hidden="true"></div>
+                    <div class="gb-story-quote-icon-box" aria-hidden="true">
+                        <i data-lucide="quote" class="gb-story-quote-icon"></i>
+                    </div>
+                    <p class="gb-story-quote-phrase">
+                        "We don't just create accessories. We create confidence, sparkle and unforgettable memories."
+                    </p>
+                </blockquote>
+
+                <!-- 2x2 Feature Matrix Grid Grid -->
+                <div class="gb-story-feature-grid">
+                    
+                    <!-- Card 1: Premium Quality -->
+                    <div class="gb-story-feature-card">
+                        <div class="gb-story-icon-gradient-wrapper">
+                            <i data-lucide="gem" class="gb-story-feature-icon"></i>
+                        </div>
+                        <h3 class="gb-story-feature-title">Premium Quality</h3>
+                    </div>
+
+                    <!-- Card 2: Luxury Designs -->
+                    <div class="gb-story-feature-card">
+                        <div class="gb-story-icon-gradient-wrapper">
+                            <i data-lucide="sparkles" class="gb-story-feature-icon"></i>
+                        </div>
+                        <h3 class="gb-story-feature-title">Luxury Designs</h3>
+                    </div>
+
+                    <!-- Card 3: Skin-Friendly Materials -->
+                    <div class="gb-story-feature-card">
+                        <div class="gb-story-icon-gradient-wrapper">
+                            <i data-lucide="heart" class="gb-story-feature-icon"></i>
+                        </div>
+                        <h3 class="gb-story-feature-title">Skin-Friendly Materials</h3>
+                    </div>
+
+                    <!-- Card 4: Festival Ready -->
+                    <div class="gb-story-feature-card">
+                        <div class="gb-story-icon-gradient-wrapper">
+                            <i data-lucide="music" class="gb-story-feature-icon"></i>
+                        </div>
+                        <h3 class="gb-story-feature-title">Festival Ready</h3>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ======================================================
+   OUR STORY SECTION END
+====================================================== -->
+
+
+<!-- ======================================================
+   MISSION & VISION SECTION START
+====================================================== -->
+<section class="gb-mission" aria-labelledby="gb-mission-main-heading">
+    <!-- Luxury backdrop mesh ambient glow decorations -->
+    <div class="gb-mission-ambient-mesh" aria-hidden="true"></div>
+    <div class="gb-mission-orb-left" aria-hidden="true"></div>
+    <div class="gb-mission-orb-right" aria-hidden="true"></div>
+    <div class="gb-mission-sparkle-particle" aria-hidden="true"></div>
+
+    <div class="gb-mission-wrapper">
+        
+        <!-- Symmetrical Section Header -->
+        <header class="gb-mission-header">
+            <span class="gb-mission-tagline">Our Purpose</span>
+            <h2 id="gb-mission-main-heading" class="gb-mission-main-title">Driven by Passion. <br>Inspired by Beauty.</h2>
+            <p class="gb-mission-lead-text">
+                Every collection we create reflects our commitment to quality, creativity and confidence. Our mission is to help people express themselves through premium beauty accessories while our vision is to become a globally loved beauty lifestyle brand.
+            </p>
+        </header>
+
+        <!-- Staggered Editorial Display Runway Grid -->
+        <div class="gb-mission-grid">
+            
+            <!-- MISSION CARD: High-End Left Anchor Sheet (Positioned Staggered Higher) -->
+            <article class="gb-mission-card gb-mission-card-stagger-high gb-mission-reveal-node">
+                <div class="gb-mission-card-glow" aria-hidden="true"></div>
+                <div class="gb-mission-card-border" aria-hidden="true"></div>
+                
+                <div class="gb-mission-icon-container">
+                    <i data-lucide="compass" class="gb-mission-icon"></i>
+                </div>
+                
+                <h3 class="gb-mission-card-title">Our Mission</h3>
+                <p class="gb-mission-card-description">
+                    To design premium Face Gems and Body Gems that inspire confidence, creativity and individuality while delivering exceptional quality and comfort for every celebration.
+                </p>
+                
+                <div class="gb-mission-divider" aria-hidden="true"></div>
+                
+                <div class="gb-mission-tags" aria-label="Mission Core Pillars">
+                    <span class="gb-mission-tag-item">Premium Quality</span>
+                    <span class="gb-mission-tag-item">Skin Friendly</span>
+                    <span class="gb-mission-tag-item">Creative Designs</span>
+                </div>
+            </article>
+
+            <!-- VISION CARD: High-End Right Anchor Sheet (Positioned Staggered Lower) -->
+            <article class="gb-mission-card gb-mission-card-stagger-low gb-mission-reveal-node">
+                <div class="gb-mission-card-glow" aria-hidden="true"></div>
+                <div class="gb-mission-card-border" aria-hidden="true"></div>
+                
+                <div class="gb-mission-icon-container gb-mission-icon-alt">
+                    <i data-lucide="eye" class="gb-mission-icon"></i>
+                </div>
+                
+                <h3 class="gb-mission-card-title">Our Vision</h3>
+                <p class="gb-mission-card-description">
+                    To become one of the world's most trusted beauty accessory brands by creating innovative, elegant and unforgettable products that inspire people everywhere.
+                </p>
+                
+                <div class="gb-mission-divider" aria-hidden="true"></div>
+                
+                <div class="gb-mission-tags" aria-label="Vision Core Pillars">
+                    <span class="gb-mission-tag-item">Global Brand</span>
+                    <span class="gb-mission-tag-item">Innovation</span>
+                    <span class="gb-mission-tag-item">Customer Happiness</span>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+<!-- ======================================================
+   MISSION & VISION SECTION END
+====================================================== -->
+
+<!-- ======================================================
+   CRAFTSMANSHIP & QUALITY SECTION START
+====================================================== -->
+<section class="gb-quality" aria-labelledby="gb-quality-main-title">
+    <!-- Immersive Backdrop Mesh & Glow Architecture -->
+    <div class="gb-quality-mesh-backdrop" aria-hidden="true"></div>
+    <div class="gb-quality-orb-top" aria-hidden="true"></div>
+    <div class="gb-quality-orb-bottom" aria-hidden="true"></div>
+    <div class="gb-quality-sparkle-micro gb-quality-sparkle-pos-1" aria-hidden="true"></div>
+    <div class="gb-quality-sparkle-micro gb-quality-sparkle-pos-2" aria-hidden="true"></div>
+
+    <div class="gb-quality-wrapper">
+        
+        <!-- Symmetrical Section Header Grid -->
+        <header class="gb-quality-header">
+            <span class="gb-quality-tagline">Our Quality</span>
+            <h2 id="gb-quality-main-title" class="gb-quality-heading">Crafted With Precision. <br>Designed To Shine.</h2>
+            <p class="gb-quality-lead-desc">
+                Every Glitter Boutique product is thoughtfully designed using premium materials, attention to detail and rigorous quality standards. We believe every sparkle should feel luxurious, comfortable and unforgettable.
+            </p>
+        </header>
+
+        <!-- Main Editorial Core Interface Layout -->
+        <div class="gb-quality-core-grid">
+            
+            <!-- LEFT CANVAS: Creative Layered Media Frame -->
+            <div class="gb-quality-media-column gb-quality-reveal-scale">
+                <div class="gb-quality-decorative-frame" aria-hidden="true"></div>
+                <div class="gb-quality-image-canvas">
+                    <img class="gb-quality-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOpIK_EOW4IWEX8th3S5tYzVNtryGkQWFkZO8fd7BDKA&s=10" alt="Luxury close-up showcase of intricate crystal gem craftsmanship and premium material design" loading="lazy" decoding="async">
+                    <div class="gb-quality-image-reflection" aria-hidden="true"></div>
+                </div>
+            </div>
+
+            <!-- RIGHT CANVAS: High-End Interactive Timeline Feature Sequence -->
+            <div class="gb-quality-timeline-column">
+                <div class="gb-quality-timeline-axis" aria-hidden="true"></div>
+                
+                <div class="gb-quality-timeline-stack">
+                    
+                    <!-- Feature Block 1 -->
+                    <article class="gb-quality-feature-card gb-quality-reveal-slide">
+                        <div class="gb-quality-card-border-effect" aria-hidden="true"></div>
+                        <div class="gb-quality-timeline-node" aria-hidden="true"></div>
+                        <div class="gb-quality-icon-frame">
+                            <i data-lucide="gem" class="gb-quality-icon"></i>
+                        </div>
+                        <div class="gb-quality-feature-copy">
+                            <h3 class="gb-quality-feature-title">Premium Materials</h3>
+                            <p class="gb-quality-feature-desc">Only carefully selected materials are used for lasting brilliance.</p>
+                        </div>
+                    </article>
+
+                    <!-- Feature Block 2 -->
+                    <article class="gb-quality-feature-card gb-quality-reveal-slide">
+                        <div class="gb-quality-card-border-effect" aria-hidden="true"></div>
+                        <div class="gb-quality-timeline-node" aria-hidden="true"></div>
+                        <div class="gb-quality-icon-frame gb-quality-icon-gradient-b">
+                            <i data-lucide="feather" class="gb-quality-icon"></i>
+                        </div>
+                        <div class="gb-quality-feature-copy">
+                            <h3 class="gb-quality-feature-title">Comfort First</h3>
+                            <p class="gb-quality-feature-desc">Lightweight designs made for all-day comfort.</p>
+                        </div>
+                    </article>
+
+                    <!-- Feature Block 3 -->
+                    <article class="gb-quality-feature-card gb-quality-reveal-slide">
+                        <div class="gb-quality-card-border-effect" aria-hidden="true"></div>
+                        <div class="gb-quality-timeline-node" aria-hidden="true"></div>
+                        <div class="gb-quality-icon-frame gb-quality-icon-gradient-c">
+                            <i data-lucide="shield" class="gb-quality-icon"></i>
+                        </div>
+                        <div class="gb-quality-feature-copy">
+                            <h3 class="gb-quality-feature-title">Skin-Friendly</h3>
+                            <p class="gb-quality-feature-desc">Designed with comfort in mind for everyday celebrations.</p>
+                        </div>
+                    </article>
+
+                    <!-- Feature Block 4 -->
+                    <article class="gb-quality-feature-card gb-quality-reveal-slide">
+                        <div class="gb-quality-card-border-effect" aria-hidden="true"></div>
+                        <div class="gb-quality-timeline-node" aria-hidden="true"></div>
+                        <div class="gb-quality-icon-frame">
+                            <i data-lucide="award" class="gb-quality-icon"></i>
+                        </div>
+                        <div class="gb-quality-feature-copy">
+                            <h3 class="gb-quality-feature-title">Luxury Finish</h3>
+                            <p class="gb-quality-feature-desc">Every detail is refined to deliver a premium appearance.</p>
+                        </div>
+                    </article>
+
+                    <!-- Feature Block 5 -->
+                    <article class="gb-quality-feature-card gb-quality-reveal-slide">
+                        <div class="gb-quality-card-border-effect" aria-hidden="true"></div>
+                        <div class="gb-quality-timeline-node" aria-hidden="true"></div>
+                        <div class="gb-quality-icon-frame gb-quality-icon-gradient-b">
+                            <i data-lucide="clipboard-check" class="gb-quality-icon"></i>
+                        </div>
+                        <div class="gb-quality-feature-copy">
+                            <h3 class="gb-quality-feature-title">Hand-Checked Quality</h3>
+                            <p class="gb-quality-feature-desc">Each collection goes through a detailed quality review before packaging.</p>
+                        </div>
+                    </article>
+
+                    <!-- Feature Block 6 -->
+                    <article class="gb-quality-feature-card gb-quality-reveal-slide">
+                        <div class="gb-quality-card-border-effect" aria-hidden="true"></div>
+                        <div class="gb-quality-timeline-node" aria-hidden="true"></div>
+                        <div class="gb-quality-icon-frame gb-quality-icon-gradient-c">
+                            <i data-lucide="package" class="gb-quality-icon"></i>
+                        </div>
+                        <div class="gb-quality-feature-copy">
+                            <h3 class="gb-quality-feature-title">Beautiful Packaging</h3>
+                            <p class="gb-quality-feature-desc">Elegant packaging designed to create a memorable unboxing experience.</p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- LOWER HUB: Immersive Full-Width Unboxing Experience Strip -->
+        <aside class="gb-quality-strip gb-quality-reveal-slide" aria-label="Our Unboxing Delivery Promise">
+            <div class="gb-quality-strip-border" aria-hidden="true"></div>
+            <div class="gb-quality-strip-content">
+                <div class="gb-quality-strip-icon-box">
+                    <i data-lucide="sparkles" class="gb-quality-strip-icon" aria-hidden="true"></i>
+                </div>
+                <p class="gb-quality-strip-text">
+                    Every order is carefully prepared to ensure a beautiful experience from the moment it reaches your doorstep.
+                </p>
+            </div>
+        </aside>
+
+    </div>
+</section>
+<!-- ======================================================
+   CRAFTSMANSHIP & QUALITY SECTION END
+====================================================== -->
+
+<!-- ======================================================
+   BRAND JOURNEY SECTION START
+====================================================== -->
+<section class="gb-journey" aria-labelledby="gb-journey-main-heading">
+    <!-- Luxury backdrop mesh ambient glow decorations -->
+    <div class="gb-journey-mesh-layer" aria-hidden="true"></div>
+    <div class="gb-journey-glow-orb-left" aria-hidden="true"></div>
+    <div class="gb-journey-glow-orb-right" aria-hidden="true"></div>
+
+    <div class="gb-journey-wrapper">
+        
+        <!-- Symmetrical Section Header -->
+        <header class="gb-journey-header">
+            <span class="gb-journey-tagline">Our Journey</span>
+            <h2 id="gb-journey-main-heading" class="gb-journey-main-title">From Inspiration To Your Celebration</h2>
+            <p class="gb-journey-lead-text">
+                Every Face Gem and Body Gem follows a thoughtful journey&mdash;from the first spark of creativity to the final premium packaging delivered to your doorstep.
+            </p>
+        </header>
+
+        <!-- Dynamic Editorial Timeline Matrix Runway -->
+        <div class="gb-journey-timeline-container">
+            <!-- Central Glowing Line Track -->
+            <div class="gb-journey-axis-line" aria-hidden="true">
+                <div class="gb-journey-axis-fill" id="gb-journey-scroll-fill"></div>
+            </div>
+
+            <!-- STEP 01: Creative Inspiration (Left Align) -->
+            <div class="gb-journey-step gb-journey-step-left gb-journey-reveal-node">
+                <div class="gb-journey-axis-marker" aria-hidden="true"></div>
+                <article class="gb-journey-card">
+                    <div class="gb-journey-card-border" aria-hidden="true"></div>
+                    <div class="gb-journey-image-wrapper">
+                        <img class="gb-journey-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKMC6dGEXO0NgzgbpPkW4iT4D-LZJsQREhhc06xRKUZA&s=10" alt="Creative fashion sketches and trend inspiration boards" loading="lazy" decoding="async">
+                    </div>
+                    <div class="gb-journey-content">
+                        <span class="gb-journey-step-number">01</span>
+                        <h3 class="gb-journey-step-title">Creative Inspiration</h3>
+                        <p class="gb-journey-step-desc">Every collection begins with trend research, fashion inspiration and creative sketches.</p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- STEP 02: Design & Prototyping (Right Align) -->
+            <div class="gb-journey-step gb-journey-step-right gb-journey-reveal-node">
+                <div class="gb-journey-axis-marker" aria-hidden="true"></div>
+                <article class="gb-journey-card">
+                    <div class="gb-journey-card-border" aria-hidden="true"></div>
+                    <div class="gb-journey-image-wrapper">
+                        <img class="gb-journey-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVTwqFXBJ5fHSSkdKsTeko34R-QkEMF9vy-2hg4rw-pPiQ4tdw19saPSyr&s=10" alt="Refining gem samples for comfort and luxury finish" loading="lazy" decoding="async">
+                    </div>
+                    <div class="gb-journey-content">
+                        <span class="gb-journey-step-number">02</span>
+                        <h3 class="gb-journey-step-title">Design &amp; Prototyping</h3>
+                        <p class="gb-journey-step-desc">Designs are refined to ensure elegance, comfort and a premium finish.</p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- STEP 03: Material Selection (Left Align) -->
+            <div class="gb-journey-step gb-journey-step-left gb-journey-reveal-node">
+                <div class="gb-journey-axis-marker" aria-hidden="true"></div>
+                <article class="gb-journey-card">
+                    <div class="gb-journey-card-border" aria-hidden="true"></div>
+                    <div class="gb-journey-image-wrapper">
+                        <img class="gb-journey-image" src="https://m.media-amazon.com/images/I/61EHsmRLUPL._AC_UF894,1000_QL80_.jpg" alt="Selecting multi-faceted brilliant luxury rhinestones" loading="lazy" decoding="async">
+                    </div>
+                    <div class="gb-journey-content">
+                        <span class="gb-journey-step-number">03</span>
+                        <h3 class="gb-journey-step-title">Material Selection</h3>
+                        <p class="gb-journey-step-desc">Carefully selected materials are chosen to deliver lasting shine and comfort.</p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- STEP 04: Quality Inspection (Right Align) -->
+            <div class="gb-journey-step gb-journey-step-right gb-journey-reveal-node">
+                <div class="gb-journey-axis-marker" aria-hidden="true"></div>
+                <article class="gb-journey-card">
+                    <div class="gb-journey-card-border" aria-hidden="true"></div>
+                    <div class="gb-journey-image-wrapper">
+                        <img class="gb-journey-image" src="https://leezoncosmetics.com/wp-content/uploads/2025/10/P03_S02_pic_1_MachineSterilization.jpg" alt="Detailed cosmetic quality review process before packaging" loading="lazy" decoding="async">
+                    </div>
+                    <div class="gb-journey-content">
+                        <span class="gb-journey-step-number">04</span>
+                        <h3 class="gb-journey-step-title">Quality Inspection</h3>
+                        <p class="gb-journey-step-desc">Every design is reviewed to meet our quality standards before packaging.</p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- STEP 05: Luxury Packaging (Left Align) -->
+            <div class="gb-journey-step gb-journey-step-left gb-journey-reveal-node">
+                <div class="gb-journey-axis-marker" aria-hidden="true"></div>
+                <article class="gb-journey-card">
+                    <div class="gb-journey-card-border" aria-hidden="true"></div>
+                    <div class="gb-journey-image-wrapper">
+                        <img class="gb-journey-image" src="https://www.drboxpak.com/wp-content/uploads/2025/12/Top-And-Bottom-Lid-Box.jpg" alt="Luxury premium brand box unboxing experience preparation" loading="lazy" decoding="async">
+                    </div>
+                    <div class="gb-journey-content">
+                        <span class="gb-journey-step-number">05</span>
+                        <h3 class="gb-journey-step-title">Luxury Packaging</h3>
+                        <p class="gb-journey-step-desc">Each order is beautifully packed to create an unforgettable unboxing experience.</p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- STEP 06: Delivered With Care (Right Align) -->
+            <div class="gb-journey-step gb-journey-step-right gb-journey-reveal-node">
+                <div class="gb-journey-axis-marker" aria-hidden="true"></div>
+                <article class="gb-journey-card">
+                    <div class="gb-journey-card-border" aria-hidden="true"></div>
+                    <div class="gb-journey-image-wrapper">
+                        <img class="gb-journey-image" src="https://www.boxupgifting.com/cdn/shop/files/DSC03231.jpg?format=webp&v=1729164963&width=400" alt="Premium package arrival ready for custom celebration" loading="lazy" decoding="async">
+                    </div>
+                    <div class="gb-journey-content">
+                        <span class="gb-journey-step-number">06</span>
+                        <h3 class="gb-journey-step-title">Delivered With Care</h3>
+                        <p class="gb-journey-step-desc">Your order arrives ready to make every celebration brighter and more memorable.</p>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ======================================================
+   BRAND JOURNEY SECTION END
+====================================================== -->
+
+
+<!-- ======================================================
+   GLITTER EXPERIENCE SECTION START
+====================================================== -->
+<section class="gb-experience" aria-labelledby="gb-experience-main-heading">
+    <!-- Luxury backdrop mesh ambient glow decorations -->
+    <div class="gb-experience-mesh-layer" aria-hidden="true"></div>
+    <div class="gb-experience-blur-orb-1" aria-hidden="true"></div>
+    <div class="gb-experience-blur-orb-2" aria-hidden="true"></div>
+    <div class="gb-experience-sparkle gb-experience-sp-1" aria-hidden="true"></div>
+    <div class="gb-experience-sparkle gb-experience-sp-2" aria-hidden="true"></div>
+
+    <div class="gb-experience-wrapper">
+        
+        <!-- Symmetrical Editorial Header Block -->
+        <header class="gb-experience-header">
+            <span class="gb-experience-tagline">Experience The Magic</span>
+            <h2 id="gb-experience-main-heading" class="gb-experience-main-title">Every Celebration <br>Deserves To Sparkle</h2>
+            <p class="gb-experience-lead-text">
+                Glitter Boutique isn't just about accessories. It's about confidence, unforgettable memories, beautiful celebrations and expressing your personality.
+            </p>
+        </header>
+
+        <!-- Luxury Masonry Asymmetric Pinterest-Style Layout Grid -->
+        <div class="gb-experience-masonry">
+            
+            <!-- Column 1 -->
+            <div class="gb-experience-column">
+                <!-- Card 1: Festival Look -->
+                <article class="gb-experience-card gb-experience-h-large gb-experience-reveal-node">
+                    <div class="gb-experience-image-container">
+                        <img class="gb-experience-image" src="https://m.media-amazon.com/images/I/61HvO0jrZTL._AC_UF1000,1000_QL80_.jpg" alt="Immersive mainstage music festival look styling" loading="lazy" decoding="async">
+                        <div class="gb-experience-gradient-mask" aria-hidden="true"></div>
+                        <div class="gb-experience-glass-glare" aria-hidden="true"></div>
+                    </div>
+                    <div class="gb-experience-caption-zone">
+                        <span class="gb-experience-context-tag">Festival Look</span>
+                        <h3 class="gb-experience-caption-title">Festival Magic</h3>
+                    </div>
+                </article>
+
+                <!-- Card 4: Wedding Celebration -->
+                <article class="gb-experience-card gb-experience-h-small gb-experience-reveal-node">
+                    <div class="gb-experience-image-container">
+                        <img class="gb-experience-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQG9yGkOgseinknHMG_gRQ6f7QsGhY9PE6SmcwW9FkPw&s=10" alt="Elegant editorial wedding celebration crystal jewelry styling" loading="lazy" decoding="async">
+                        <div class="gb-experience-gradient-mask" aria-hidden="true"></div>
+                        <div class="gb-experience-glass-glare" aria-hidden="true"></div>
+                    </div>
+                    <div class="gb-experience-caption-zone">
+                        <span class="gb-experience-context-tag">Wedding Celebration</span>
+                        <h3 class="gb-experience-caption-title">Luxury In Every Detail</h3>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Column 2 (Center Pivot Offset Column) -->
+            <div class="gb-experience-column">
+                <!-- Card 2: Concert Night -->
+                <article class="gb-experience-card gb-experience-h-medium gb-experience-reveal-node">
+                    <div class="gb-experience-image-container">
+                        <img class="gb-experience-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgVXqI9m4VqVXkxVPOb5cfkNjyDnhyyWxN571KO32OQg&s=10" alt="Glamorous concert night crystal accents editorial" loading="lazy" decoding="async">
+                        <div class="gb-experience-gradient-mask" aria-hidden="true"></div>
+                        <div class="gb-experience-glass-glare" aria-hidden="true"></div>
+                    </div>
+                    <div class="gb-experience-caption-zone">
+                        <span class="gb-experience-context-tag">Concert Night</span>
+                        <h3 class="gb-experience-caption-title">Own The Spotlight</h3>
+                    </div>
+                </article>
+
+                <!-- Card 5: Girls Night Out -->
+                <article class="gb-experience-card gb-experience-h-medium gb-experience-reveal-node">
+                    <div class="gb-experience-image-container">
+                        <img class="gb-experience-image" src="https://m.media-amazon.com/images/I/81n6wxBl9eL._AC_UF894,1000_QL80_.jpg" alt="Avant-garde high fashion styling for a girls night out statement" loading="lazy" decoding="async">
+                        <div class="gb-experience-gradient-mask" aria-hidden="true"></div>
+                        <div class="gb-experience-glass-glare" aria-hidden="true"></div>
+                    </div>
+                    <div class="gb-experience-caption-zone">
+                        <span class="gb-experience-context-tag">Girls Night Out</span>
+                        <h3 class="gb-experience-caption-title">Confidence That Shines</h3>
+                    </div>
+                </article>
+            </div>
+            
+
+            <!-- Column 3 -->
+            <div class="gb-experience-column">
+                <!-- Card 3: Birthday Party -->
+                <article class="gb-experience-card gb-experience-h-large gb-experience-reveal-node">
+                    <div class="gb-experience-image-container">
+                        <img class="gb-experience-image" src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/58b4761d-abbf-4122-9ecf-caf0681f464e.__CR0,0,1000,1000_PT0_SX300_V1___.jpg" alt="Sparkling aesthetic profile for high fashion birthday party layouts" loading="lazy" decoding="async">
+                        <div class="gb-experience-gradient-mask" aria-hidden="true"></div>
+                        <div class="gb-experience-glass-glare" aria-hidden="true"></div>
+                    </div>
+                    <div class="gb-experience-caption-zone">
+                        <span class="gb-experience-context-tag">Birthday Party</span>
+                        <h3 class="gb-experience-caption-title">Celebrate Every Moment</h3>
+                    </div>
+                </article>
+            </div>
+
+
+            
+
+        </div>
+
+        <!-- BOTTOM STRIP: Premium White Glass Brand Action Module -->
+        <aside class="gb-experience-strip gb-experience-reveal-node" aria-label="Brand Philosophy Closing Call">
+            <div class="gb-experience-strip-border" aria-hidden="true"></div>
+            <div class="gb-experience-strip-glow" aria-hidden="true"></div>
+            <div class="gb-experience-strip-content">
+                <h3 class="gb-experience-strip-title">More Than Accessories</h3>
+                <p class="gb-experience-strip-desc">
+                    Every Glitter Boutique collection is thoughtfully designed to help you create unforgettable memories, whether it's a music festival, wedding, party or special celebration.
+                </p>
+                <a href="products.html" class="gb-experience-strip-button">
+                    <span>Explore Collections</span>
+                    <i data-lucide="arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </aside>
+
+    </div>
+</section>
+<!-- ======================================================
+   GLITTER EXPERIENCE SECTION END
+====================================================== -->
+
+
+<!-- ======================================================
+   BRAND BY THE NUMBERS SECTION START
+====================================================== -->
+<section class="gb-stats" aria-labelledby="gb-stats-main-heading">
+    <!-- Luxury backdrop mesh ambient glow decorations -->
+    <div class="gb-stats-mesh-layer" aria-hidden="true"></div>
+    <div class="gb-stats-blur-orb-left" aria-hidden="true"></div>
+    <div class="gb-stats-blur-orb-right" aria-hidden="true"></div>
+
+    <div class="gb-stats-wrapper">
+        
+        <!-- Symmetrical Section Header -->
+        <header class="gb-stats-header">
+            <span class="gb-stats-tagline">Our Impact</span>
+            <h2 id="gb-stats-main-heading" class="gb-stats-main-title">Numbers That Reflect <br>Our Journey</h2>
+            <p class="gb-stats-lead-text">
+                Behind every sparkle is a growing community of customers who trust Glitter Boutique for premium quality, creativity and unforgettable experiences.
+            </p>
+        </header>
+
+        <!-- Extra Premium Touch: Thin Animated Gradient Divider Matrix -->
+        <div class="gb-stats-divider-zone" aria-hidden="true">
+            <div class="gb-stats-divider-line"></div>
+            <div class="gb-stats-divider-diamond">
+                <i data-lucide="gem"></i>
+            </div>
+            <div class="gb-stats-divider-line"></div>
+        </div>
+
+        <!-- 3 Columns × 2 Rows Premium Statistics Display Runway Grid -->
+        <div class="gb-stats-grid">
+            
+            <!-- Card 1: Happy Customers -->
+            <article class="gb-stats-card gb-stats-reveal-node" data-target-value="100000" data-suffix="+" data-format="integer">
+                <div class="gb-stats-card-border" aria-hidden="true"></div>
+                <div class="gb-stats-mouse-glow" aria-hidden="true"></div>
+                <div class="gb-stats-bg-ghost-number" aria-hidden="true">100K+</div>
+                
+                <div class="gb-stats-icon-wrapper">
+                    <div class="gb-stats-icon-ring" aria-hidden="true"></div>
+                    <i data-lucide="users" class="gb-stats-icon"></i>
+                </div>
+                
+                <div class="gb-stats-number-zone">
+                    <span class="gb-stats-number" id="gb-stat-counter-1">0</span><span class="gb-stats-suffix">+</span>
+                </div>
+                <h3 class="gb-stats-label">Happy Customers</h3>
+            </article>
+
+            <!-- Card 2: Premium Designs -->
+            <article class="gb-stats-card gb-stats-reveal-node" data-target-value="500" data-suffix="+" data-format="integer">
+                <div class="gb-stats-card-border" aria-hidden="true"></div>
+                <div class="gb-stats-mouse-glow" aria-hidden="true"></div>
+                <div class="gb-stats-bg-ghost-number" aria-hidden="true">500+</div>
+                
+                <div class="gb-stats-icon-wrapper">
+                    <div class="gb-stats-icon-ring" aria-hidden="true"></div>
+                    <i data-lucide="sparkles" class="gb-stats-icon"></i>
+                </div>
+                
+                <div class="gb-stats-number-zone">
+                    <span class="gb-stats-number" id="gb-stat-counter-2">0</span><span class="gb-stats-suffix">+</span>
+                </div>
+                <h3 class="gb-stats-label">Premium Designs</h3>
+            </article>
+
+            <!-- Card 3: Countries Served -->
+            <article class="gb-stats-card gb-stats-reveal-node" data-target-value="25" data-suffix="+" data-format="integer">
+                <div class="gb-stats-card-border" aria-hidden="true"></div>
+                <div class="gb-stats-mouse-glow" aria-hidden="true"></div>
+                <div class="gb-stats-bg-ghost-number" aria-hidden="true">25+</div>
+                
+                <div class="gb-stats-icon-wrapper">
+                    <div class="gb-stats-icon-ring" aria-hidden="true"></div>
+                    <i data-lucide="globe" class="gb-stats-icon"></i>
+                </div>
+                
+                <div class="gb-stats-number-zone">
+                    <span class="gb-stats-number" id="gb-stat-counter-3">0</span><span class="gb-stats-suffix">+</span>
+                </div>
+                <h3 class="gb-stats-label">Countries Served</h3>
+            </article>
+
+            <!-- Card 4: Average Rating -->
+            <article class="gb-stats-card gb-stats-reveal-node" data-target-value="4.9" data-suffix="★" data-format="decimal">
+                <div class="gb-stats-card-border" aria-hidden="true"></div>
+                <div class="gb-stats-mouse-glow" aria-hidden="true"></div>
+                <div class="gb-stats-bg-ghost-number" aria-hidden="true">4.9★</div>
+                
+                <div class="gb-stats-icon-wrapper">
+                    <div class="gb-stats-icon-ring" aria-hidden="true"></div>
+                    <i data-lucide="star" class="gb-stats-icon"></i>
+                </div>
+                
+                <div class="gb-stats-number-zone">
+                    <span class="gb-stats-number" id="gb-stat-counter-4">0.0</span><span class="gb-stats-suffix">★</span>
+                </div>
+                <h3 class="gb-stats-label">Average Rating</h3>
+            </article>
+
+            <!-- Card 5: Customer Satisfaction -->
+            <article class="gb-stats-card gb-stats-reveal-node" data-target-value="98" data-suffix="%" data-format="integer">
+                <div class="gb-stats-card-border" aria-hidden="true"></div>
+                <div class="gb-stats-mouse-glow" aria-hidden="true"></div>
+                <div class="gb-stats-bg-ghost-number" aria-hidden="true">98%</div>
+                
+                <div class="gb-stats-icon-wrapper">
+                    <div class="gb-stats-icon-ring" aria-hidden="true"></div>
+                    <i data-lucide="badge-check" class="gb-stats-icon"></i>
+                </div>
+                
+                <div class="gb-stats-number-zone">
+                    <span class="gb-stats-number" id="gb-stat-counter-5">0</span><span class="gb-stats-suffix">%</span>
+                </div>
+                <h3 class="gb-stats-label">Customer Satisfaction</h3>
+            </article>
+
+            <!-- Card 6: Fast Dispatch -->
+            <article class="gb-stats-card gb-stats-reveal-node" data-target-value="48" data-suffix=" Hr" data-format="integer">
+                <div class="gb-stats-card-border" aria-hidden="true"></div>
+                <div class="gb-stats-mouse-glow" aria-hidden="true"></div>
+                <div class="gb-stats-bg-ghost-number" aria-hidden="true">48h</div>
+                
+                <div class="gb-stats-icon-wrapper">
+                    <div class="gb-stats-icon-ring" aria-hidden="true"></div>
+                    <i data-lucide="truck" class="gb-stats-icon"></i>
+                </div>
+                
+                <div class="gb-stats-number-zone">
+                    <span class="gb-stats-number" id="gb-stat-counter-6">0</span><span class="gb-stats-suffix"> Hr</span>
+                </div>
+                <h3 class="gb-stats-label">Fast Dispatch</h3>
+            </article>
+
+        </div>
+    </div>
+</section>
+<!-- ======================================================
+   BRAND BY THE NUMBERS SECTION END
+====================================================== -->
+
+<!-- ======================================================
+   MEET THE CREATIVE TEAM SECTION START
+====================================================== -->
+<section class="gb-team" aria-labelledby="gb-team-main-heading">
+    <!-- Luxury backdrop mesh ambient elements and ghost background typography -->
+    <div class="gb-team-mesh-layer" aria-hidden="true"></div>
+    <div class="gb-team-glow-orb-left" aria-hidden="true"></div>
+    <div class="gb-team-glow-orb-right" aria-hidden="true"></div>
+    
+    <div class="gb-team-ghost-text gb-team-ghost-pos-1" aria-hidden="true">CREATIVITY</div>
+    <div class="gb-team-ghost-text gb-team-ghost-pos-2" aria-hidden="true">QUALITY</div>
+    <div class="gb-team-ghost-text gb-team-ghost-pos-3" aria-hidden="true">PASSION</div>
+
+    <div class="gb-team-wrapper">
+        
+        <!-- Symmetrical Section Header Block -->
+        <header class="gb-team-header">
+            <span class="gb-team-tagline">Our People</span>
+            <h2 id="gb-team-main-heading" class="gb-team-main-title">The Creative Minds <br>Behind Glitter Boutique</h2>
+            <p class="gb-team-lead-text">
+                Every collection is thoughtfully created by a passionate team dedicated to beauty, creativity and premium craftsmanship.
+            </p>
+        </header>
+
+        <!-- Asymmetric Fashion Magazine Masonry Grid Layout -->
+        <div class="gb-team-grid">
+            
+            <!-- Member 1: Founder & Creative Director (Tall Anchor) -->
+            <div class="gb-team-card-wrapper gb-team-h-tall gb-team-reveal-node">
+                <article class="gb-team-card" data-tilt-active="true">
+                    <div class="gb-team-card-border" aria-hidden="true"></div>
+                    <div class="gb-team-spotlight-layer" aria-hidden="true"></div>
+                    <div class="gb-team-halo" aria-hidden="true"></div>
+                    
+                    <div class="gb-team-image-container">
+                        <img class="gb-team-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK-CtwWYJcuRr9aalDNlECgjx51Htq3tHVCzYKH1SXHw&s=10" alt="Founder &amp; Creative Director portrait presentation" loading="lazy" decoding="async">
+                        <div class="gb-team-gradient-mask" aria-hidden="true"></div>
+                    </div>
+                    
+                    <!-- Immersive Hover Panel Overlay Details -->
+                    <div class="gb-team-hover-panel">
+                        <p class="gb-team-bio">Envisioning alternative cosmic self-expression canvases through custom crystal geometry.</p>
+                        <div class="gb-team-socials" aria-label="Social connections">
+                            <a href="https://instagram.com" target="_blank" rel="noopener" class="gb-team-social-btn" aria-label="Connect via Instagram"><i data-lucide="instagram"></i></a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener" class="gb-team-social-btn" aria-label="Connect via LinkedIn"><i data-lucide="linkedin"></i></a>
+                            <a href="mailto:creative@glitterboutique.com" class="gb-team-social-btn" aria-label="Connect via Email"><i data-lucide="mail"></i></a>
+                        </div>
+                        <button class="gb-team-profile-trigger" aria-label="View Founder profile">
+                            <span>View Profile</span><i data-lucide="arrow-up-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Static Baseline Meta Details Block -->
+                    <div class="gb-team-meta-zone">
+                        <h3 class="gb-team-name">Ananya Sharma</h3>
+                        <p class="gb-team-role">Founder &amp; Creative Director</p>
+                        <!-- Animated Signature Line Indicator Path -->
+                        <div class="gb-team-signature-track" aria-hidden="true">
+                            <div class="gb-team-signature-path"></div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Member 2: Product Designer (Medium Anchor) -->
+            <div class="gb-team-card-wrapper gb-team-h-medium gb-team-reveal-node">
+                <article class="gb-team-card" data-tilt-active="true">
+                    <div class="gb-team-card-border" aria-hidden="true"></div>
+                    <div class="gb-team-spotlight-layer" aria-hidden="true"></div>
+                    <div class="gb-team-halo" aria-hidden="true"></div>
+                    
+                    <div class="gb-team-image-container">
+                        <img class="gb-team-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkLcdJegR494Tvbm0YkBGOUiLMtemen6fFLkkzcpxZfQ&s=10" alt="Product Designer portrait presentation" loading="lazy" decoding="async">
+                        <div class="gb-team-gradient-mask" aria-hidden="true"></div>
+                    </div>
+                    
+                    <div class="gb-team-hover-panel">
+                        <p class="gb-team-bio">Engineering flexible medical-grade composite backing patterns that fuse seamlessly with the skin.</p>
+                        <div class="gb-team-socials" aria-label="Social connections">
+                            <a href="https://instagram.com" target="_blank" rel="noopener" class="gb-team-social-btn" aria-label="Connect via Instagram"><i data-lucide="instagram"></i></a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener" class="gb-team-social-btn" aria-label="Connect via LinkedIn"><i data-lucide="linkedin"></i></a>
+                            <a href="mailto:design@glitterboutique.com" class="gb-team-social-btn" aria-label="Connect via Email"><i data-lucide="mail"></i></a>
+                        </div>
+                        <button class="gb-team-profile-trigger" aria-label="View Product Designer profile">
+                            <span>View Profile</span><i data-lucide="arrow-up-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="gb-team-meta-zone">
+                        <h3 class="gb-team-name">Kabir Mehta</h3>
+                        <p class="gb-team-role">Product Designer</p>
+                        <div class="gb-team-signature-track" aria-hidden="true">
+                            <div class="gb-team-signature-path"></div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Member 3: Quality Specialist (Short Anchor) -->
+            <div class="gb-team-card-wrapper gb-team-h-short gb-team-reveal-node">
+                <article class="gb-team-card" data-tilt-active="true">
+                    <div class="gb-team-card-border" aria-hidden="true"></div>
+                    <div class="gb-team-spotlight-layer" aria-hidden="true"></div>
+                    <div class="gb-team-halo" aria-hidden="true"></div>
+                    
+                    <div class="gb-team-image-container">
+                        <img class="gb-team-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTtfhacxtEXQpyjryQYn1jufV3T1JjpU-JfJ8D8-E4WA&s=10" alt="Quality Specialist portrait presentation" loading="lazy" decoding="async">
+                        <div class="gb-team-gradient-mask" aria-hidden="true"></div>
+                    </div>
+                    
+                    <div class="gb-team-hover-panel">
+                        <p class="gb-team-bio">Enforcing absolute optical facet evaluation loops to guarantee intense diamond-cut light refraction scores.</p>
+                        <div class="gb-team-socials" aria-label="Social connections">
+                            <a href="https://instagram.com" target="_blank" rel="noopener" class="gb-team-social-btn" aria-label="Connect via Instagram"><i data-lucide="instagram"></i></a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener" class="gb-team-social-btn" aria-label="Connect via LinkedIn"><i data-lucide="linkedin"></i></a>
+                            <a href="mailto:quality@glitterboutique.com" class="gb-team-social-btn" aria-label="Connect via Email"><i data-lucide="mail"></i></a>
+                        </div>
+                        <button class="gb-team-profile-trigger" aria-label="View Quality Specialist profile">
+                            <span>View Profile</span><i data-lucide="arrow-up-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="gb-team-meta-zone">
+                        <h3 class="gb-team-name">Meera Kaplan</h3>
+                        <p class="gb-team-role">Quality Specialist</p>
+                        <div class="gb-team-signature-track" aria-hidden="true">
+                            <div class="gb-team-signature-path"></div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Member 4: Customer Experience Lead (Medium Anchor) -->
+            <div class="gb-team-card-wrapper gb-team-h-medium gb-team-reveal-node">
+                <article class="gb-team-card" data-tilt-active="true">
+                    <div class="gb-team-card-border" aria-hidden="true"></div>
+                    <div class="gb-team-spotlight-layer" aria-hidden="true"></div>
+                    <div class="gb-team-halo" aria-hidden="true"></div>
+                    
+                    <div class="gb-team-image-container">
+                        <img class="gb-team-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhdxeYThcgILZGjMR21-Iac9abbWPnXDzoYRGRw1s8Nw&s=10" alt="Customer Experience Lead portrait presentation" loading="lazy" decoding="async">
+                        <div class="gb-team-gradient-mask" aria-hidden="true"></div>
+                    </div>
+                    
+                    <div class="gb-team-hover-panel">
+                        <p class="gb-team-bio">Cultivating meticulous concierge pipelines to assure an exquisite unboxing memory blueprint for every client.</p>
+                        <div class="gb-team-socials" aria-label="Social connections">
+                            <a href="https://instagram.com" target="_blank" rel="noopener" class="gb-team-social-btn" aria-label="Connect via Instagram"><i data-lucide="instagram"></i></a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener" class="gb-team-social-btn" aria-label="Connect via LinkedIn"><i data-lucide="linkedin"></i></a>
+                            <a href="mailto:experience@glitterboutique.com" class="gb-team-social-btn" aria-label="Connect via Email"><i data-lucide="mail"></i></a>
+                        </div>
+                        <button class="gb-team-profile-trigger" aria-label="View Customer Experience Lead profile">
+                            <span>View Profile</span><i data-lucide="arrow-up-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="gb-team-meta-zone">
+                        <h3 class="gb-team-name">Rohan Malhotra</h3>
+                        <p class="gb-team-role">Customer Experience Lead</p>
+                        <div class="gb-team-signature-track" aria-hidden="true">
+                            <div class="gb-team-signature-path"></div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ======================================================
+   MEET THE CREATIVE TEAM SECTION END
+====================================================== -->
+
+
+<!-- ======================================================
+   AWARDS & PARTNERS SECTION START
+====================================================== -->
+<section class="gb-awards" aria-labelledby="gb-awards-main-heading">
+    <!-- Luxury backdrop mesh ambient decorations & ghost editorial typography -->
+    <div class="gb-awards-mesh-layer" aria-hidden="true"></div>
+    <div class="gb-awards-blur-blue" aria-hidden="true"></div>
+    <div class="gb-awards-blur-purple" aria-hidden="true"></div>
+    
+    <div class="gb-awards-ghost-text gb-awards-ghost-pos-1" aria-hidden="true">EXCELLENCE</div>
+    <div class="gb-awards-ghost-text gb-awards-ghost-pos-2" aria-hidden="true">TRUST</div>
+    <div class="gb-awards-ghost-text gb-awards-ghost-pos-3" aria-hidden="true">QUALITY</div>
+
+    <div class="gb-awards-wrapper">
+        
+        <!-- Symmetrical Section Header -->
+        <header class="gb-awards-header">
+            <span class="gb-awards-tagline">Our Recognition</span>
+            <h2 id="gb-awards-main-heading" class="gb-awards-main-title">Trusted By Excellence</h2>
+            <p class="gb-awards-lead-text">
+                Every milestone inspires us to continue creating premium beauty experiences with quality, innovation and customer trust.
+            </p>
+        </header>
+
+        <!-- TOP LAYOUT: Featured Award Card with Shimmer & Spotlight Loop -->
+        <div class="gb-awards-featured-container gb-awards-reveal-node">
+            <article class="gb-awards-featured-card" id="gb-awards-hero-card">
+                <div class="gb-awards-card-border" aria-hidden="true"></div>
+                <div class="gb-awards-card-spotlight" aria-hidden="true"></div>
+                <div class="gb-awards-card-shimmer" aria-hidden="true"></div>
+                
+                <div class="gb-awards-featured-media">
+                    <img class="gb-awards-featured-img" src="assets/images/awards/featured-award.png" alt="Global Luxury Beauty Cosmetics Trophy Award Emblem" loading="lazy" decoding="async">
+                </div>
+                
+                <div class="gb-awards-featured-info">
+                    <div class="gb-awards-meta-badge">
+                        <i data-lucide="award" aria-hidden="true"></i>
+                        <span>Winner 2026</span>
+                    </div>
+                    <h3 class="gb-awards-featured-title">Vogue Avant-Garde Beauty Innovation</h3>
+                    <p class="gb-awards-featured-desc">
+                        Recognized globally for pioneering medical-grade, multi-faceted cosmetic gem arrangements that fuse unparalleled architectural crystal safety with high-fashion festival mainstage aesthetic dominance.
+                    </p>
+                    <a href="/milestones" class="gb-awards-action-link" aria-label="Learn more about the Vogue Beauty Innovation Award">
+                        <span>Learn More</span>
+                        <i data-lucide="arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+
+        <!-- Animated Glowing Divider Matrix -->
+        <div class="gb-awards-glow-divider" aria-hidden="true">
+            <div class="gb-awards-divider-track"></div>
+            <div class="gb-awards-divider-pulse"></div>
+        </div>
+
+        <!-- BOTTOM LAYOUT: Two Column Split Trust Ecosystem Grid -->
+        <div class="gb-awards-split-grid">
+            
+            <!-- LEFT COLUMN: Pulse Verification Certification Badges -->
+            <div class="gb-awards-split-column gb-awards-reveal-node">
+                <h3 class="gb-awards-split-heading">Ecosystem Certifications</h3>
+                <div class="gb-awards-badge-stack">
+                    
+                    <!-- Badge 1: Premium Quality -->
+                    <div class="gb-awards-badge-card">
+                        <div class="gb-awards-badge-icon-box">
+                            <i data-lucide="gem"></i>
+                        </div>
+                        <div class="gb-awards-badge-copy">
+                            <h4>Premium Quality</h4>
+                            <p>Multi-faceted diamond cut crystals.</p>
+                        </div>
+                    </div>
+
+                    <!-- Badge 2: Skin Friendly -->
+                    <div class="gb-awards-badge-card">
+                        <div class="gb-awards-badge-icon-box gb-awards-icon-alt-pink">
+                            <i data-lucide="shield-check"></i>
+                        </div>
+                        <div class="gb-awards-badge-copy">
+                            <h4>Skin Friendly</h4>
+                            <p>Hypoallergenic medical grade backing.</p>
+                        </div>
+                    </div>
+
+                    <!-- Badge 3: Cruelty Conscious -->
+                    <div class="gb-awards-badge-card">
+                        <div class="gb-awards-badge-icon-box gb-awards-icon-alt-blue">
+                            <i data-lucide="heart"></i>
+                        </div>
+                        <div class="gb-awards-badge-copy">
+                            <h4>Cruelty Conscious</h4>
+                            <p>100% vegan formulation materials.</p>
+                        </div>
+                    </div>
+
+                    <!-- Badge 4: Secure Shopping -->
+                    <div class="gb-awards-badge-card">
+                        <div class="gb-awards-badge-icon-box">
+                            <i data-lucide="lock"></i>
+                        </div>
+                        <div class="gb-awards-badge-copy">
+                            <h4>Secure Shopping</h4>
+                            <p>Encrypted multi-tier checking vault.</p>
+                        </div>
+                    </div>
+
+                    <!-- Badge 5: Eco Packaging -->
+                    <div class="gb-awards-badge-card">
+                        <div class="gb-awards-badge-icon-box gb-awards-icon-alt-pink">
+                            <i data-lucide="leaf"></i>
+                        </div>
+                        <div class="gb-awards-badge-copy">
+                            <h4>Eco Packaging</h4>
+                            <p>Sustainably printed luxury box frames.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Interactive Gray-To-Color Collaborations Grid -->
+            <div class="gb-awards-split-column gb-awards-reveal-node">
+                <h3 class="gb-awards-split-heading">Trusted Editorial Partners</h3>
+                <div class="gb-awards-logo-grid">
+                    
+                    <div class="gb-awards-logo-box" title="Partner Brand Editorial Collaboration 1">
+                        <img class="gb-awards-logo-img" src="assets/images/partners/logo-1.png" alt="Luxury Beauty Media Icon Partner 1">
+                    </div>
+
+                    <div class="gb-awards-logo-box" title="Partner Brand Editorial Collaboration 2">
+                        <img class="gb-awards-logo-img" src="assets/images/partners/logo-2.png" alt="Luxury Beauty Media Icon Partner 2">
+                    </div>
+
+                    <div class="gb-awards-logo-box" title="Partner Brand Editorial Collaboration 3">
+                        <img class="gb-awards-logo-img" src="assets/images/partners/logo-3.png" alt="Luxury Beauty Media Icon Partner 3">
+                    </div>
+
+                    <div class="gb-awards-logo-box" title="Partner Brand Editorial Collaboration 4">
+                        <img class="gb-awards-logo-img" src="assets/images/partners/logo-4.png" alt="Luxury Beauty Media Icon Partner 4">
+                    </div>
+
+                    <div class="gb-awards-logo-box" title="Partner Brand Editorial Collaboration 5">
+                        <img class="gb-awards-logo-img" src="assets/images/partners/logo-5.png" alt="Luxury Beauty Media Icon Partner 5">
+                    </div>
+
+                    <div class="gb-awards-logo-box" title="Partner Brand Editorial Collaboration 6">
+                        <img class="gb-awards-logo-img" src="assets/images/partners/logo-6.png" alt="Luxury Beauty Media Icon Partner 6">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- ======================================================
+   AWARDS & PARTNERS SECTION END
+====================================================== -->
+
+<!-- FOOTER -->
+<footer class="gb-footer" aria-labelledby="gb-footer-community-heading">
+    <!-- Luxury Ambient Gradient Mesh & Sparkle Effects -->
+    <div class="gb-footer-ambient-mesh" aria-hidden="true"></div>
+    <div class="gb-footer-sparkle-overlay" aria-hidden="true"></div>
+    
+    <div class="gb-footer-wrapper">
+        
+        <!-- TOP AREA: Premium Glassmorphism Newsletter Subsystem -->
+        <div class="gb-footer-newsletter-zone">
+            <header class="gb-footer-newsletter-header">
+                <span class="gb-footer-label">Join Our Community</span>
+                <h2 id="gb-footer-community-heading" class="gb-footer-newsletter-title">Stay Sparkling With Glitter Boutique</h2>
+                <p class="gb-footer-newsletter-desc">
+                    Get exclusive product launches, festival inspiration and special offers delivered directly to your inbox.
+                </p>
+            </header>
+            
+            <form class="gb-footer-form" id="gb-footer-newsletter-form" novalidate>
+                <div class="gb-footer-input-wrapper">
+                    <i data-lucide="mail" class="gb-footer-input-icon" aria-hidden="true"></i>
+                    <input type="email" class="gb-footer-input" id="gb-footer-newsletter-email" placeholder="Enter your luxury email address" aria-label="Luxury email address input field" required>
+                    <div class="gb-footer-input-glow"></div>
+                </div>
+                <button type="submit" class="gb-footer-submit-btn">
+                    <span>Subscribe</span>
+                    <i data-lucide="arrow-right" class="gb-footer-btn-icon" aria-hidden="true"></i>
+                </button>
+            </form>
+            <div class="gb-footer-status-msg" id="gb-footer-status-message" role="status" aria-live="polite"></div>
+        </div>
+
+        <!-- MAIN AREA: Structural 4-Column Balanced Grid Link Matrix -->
+        <div class="gb-footer-grid">
+            
+            <!-- COLUMN 1: Brand Ecosystem & Glowing Social Clusters -->
+            <div class="gb-footer-column">
+                <a href="/" class="gb-footer-logo-link" aria-label="Glitter Boutique Home">
+                    <img src="assets/home_img/logo/Glitter Beauty LOGO PNG.png" alt="Glitter Boutique Logo"
+                        class="gb-footer-logo-img">
+                </a>
+                <p class="gb-footer-brand-desc">
+                    Elevating the art of body ornamentation through premium, medical-grade multi-faceted crystal design matrices. Designed for mainstages, spotlight events, and unparalleled individual cosmic expressions.
+                </p>
+                <div class="gb-footer-social-cluster" aria-label="Glitter Boutique Social Media Links">
+                    <a href="https://instagram.com" class="gb-footer-social-btn" aria-label="Follow us on Instagram" target="_blank" rel="noopener">
+                        <i data-lucide="instagram"></i>
+                    </a>
+                    <a href="https://facebook.com" class="gb-footer-social-btn" aria-label="Follow us on Facebook" target="_blank" rel="noopener">
+                        <i data-lucide="facebook"></i>
+                    </a>
+                    <a href="https://pinterest.com" class="gb-footer-social-btn" aria-label="Follow us on Pinterest" target="_blank" rel="noopener">
+                        <i data-lucide="pin"></i>
+                    </a>
+                    <a href="https://tiktok.com" class="gb-footer-social-btn" aria-label="Follow us on TikTok" target="_blank" rel="noopener">
+                        <i data-lucide="music-2"></i>
+                    </a>
+                    <a href="https://youtube.com" class="gb-footer-social-btn" aria-label="Subscribe to our YouTube Channel" target="_blank" rel="noopener">
+                        <i data-lucide="youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- COLUMN 2: Quick Navigation Links Runway -->
+            <nav class="gb-footer-column" aria-label="Footer Quick Links Navigation">
+                <h3 class="gb-footer-column-title">Quick Links</h3>
+                <ul class="gb-footer-links-list">
+                    <li><a href="/" class="gb-footer-link">Home</a></li>
+                    <li><a href="/about" class="gb-footer-link">About Us</a></li>
+                    <li><a href="/products" class="gb-footer-link">Products</a></li>
+                    <li><a href="/collections" class="gb-footer-link">Collections</a></li>
+                    <li><a href="/blog" class="gb-footer-link">Blog</a></li>
+                    <li><a href="/contact" class="gb-footer-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- COLUMN 3: Core Curated Product Collections Links Runway -->
+            <nav class="gb-footer-column" aria-label="Footer Collections Navigation">
+                <h3 class="gb-footer-column-title">Collections</h3>
+                <ul class="gb-footer-links-list">
+                    <li><a href="/collections/face-gems" class="gb-footer-link">Face Gems</a></li>
+                    <li><a href="/collections/body-gems" class="gb-footer-link">Body Gems</a></li>
+                    <li><a href="/collections/festival" class="gb-footer-link">Festival Collection</a></li>
+                    <li><a href="/collections/concert" class="gb-footer-link">Concert Collection</a></li>
+                    <li><a href="/collections/bridal" class="gb-footer-link">Bridal Collection</a></li>
+                    <li><a href="/collections/new-arrivals" class="gb-footer-link">New Arrivals</a></li>
+                </ul>
+            </nav>
+
+            <!-- COLUMN 4: Corporate Customer Support Infrastructure Links Runway -->
+            <nav class="gb-footer-column" aria-label="Footer Customer Support Navigation">
+                <h3 class="gb-footer-column-title">Customer Support</h3>
+                <ul class="gb-footer-links-list">
+                    <li><a href="/shipping" class="gb-footer-link">Shipping Policy</a></li>
+                    <li><a href="/returns" class="gb-footer-link">Return Policy</a></li>
+                    <li><a href="/privacy" class="gb-footer-link">Privacy Policy</a></li>
+                    <li><a href="/terms" class="gb-footer-link">Terms &amp; Conditions</a></li>
+                    <li><a href="/faqs" class="gb-footer-link">FAQs</a></li>
+                    <li><a href="/track" class="gb-footer-link">Track Order</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <!-- BOTTOM AREA: Gradient Dividers, Copyright & Encrypted Payment Vector Array -->
+        <div class="gb-footer-bottom-bar">
+            <div class="gb-footer-divider" aria-hidden="true"></div>
+            <div class="gb-footer-bottom-content">
+                <span class="gb-footer-copyright">&copy; 2026 Glitter Boutique. All Rights Reserved.</span>
+                
+                <div class="gb-footer-payment-vault" aria-label="Supported Secure Checkout Methods">
+                    <!-- Visa Minimal SVG Icon Asset -->
+                    <div class="gb-footer-payment-card" title="Visa Secured Payments">
+                        <svg viewBox="0 0 32 20" width="38" height="24" fill="none"><rect width="32" height="20" rx="3" fill="#1434CB"/><path d="M7.7 14.5l1.1-6.6h1.8l-1.1 6.6H7.7zm7.2-6.4c-.3-.2-.8-.4-1.4-.4-1.4 0-2.3.7-2.3 1.7 0 .8.7 1.2 1.3 1.5.6.3.8.5.8.7 0 .4-.5.6-1 .6-.6 0-1.1-.2-1.6-.4l-.2-.1-.3 1.7c.5.2 1.3.4 2.1.4 2 0 3.3-.9 3.3-2.4 0-.8-.5-1.4-1.6-1.9-.6-.3-.9-.5-.9-.8 0-.3.3-.6.9-.6.5 0 .9.1 1.3.3l.2.1.3-1.8zm4.8 2.2c0-.3-.2-.6-.5-.8l-1.7 4.2h1.9l.3-.9h2.3l.2.9h1.7l-1.5-6.6H21c-.4 0-.8.2-1 .6l-2.9 6h1.8l.8-2.4zm1.7-1.4l.7 2.1h-1.4l.7-2.1zM5.4 7.9L3.8 12c-.2-.4-.7-1.1-1.3-1.5L4 14.5h1.9L8.7 7.9H5.4z" fill="#FFF"/></svg>
+                    </div>
+                    <!-- Mastercard Minimal SVG Icon Asset -->
+                    <div class="gb-footer-payment-card" title="Mastercard Secured Payments">
+                        <svg viewBox="0 0 32 20" width="38" height="24" fill="none"><rect width="32" height="20" rx="3" fill="#222222"/><circle cx="12.5" cy="10" r="6" fill="#EB001B" fill-opacity=".9"/><circle cx="19.5" cy="10" r="6" fill="#F79E1B" fill-opacity=".9"/><path d="M16 5.5a5.9 5.9 0 012.3 4.5 5.9 5.9 0 01-2.3 4.5 5.9 5.9 0 01-2.3-4.5A5.9 5.9 0 0116 5.5z" fill="#FF5F00"/></svg>
+                    </div>
+                    <!-- PayPal Minimal SVG Icon Asset -->
+                    <div class="gb-footer-payment-card" title="PayPal Express Checkout">
+                        <svg viewBox="0 0 32 20" width="38" height="24" fill="none"><rect width="32" height="20" rx="3" fill="#FFF"/><path d="M12.4 4.5h3.9c1.6 0 2.5.3 3.1.9.5.5.7 1.2.6 2-.1 1.2-.8 2.2-2 2.7-.6.3-1.3.4-2.2.4h-1.5l-1.2 5.1H11l1.9-8.1h-.5zm3.1 4.3c.7 0 1.2-.1 1.5-.4.3-.3.4-.6.5-1 0-.4-.1-.7-.3-.9-.2-.2-.6-.3-1.1-.3h-1.6l-.6 2.6h1.6zm.9-.9l.4-1.7H15l-.4 1.7h1.8z" fill="#003087"/><path d="M14.4 6.5h3.9c1.6 0 2.5.3 3.1.9.5.5.7 1.2.6 2-.1 1.2-.8 2.2-2 2.7-.6.3-1.3.4-2.2.4h-1.5l-1.2 5.1H13l1.9-8.1h-.5zm3.1 4.3c.7 0 1.2-.1 1.5-.4.3-.3.4-.6.5-1 0-.4-.1-.7-.3-.9-.2-.2-.6-.3-1.1-.3h-1.6l-.6 2.6h1.6zm.9-.9l.4-1.7H17l-.4 1.7h1.8z" fill="#0079C1"/></svg>
+                    </div>
+                    <!-- Apple Pay Minimal SVG Icon Asset -->
+                    <div class="gb-footer-payment-card" title="Apple Pay Instant Pass">
+                        <svg viewBox="0 0 32 20" width="38" height="24" fill="none"><rect width="32" height="20" rx="3" fill="#000"/><path d="M11.5 12.8c-.5 0-1.1-.3-1.4-.7-.3.4-.9.7-1.5.7-1 0-1.7-.8-1.7-1.8 0-1.1.8-1.9 1.8-1.9.5 0 1 .2 1.3.5v-.2c0-.6-.4-1-1.1-1-.4 0-.8.2-1.1.4l-.4-.7c.5-.4 1.2-.6 1.7-.6 1.4 0 2.1.8 2.1 2v2.4c0 .5.2.8.4.8h.1v.6h-.2zm-1.4-1.6c-.2-.3-.6-.5-1-.5-.5 0-.9.4-.9 1 0 .6.4 1 .9 1 .4 0 .8-.2 1-.5v-1zm4.8 1.6h-.9v-3.7h.9v.5c.3-.4.8-.6 1.3-.6 1 0 1.6.7 1.6 1.8s-.6 1.9-1.6 1.9c-.5 0-1-.2-1.3-.5v.6zm1.3-.8c.5 0 .9-.4 .9-1.1s-.4-1.1-.9-1.1c-.5 0-.9.4-.9 1.1s.4 1.1.9 1.1zm6-3.8l-2 4.9c-.3.7-.7 1-1.2 1h-.3v-.7h.2c.3 0 .5-.2.7-.5l.2-.5-2.2-4.2h1l1.4 2.9 1.4-2.9h1.1zM18.8 6.9c-.7.8-.7 1.9-.6 2.4.5 0 1.5-.3 2-1.1.6-.8.5-1.9.5-1.9-.5.1-1.4.4-1.9.6zM21.5 9c-.5-.3-1.1-.2-1.4.1-.4.4-.6.9-.6 1.5 0 .9.6 1.5 1.4 1.5.5 0 .9-.3 1.2-.6.3.4.8.6 1.5.6.9 0 1.6-.7 1.6-1.6 0-1.2-1-1.7-2.3-1.7-.8 0-1.2.1-1.4.2zm1.2 2c0 .4-.3.7-.7.7-.3 0-.6-.3-.6-.7 0-.5.3-.8.6-.8.4 0 .7.3.7.8z" fill="#FFF"/></svg>
+                    </div>
+                    <!-- Google Pay Minimal SVG Icon Asset -->
+                    <div class="gb-footer-payment-card" title="Google Pay Secure Port">
+                        <svg viewBox="0 0 32 20" width="38" height="24" fill="none"><rect width="32" height="20" rx="3" fill="#FFF"/><path d="M12.5 7.4h-2.1v4.7H9.1V4.5h3.4c.9 0 1.6.3 2.1.8.5.5.8 1.2.8 2 0 .8-.3 1.4-.8 1.9-.5.6-1.2.8-2.1.8zm-2.1-1.4h1.3c.4 0 .8-.1 1-.4.3-.3.4-.6.4-1 0-.4-.1-.7-.4-.9-.2-.3-.6-.4-1-.4h-1.3v3.1zm8.2 2.4v3.7h-1.3v-.9c-.3.4-.8.9-1.6.9-.8 0-1.4-.2-1.8-.7-.4-.5-.6-1.1-.6-1.9 0-.8.3-1.5.8-2 .6-.5 1.3-.7 2.2-.7.7 0 1.3.2 1.6.5v-.3c0-.5-.2-.9-.5-1.1-.3-.3-.8-.4-1.3-.4-.7 0-1.4.3-1.8.8l-.8-.8c.7-.8 1.6-1.2 2.7-1.2 1.2 0 2 .3 2.5 1 .5.6.7 1.4.7 2.5zm-1.3 1.5v-.8c-.3-.3-.7-.4-1.1-.4-.5 0-.9.2-1.1.5-.3.3-.4.7-.4 1.2 0 .5.1.8.4 1.1.3.3.6.4 1 .4.5 0 .9-.2 1.2-.5v-1.5zM23.9 7.6l-2.4 5.6h-1.4l.9-2-2.1-4.7h1.5l1.3 3.1 1.3-3.1h1.4z" fill="#5F6368"/><path d="M7.4 7.6c0-.4 0-.8-.1-1.1H4v2.1h1.9c-.1.5-.4 1-.8 1.3v1.1h1.3c.8-.8 1-2.1 1-3.4z" fill="#4285F4"/><path d="M4 9.8c.6 0 1.2-.2 1.6-.6L4.3 8.1c-.3.2-.6.3-.9.3-.7 0-1.3-.5-1.5-1.1H.6v1.1c.7 1.3 2 1.4 3.4 1.4z" fill="#34A853"/><path d="M2.5 7.3C2.4 7 2.4 6.7 2.4 6.4c0-.3 0-.6.1-.9V4.4H.6c-.4.8-.4 1.9 0 2.9l1.9-1.5z" fill="#FBBC04"/><path d="M4 5.2c.5 0 .9.2 1.2.5l.9-.9C5.5 4.3 4.8 4 4 4c-1.4 0-2.7.8-3.4 2.1l1.9 1.5C2.7 5.7 3.3 5.2 4 5.2z" fill="#EA4335"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</footer>
+<!-- ======================================================
+   FOOTER END
+====================================================== -->
+    <!-- Component Logic Injection -->
+    <script src="script.js"></script>
+    <script src="about.js"></script>
+</body>
+</html>

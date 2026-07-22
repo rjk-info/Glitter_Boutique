@@ -501,3 +501,207 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1500);
     });
 });
+
+/**
+ * GLITTER BOUTIQUE - CONTACT US PREMIUM LAYER CONTROLLER
+ * Architectural Core: Asynchronous UX Operations & Non-Destructive Inline Field Validation
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+    'use strict';
+
+    // Verify and synchronize active Lucide icon elements context immediately
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
+
+    // Node Targeting Registry Matrix
+    const contactForm = document.getElementById('gb-contact-main-form');
+    const submitTrigger = document.getElementById('gb-contact-submit-trigger');
+    const bannerResponse = document.getElementById('gb-contact-form-response');
+
+    if (!contactForm) return;
+
+    // Strict Field Validations Mapping Core Configuration
+    const validationRules = {
+        firstname: {
+            required: true,
+            msg: 'First name is required context.'
+        },
+        lastname: {
+            required: true,
+            msg: 'Last name is required context.'
+        },
+        email: {
+            required: true,
+            pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+            msg: 'Please specify a valid luxury email coordinate.'
+        },
+        subject: {
+            required: true,
+            msg: 'Subject parameter mapping missing.'
+        },
+        message: {
+            required: true,
+            minLength: 10,
+            msg: 'Please extend your message criteria (Minimum 10 characters).'
+        }
+    };
+
+    /**
+     * Clear Single Error State Indication
+     */
+    const clearErrorIndicator = (fieldName) => {
+        const fieldNode = document.getElementById(`gb-${fieldName}`);
+        const textErrorNode = document.getElementById(`err-gb-${fieldName}`);
+        
+        if (fieldNode) fieldNode.classList.remove('invalid-state');
+        if (textErrorNode) textErrorNode.textContent = '';
+    };
+
+    /**
+     * Inject Active Single Error Indication Parameters
+     */
+    const raiseErrorIndicator = (fieldName, errorMessage) => {
+        const fieldNode = document.getElementById(`gb-${fieldName}`);
+        const textErrorNode = document.getElementById(`err-gb-${fieldName}`);
+        
+        if (fieldNode) fieldNode.classList.add('invalid-state');
+        if (textErrorNode) {
+            textErrorNode.textContent = errorMessage;
+            textErrorNode.className = 'gb-contact-field-error';
+        }
+    };
+
+    /**
+     * Isolated Inline Component Single Field Validator Evaluation Loop
+     */
+    const evaluateFieldValidity = (fieldName) => {
+        const fieldNode = document.getElementById(`gb-${fieldName}`);
+        if (!fieldNode) return true;
+
+        const rule = validationRules[fieldName];
+        const fieldValue = fieldNode.value.trim();
+
+        clearErrorIndicator(fieldName);
+
+        if (rule.required && fieldValue === '') {
+            raiseErrorIndicator(fieldName, rule.msg);
+            return false;
+        }
+
+        if (rule.pattern && !rule.pattern.test(fieldValue)) {
+            raiseErrorIndicator(fieldName, rule.msg);
+            return false;
+        }
+
+        if (rule.minLength && fieldValue.length < rule.minLength) {
+            raiseErrorIndicator(fieldName, rule.msg);
+            return false;
+        }
+
+        return true;
+    };
+
+    // Attach real-time input correction tracking nodes to reduce submission frictions
+    Object.keys(validationRules).forEach((fieldName) => {
+        const fieldNode = document.getElementById(`gb-${fieldName}`);
+        if (fieldNode) {
+            fieldNode.addEventListener('input', () => evaluateFieldValidity(fieldName));
+            fieldNode.addEventListener('blur', () => evaluateFieldValidity(fieldName));
+        }
+    });
+
+    /**
+     * Core Asynchronous Submission Dispatch Handler Thread
+     */
+    contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        // Enforce comprehensive sequence validations on form collection boundaries
+        let isFormStrictlyValid = true;
+        Object.keys(validationRules).forEach((fieldName) => {
+            const isCurrentFieldValid = evaluateFieldValidity(fieldName);
+            if (!isCurrentFieldValid) {
+                isFormStrictlyValid = false;
+            }
+        });
+
+        // Terminate and target focal point to first faulty node layout element if verification drops
+        if (!isFormStrictlyValid) {
+            const firstFaultyNode = contactForm.querySelector('.invalid-state');
+            if (firstFaultyNode) firstFaultyNode.focus();
+            return;
+        }
+
+        // Engage Hardware-Accelerated Submit Loading Handshake States
+        submitTrigger.disabled = true;
+        submitTrigger.classList.add('loading-active');
+        bannerResponse.textContent = '';
+        bannerResponse.className = 'gb-contact-response-banner';
+
+        // Pack functional request payload fields securely
+        const transmissionPayload = {
+            firstname: document.getElementById('gb-firstname').value.trim(),
+            lastname: document.getElementById('gb-lastname').value.trim(),
+            email: document.getElementById('gb-email').value.trim(),
+            phone: document.getElementById('gb-phone').value.trim(),
+            subject: document.getElementById('gb-subject').value.trim(),
+            message: document.getElementById('gb-message').value.trim()
+        };
+
+        // Simulate high-end backend microservice secure endpoint execution handshake delay
+        setTimeout(() => {
+            // Disengage hardware submit button configuration lock states
+            submitTrigger.disabled = false;
+            submitTrigger.classList.remove('loading-active');
+
+            // Set operational success messages output metrics
+            bannerResponse.textContent = 'Thank you. Your crystal concierge inquiry was dispatched flawlessly.';
+            bannerResponse.classList.add('success');
+
+            // Reset native collection fields securely
+            contactForm.reset();
+
+            // Symmetrical UX refinement: Smooth layout viewport scroll anchor to visual confirmation tracking
+            bannerResponse.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            // Clear successful transaction indicators buffer layer smoothly down the timeline
+            setTimeout(() => {
+                bannerResponse.textContent = '';
+                bannerResponse.className = 'gb-contact-response-banner';
+            }, 6000);
+
+        }, 2200);
+    });
+});
+// Ensure the navbar highlights the correct menu item based on the current page
+document.addEventListener('DOMContentLoaded', () => {
+    try {
+        const links = Array.from(document.querySelectorAll('.gb-navbar-menu-link, .gb-navbar-mobile-link'));
+        if (links.length === 0) return;
+
+        const path = window.location.pathname;
+        let current = path.substring(path.lastIndexOf('/') + 1);
+        if (!current) current = 'index.html';
+
+        links.forEach((link) => {
+            try {
+                const url = new URL(link.href, location.origin);
+                let hrefFile = url.pathname.substring(url.pathname.lastIndexOf('/') + 1);
+                if (!hrefFile) hrefFile = 'index.html';
+
+                if (hrefFile === current) {
+                    link.classList.add('gb-navbar-active');
+                } else {
+                    link.classList.remove('gb-navbar-active');
+                }
+            } catch (e) {
+                // ignore malformed hrefs
+            }
+        });
+    } catch (e) {
+        // fail-safe: do not throw
+        console.error('Navbar active link script failed', e);
+    }
+});
