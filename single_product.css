@@ -1,0 +1,729 @@
+/* ==========================================================================
+   GLITTER BOUTIQUE - CORE PRODUCT DETAIL PAGE (PDP) STYLESHEET
+   Architectural System: Section-Isolated Vanilla Layering Matrix Configuration
+   ========================================================================== */
+
+:root {
+    --gb-pdp-font-display: 'Playfair Display', serif;
+    --gb-pdp-font-body: 'Poppins', sans-serif;
+    
+    --gb-pdp-c-blue: #2F6BFF;
+    --gb-pdp-c-royal: #0057FF;
+    --gb-pdp-c-purple: #8A3DFF;
+    --gb-pdp-c-pink: #D946EF;
+    --gb-pdp-c-white: #FFFFFF;
+    --gb-pdp-c-bg-light: #F8FAFC;
+    --gb-pdp-c-border: #E2E8F0;
+    
+    --gb-pdp-text-dark: #334155;
+    --gb-pdp-text-second: #64748B;
+    --gb-pdp-text-muted: #7C8AA5;
+    
+    --gb-pdp-ease-lux: cubic-bezier(0.25, 1, 0.5, 1);
+    --gb-pdp-transition-dur: 0.35s;
+    --gb-pdp-radius-lux: 28px;
+    --gb-pdp-shadow-lux: 0 10px 40px rgba(13, 16, 40, 0.02);
+}
+
+/* Core Structural Base Elements Box Overrides Reset Rules */
+.gb-pdp-page-container {
+    background-color: var(--gb-pdp-c-white);
+    color: var(--gb-pdp-text-dark);
+}
+
+.gb-pdp-page-container *,
+.gb-pdp-page-container *::before,
+.gb-pdp-page-container *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.gb-pdp-container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.gb-pdp-section-pad { padding: 80px 0; }
+.gb-pdp-divider { width: 100%; height: 1px; background-color: var(--gb-pdp-c-border); margin: 30px 0; }
+
+/* ==========================================================================
+   BREADCRUMB SYSTEM CONTEXT TRACK
+   ========================================================================== */
+.gb-pdp-breadcrumb {
+    width: 100%;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+    background-color: var(--gb-pdp-c-white);
+}
+
+.gb-pdp-breadcrumb-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.gb-pdp-breadcrumb-link {
+    font-family: var(--gb-pdp-font-body);
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--gb-pdp-text-second);
+    text-decoration: none;
+    transition: color 0.2s linear;
+}
+
+.gb-pdp-breadcrumb-link:hover { color: var(--gb-pdp-c-royal); }
+
+.gb-pdp-breadcrumb-list li:not(:last-child)::after {
+    content: '/';
+    margin-left: 10px;
+    font-size: 11px;
+    color: var(--gb-pdp-text-muted);
+}
+
+.gb-pdp-breadcrumb-current {
+    font-family: var(--gb-pdp-font-body);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gb-pdp-text-dark);
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   PRIMARY SPLIT COLUMN MAIN SHOWCASE INTERFACE GRID (45% GALLERY / 55% META)
+   ========================================================================== */
+.gb-pdp-main-showcase {
+    padding: 60px 0;
+}
+
+.gb-pdp-split-grid {
+    display: grid;
+    grid-template-columns: 5.5fr 6.5fr; /* Strategic Editorial Asymmetrical Layout Ratio */
+    gap: 80px;
+    align-items: start;
+}
+
+/* LEFT SIDE PANEL: Multilayer Gallery Canvas Components */
+.gb-pdp-gallery-column {
+    width: 100%;
+}
+
+.gb-pdp-gallery-sticky-holder {
+    position: sticky;
+    top: 130px; /* Provides precise tracking coordinates beneath sticky elements */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.gb-pdp-gallery-main-view {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--gb-pdp-radius-lux);
+    overflow: hidden;
+    background-color: var(--gb-pdp-c-bg-light);
+    box-shadow: var(--gb-pdp-shadow-lux);
+}
+
+.gb-pdp-gallery-border-effect {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border: 1px solid rgba(243, 238, 255, 0.95);
+    border-radius: var(--gb-pdp-radius-lux);
+    pointer-events: none;
+    z-index: 3;
+}
+
+.gb-pdp-gallery-large-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s var(--gb-pdp-ease-lux);
+}
+
+.gb-pdp-gallery-glare {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.gb-pdp-gallery-badge {
+    position: absolute;
+    top: 20px; left: 20px;
+    background: var(--gb-pdp-c-white);
+    border: 1px solid var(--gb-pdp-c-border);
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-family: var(--gb-pdp-font-body);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gb-pdp-c-purple);
+    z-index: 4;
+}
+
+/* Thumbnail Strip Pipelines Layout */
+.gb-pdp-gallery-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    width: 100%;
+}
+
+.gb-pdp-thumb-btn {
+    aspect-ratio: 1 / 1;
+    border-radius: 14px;
+    overflow: hidden;
+    background-color: var(--gb-pdp-c-bg-light);
+    border: 1px solid var(--gb-pdp-c-border);
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    transition: transform 0.3s var(--gb-pdp-ease-lux), border-color 0.3s var(--gb-pdp-ease-lux);
+}
+
+.gb-pdp-thumb-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gb-pdp-thumb-btn:hover { transform: translateY(-2px); border-color: var(--gb-pdp-c-blue); }
+.gb-pdp-thumb-active { border-color: var(--gb-pdp-c-purple); border-width: 2px; box-shadow: 0 4px 12px rgba(138, 61, 255, 0.1); }
+
+/* RIGHT SIDE PANEL: Metadata Typography & Action Elements */
+.gb-pdp-details-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.gb-pdp-collection-tag {
+    font-family: var(--gb-pdp-font-body);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gb-pdp-c-purple);
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.gb-pdp-product-title {
+    font-family: var(--gb-pdp-font-display);
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--gb-pdp-text-dark);
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+/* Stars Rating Matrix Row */
+.gb-pdp-rating-summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.gb-pdp-stars {
+    display: flex;
+    gap: 3px;
+    color: #FBBF24;
+}
+
+.gb-pdp-stars i { width: 14px; height: 14px; fill: currentColor; stroke-width: 1px; }
+
+.gb-pdp-rating-text {
+    font-family: var(--gb-pdp-font-body);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gb-pdp-text-dark);
+}
+
+.gb-pdp-rating-count { color: var(--gb-pdp-text-second); font-weight: 400; }
+
+/* Pricing Base Setup Layout */
+.gb-pdp-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.gb-pdp-price-current {
+    font-family: var(--gb-pdp-font-body);
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--gb-pdp-c-royal);
+}
+
+.gb-pdp-price-old {
+    font-family: var(--gb-pdp-font-body);
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: line-through;
+    color: var(--gb-pdp-text-muted);
+}
+
+.gb-pdp-price-discount {
+    font-family: var(--gb-pdp-font-body);
+    font-size: 12px;
+    font-weight: 600;
+    color: #10B981;
+    background-color: #ECFDF5;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* PURCHASE MATRICES INPUT FORM CONTROLS GROUP */
+.gb-pdp-selection-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.gb-pdp-option-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.gb-pdp-option-label {
+    font-family: var(--gb-pdp-font-body);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gb-pdp-text-second);
+    margin-bottom: 12px;
+}
+
+/* Variant Swatches Clusters */
+.gb-pdp-swatches-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.gb-pdp-swatch-btn {
+    background: var(--gb-pdp-c-bg-light);
+    border: 1px solid var(--gb-pdp-c-border);
+    padding: 10px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-family: var(--gb-pdp-font-body);
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--gb-pdp-text-dark);
+    outline: none;
+    transition: border-color var(--gb-pdp-transition-dur) var(--gb-pdp-ease-lux),
+                background-color var(--gb-pdp-transition-dur) var(--gb-pdp-ease-lux);
+}
+
+.gb-pdp-swatch-color { width: 14px; height: 14px; border-radius: 50%; display: inline-block; border: 1px solid rgba(0,0,0,0.05); }
+.gb-pdp-swatch-btn:hover { border-color: rgba(47, 107, 255, 0.4); }
+.gb-pdp-swatch-active { border-color: var(--gb-pdp-c-blue); background-color: var(--gb-pdp-c-white); box-shadow: 0 4px 15px rgba(47, 107, 255, 0.05); }
+
+/* Quantity Stepper Engine Blocks */
+.gb-pdp-qty-stepper {
+    display: flex;
+    align-items: center;
+    background-color: var(--gb-pdp-c-bg-light);
+    border: 1px solid var(--gb-pdp-c-border);
+    border-radius: 12px;
+    overflow: hidden;
+    height: 46px;
+}
+
+.gb-pdp-qty-btn {
+    width: 46px;
+    height: 100%;
+    background: none;
+    border: none;
+    font-family: var(--gb-pdp-font-body);
+    font-size: 16px;
+    color: var(--gb-pdp-text-dark);
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s linear;
+}
+
+.gb-pdp-qty-btn:hover { background-color: rgba(226, 232, 240, 0.5); }
+
+.gb-pdp-qty-input {
+    width: 50px;
+    height: 100%;
+    border: none;
+    background: none;
+    text-align: center;
+    font-family: var(--gb-pdp-font-body);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gb-pdp-text-dark);
+    -moz-appearance: textfield; /* Remove spinning bounds arrows natively */
+}
+
+.gb-pdp-qty-input::-webkit-outer-spin-button,
+.gb-pdp-qty-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+/* Checkout Triggers Core System Box */
+.gb-pdp-action-triggers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.gb-pdp-btn {
+    height: 54px;
+    border-radius: 30px;
+    font-family: var(--gb-pdp-font-body);
+    font-size: 13.5px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: transform var(--gb-pdp-transition-dur) var(--gb-pdp-ease-lux),
+                box-shadow var(--gb-pdp-transition-dur) var(--gb-pdp-ease-lux),
+                background var(--gb-pdp-transition-dur) var(--gb-pdp-ease-lux);
+}
+
+.gb-pdp-btn-primary {
+    background: linear-gradient(135deg, var(--gb-pdp-c-royal) 0%, var(--gb-pdp-c-purple) 100%);
+    color: var(--gb-pdp-c-white);
+    box-shadow: 0 4px 20px rgba(0, 87, 255, 0.25);
+}
+
+.gb-pdp-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 87, 255, 0.35); filter: brightness(1.03); }
+
+.gb-pdp-btn-outline {
+    background: transparent;
+    border: 1px solid var(--gb-pdp-text-dark);
+    color: var(--gb-pdp-text-dark);
+}
+
+.gb-pdp-btn-outline:hover { background-color: var(--gb-pdp-text-dark); color: var(--gb-pdp-c-white); }
+
+/* Horizontal Minimal Trust Badging Rings Row */
+.gb-pdp-trust-badges {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 40px;
+    border-top: 1px dashed var(--gb-pdp-c-border);
+    padding-top: 30px;
+}
+
+.gb-pdp-trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+}
+
+.gb-pdp-trust-item i { width: 18px; height: 18px; color: var(--gb-pdp-c-blue); stroke-width: 1.8px; }
+.gb-pdp-trust-item span { font-family: var(--gb-pdp-font-body); font-size: 11px; font-weight: 500; color: var(--gb-pdp-text-second); line-height: 1.4; }
+
+/* ==========================================================================
+   SECTION 2: STICKY CONTEXT DATA SPECIFICATION TABS NAVIGATION SYSTEM
+   ========================================================================== */
+.gb-pdp-tabs-section {
+    width: 100%;
+    background-color: var(--gb-pdp-c-bg-light);
+    border-top: 1px solid var(--gb-pdp-c-border);
+    border-bottom: 1px solid var(--gb-pdp-c-border);
+    padding-bottom: 60px;
+}
+
+.gb-pdp-tabs-nav-bar {
+    position: sticky;
+    top: 90px; /* Synchronizes perfectly beneath primary application header bars clearance bounds */
+    width: 100%;
+    background: rgba(248, 250, 252, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+    z-index: 99;
+}
+
+.gb-pdp-tabs-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 40px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.gb-pdp-tabs-list::-webkit-scrollbar { display: none; }
+
+.gb-pdp-tab-trigger {
+    background: none;
+    border: none;
+    padding: 24px 0;
+    font-family: var(--gb-pdp-font-body);
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gb-pdp-text-second);
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    white-space: nowrap;
+    transition: color var(--gb-pdp-transition-dur) var(--gb-pdp-ease-lux);
+}
+
+.gb-pdp-tab-trigger:hover { color: var(--gb-pdp-text-dark); }
+
+.gb-pdp-tab-trigger::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 0; width: 100%; height: 2px;
+    background-color: var(--gb-pdp-c-purple);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--gb-pdp-transition-dur) var(--gb-pdp-ease-lux);
+}
+
+.gb-pdp-tab-active { color: var(--gb-pdp-text-dark); font-weight: 600; }
+.gb-pdp-tab-active::after { transform: scaleX(1); transform-origin: left; }
+
+/* Content Switch Viewport Panels */
+.gb-pdp-tabs-content-viewport {
+    max-width: 760px;
+    margin: 50px auto 0 auto;
+    text-align: center;
+}
+
+.gb-pdp-tab-panel {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s var(--gb-pdp-ease-lux), transform 0.4s var(--gb-pdp-ease-lux);
+    will-change: opacity, transform;
+}
+
+.gb-pdp-tab-panel.gb-pdp-panel-active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gb-pdp-tab-panel p {
+    font-family: var(--gb-pdp-font-body);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--gb-pdp-text-second);
+}
+
+/* ==========================================================================
+   SECTION 3: REUSABLE RELATED PRODUCT SHOWCASE SHILLS
+   ========================================================================== */
+.gb-pdp-section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.gb-pdp-section-title {
+    font-family: var(--gb-pdp-font-display);
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--gb-pdp-text-dark);
+    letter-spacing: -0.5px;
+}
+
+.gb-pdp-product-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.gb-pdp-showcase-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.gb-pdp-showcase-img-frame {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: var(--gb-pdp-c-bg-light);
+    margin-bottom: 20px;
+    border: 1px solid var(--gb-pdp-c-border);
+    transition: transform 0.4s var(--gb-pdp-ease-lux);
+}
+
+.gb-pdp-showcase-img-frame img { width: 100%; height: 100%; object-fit: cover; }
+.gb-pdp-showcase-card:hover .gb-pdp-showcase-img-frame { transform: translateY(-4px); }
+
+.gb-pdp-showcase-title { font-family: var(--gb-pdp-font-display); font-size: 20px; font-weight: 600; color: var(--gb-pdp-text-dark); margin-bottom: 6px; }
+.gb-pdp-showcase-price { font-family: var(--gb-pdp-font-body); font-size: 15px; font-weight: 500; color: var(--gb-pdp-c-royal); }
+
+/* ==========================================================================
+   SECTION 4: HORIZONTAL DYNAMIC TRACK HISTORY RECENTS ROW
+   ========================================================================== */
+.gb-pdp-recents-bg { background-color: var(--gb-pdp-c-bg-light); border-top: 1px solid var(--gb-pdp-c-border); }
+.gb-pdp-section-title-sm { font-family: var(--gb-pdp-font-body); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--gb-pdp-text-second); }
+
+.gb-pdp-recents-row {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    width: 100%;
+}
+
+.gb-pdp-recent-item-thumb {
+    background-color: var(--gb-pdp-c-white);
+    border: 1px solid var(--gb-pdp-c-border);
+    padding: 10px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 240px;
+}
+
+.gb-pdp-recent-item-thumb img { width: 50px; height: 50px; object-fit: cover; border-radius: 8px; background-color: var(--gb-pdp-c-bg-light); }
+.gb-pdp-recent-item-thumb h4 { font-family: var(--gb-pdp-font-body); font-size: 13px; font-weight: 500; color: var(--gb-pdp-text-dark); }
+.gb-pdp-recent-item-thumb span { font-family: var(--gb-pdp-font-body); font-size: 12px; font-weight: 600; color: var(--gb-pdp-c-royal); }
+
+/* ==========================================================================
+   SECTION 5: HIGH-SPEC INTEGRATED CONCIERGE CALL TO ACTION BRIDGES
+   ========================================================================== */
+.gb-pdp-cta-block {
+    position: relative;
+    width: 100%;
+    background-color: #0D0D0D; /* Injects rich premium contrast anchor rows space */
+    padding: 110px 40px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.gb-pdp-cta-mesh {
+    position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle at center, rgba(138, 61, 255, 0.15) 0%, rgba(47, 107, 255, 0.05) 50%, transparent 70%);
+    pointer-events: none;
+}
+
+.gb-pdp-cta-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
+
+.gb-pdp-cta-title {
+    font-family: var(--gb-pdp-font-display);
+    font-size: 44px;
+    font-weight: 400;
+    color: var(--gb-pdp-c-white);
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.gb-pdp-cta-desc {
+    font-family: var(--gb-pdp-font-body);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--gb-pdp-text-muted);
+    max-width: 600px;
+    margin-bottom: 35px;
+}
+
+.gb-pdp-cta-btn {
+    text-decoration: none;
+    height: 52px;
+    padding: 0 34px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, var(--gb-pdp-c-blue) 0%, var(--gb-pdp-c-purple) 100%);
+    color: var(--gb-pdp-c-white);
+    font-family: var(--gb-pdp-font-body);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(0, 87, 255, 0.25);
+    transition: transform var(--gb-pdp-transition-dur) var(--gb-pdp-ease-lux), box-shadow var(--gb-pdp-transition-dur) var(--gb-pdp-ease-lux);
+}
+
+.gb-pdp-cta-btn i { width: 14px; height: 14px; stroke-width: 2.5px; transition: transform var(--gb-pdp-transition-dur) var(--gb-pdp-ease-lux); }
+.gb-pdp-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0, 87, 255, 0.35); }
+.gb-pdp-cta-btn:hover i { transform: translateX(4px); }
+
+/* Focus outlines constraints mappings handles */
+.gb-pdp-swatch-btn:focus-visible,
+.gb-pdp-qty-btn:focus-visible,
+.gb-pdp-btn:focus-visible,
+.gb-pdp-thumb-btn:focus-visible,
+.gb-pdp-tab-trigger:focus-visible,
+.gb-pdp-cta-btn:focus-visible {
+    outline: 2px dashed var(--gb-pdp-c-purple);
+    outline-offset: 4px;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES - BREAKPOINT INTERCEPT matrix LAYOUTS
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .gb-pdp-container { padding: 0 40px; }
+    .gb-pdp-split-grid { gap: 45px; }
+    .gb-pdp-product-title { font-size: 34px; }
+}
+
+@media (max-width: 992px) {
+    /* Collapse asymmetrical column grid runway cleanly into vertical rows mapping stack */
+    .gb-pdp-split-grid { grid-template-columns: 1fr; gap: 40px; max-width: 680px; margin: 0 auto; }
+    .gb-pdp-gallery-sticky-holder { position: static; }
+    .gb-pdp-product-showcase-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .gb-pdp-cta-title { font-size: 34px; }
+}
+
+@media (max-width: 680px) {
+    .gb-pdp-product-showcase-grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
+    .gb-pdp-tabs-list { gap: 24px; justify-content: flex-start; }
+    .gb-pdp-tabs-content-viewport { margin-top: 35px; }
+}
+
+@media (max-width: 480px) {
+    .gb-pdp-container { padding: 0 24px; }
+    .gb-pdp-main-showcase { padding: 30px 0; }
+    .gb-pdp-product-title { font-size: 28px; }
+    .gb-pdp-action-triggers { grid-template-columns: 1fr; gap: 12px; }
+    .gb-pdp-btn { width: 100%; }
+    .gb-pdp-gallery-main-view { border-radius: 20px; }
+    .gb-pdp-gallery-border-effect { border-radius: 20px; }
+    .gb-pdp-gallery-thumbnails { gap: 10px; }
+    .gb-pdp-thumb-btn { border-radius: 10px; }
+    .gb-pdp-cta-title { font-size: 26px; }
+}

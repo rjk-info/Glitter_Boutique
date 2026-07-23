@@ -323,6 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
     productGrid.addEventListener('click', (event) => {
         const quickViewBtn = event.target.closest('.gb-product-quickview-trigger');
         const wishlistBtn = event.target.closest('.gb-product-wishlist-btn');
+        const addCartBtn = event.target.closest('[data-gb-home-add-cart]');
 
         if (quickViewBtn) {
             const productTitle = quickViewBtn.closest('.gb-product-card').querySelector('.gb-product-title').textContent;
@@ -333,13 +334,40 @@ document.addEventListener('DOMContentLoaded', () => {
         if (wishlistBtn) {
             event.preventDefault();
             const productTitle = wishlistBtn.closest('.gb-product-card').querySelector('.gb-product-title').textContent;
-            
+
             // Toggle local presentation logic for wishlist actioning tracking states
-            const heartIcon = wishlistBtn.querySelector('i');
             const isActive = wishlistBtn.getAttribute('aria-pressed') === 'true';
-            
-            wishlistBtn.setAttribute('aria-pressed', !isActive);
+
+            wishlistBtn.setAttribute('aria-pressed', String(!isActive));
             console.log(`Toggle wishlist database reference parameter updates for: ${productTitle}`);
+        }
+
+        if (addCartBtn) {
+            event.preventDefault();
+
+            const card = addCartBtn.closest('.gb-product-card');
+            if (!card) return;
+
+            const productTitle = card.querySelector('.gb-product-title')?.textContent || 'Product';
+            const labelSpan = addCartBtn.querySelector('span');
+
+            addCartBtn.classList.add('gb-product-add-cart-added');
+            if (labelSpan) labelSpan.textContent = 'Added';
+
+            // Minimal cart persistence + navbar badge update
+            try {
+                const key = 'gb_cart_home';
+                const current = JSON.parse(localStorage.getItem(key) || '[]');
+                current.push({ title: productTitle, ts: Date.now() });
+                localStorage.setItem(key, JSON.stringify(current));
+
+                const cartBadge = document.querySelector('.gb-navbar-cart-badge');
+                if (cartBadge) cartBadge.textContent = String(current.length);
+            } catch (e) {
+                // fail silently
+            }
+
+            console.log(`Add to cart action triggered for: ${productTitle}`);
         }
     });
 });

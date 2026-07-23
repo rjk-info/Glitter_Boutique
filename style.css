@@ -521,7 +521,7 @@ body {
     font-size: 44px;
     font-weight: 400;
     line-height: 1.25;
-    background: linear-gradient(135deg, #2F6BFF 0%, #8A3DFF 100%);
+    background: #EC1E79;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 20px;
@@ -1499,7 +1499,6 @@ body {
 /* ======================================================
    BEST SELLERS / FEATURED PRODUCTS
 ====================================================== */
-
 .gb-product {
     position: relative;
     width: 100%;
@@ -1604,13 +1603,14 @@ body {
 }
 
 /* Overlapping Floating Product Image Container */
+./* Overlapping Floating Product Image Container */
 .gb-product-image-container {
     position: relative;
     width: calc(100% - 12px);
     aspect-ratio: 1 / 1;
     border-radius: 18px;
     overflow: hidden;
-    margin-top: -50px; /* Shifts image upward to structurally overlap top border line */
+    margin-top: -50px;
     margin-bottom: 24px;
     box-shadow: 0 12px 30px rgba(31, 41, 55, 0.08);
     background-color: #FFF5F8;
@@ -1620,7 +1620,14 @@ body {
     z-index: 3;
 }
 
+.gb-product-image-container > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 .gb-product-image {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1640,9 +1647,16 @@ body {
     align-items: center;
     justify-content: center;
     opacity: 0;
+    pointer-events: none;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     transition: opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 4;
+}
+
+.gb-product-image-container:hover .gb-product-quickview-mask {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .gb-product-quickview-trigger {
@@ -1658,10 +1672,15 @@ body {
     font-size: 12px;
     font-weight: 500;
     color: #2B2B2B;
+    text-decoration: none;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transform: translateY(10px);
     transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
                 background-color 0.25s linear;
+}
+
+.gb-product-image-container:hover .gb-product-quickview-trigger {
+    transform: translateY(0);
 }
 
 .gb-product-quickview-trigger i {
@@ -1802,6 +1821,69 @@ body {
     color: #8A7A7A;
 }
 
+/* Add To Cart Button — matches products listing page design */
+.gb-products-card-link {
+  position: relative;
+  width: 100%;
+  min-height: 42px;
+  margin-top: 14px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #EC1E79 0%, #9B4F96 100%);
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+  box-shadow: 0 8px 20px rgba(155, 79, 150, 0.22);
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+              filter 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gb-products-card-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateX(-100%);
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gb-products-card-link span,
+.gb-products-card-link i {
+  position: relative;
+  z-index: 1;
+}
+
+.gb-products-card-link i {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gb-products-card-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(155, 79, 150, 0.32);
+  filter: brightness(1.03);
+}
+
+.gb-products-card-link:hover::before {
+  transform: translateX(0);
+}
+
+.gb-products-card-link:hover i {
+  transform: translate(2px, -2px);
+}
 /* ======================================================
    HARDWARE-ACCELERATED KINETIC HOVER CONFIGURATIONS
 ====================================================== */
