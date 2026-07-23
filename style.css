@@ -445,6 +445,317 @@ body {
 }
 
 
+/* ========================================================
+   HOME PAGE - SHOP BY CATEGORIES
+======================================================== */
+
+.gb-home-category {
+    position: relative;
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 90px 0; /* Compact premium home framework layout margins */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Atmospheric Layer Overlays */
+.gb-home-category-ambient-mesh {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 15% 50%, rgba(47, 107, 255, 0.02) 0%, transparent 45%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gb-home-category-glow-purple {
+    position: absolute;
+    bottom: -10%; right: -5%; width: 550px; height: 550px;
+    background: radial-gradient(circle, rgba(138, 61, 255, 0.03) 0%, rgba(219, 70, 239, 0.01) 60%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(30px);
+}
+
+.gb-home-category-glitter-particles {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0.02;
+    background-image: radial-gradient(#8A3DFF 1px, transparent 1px);
+    background-size: 50px 40px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gb-home-category-wrapper {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 60px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Structural Symmetrical Center Header */
+.gb-home-category-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 60px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gb-home-category-tagline {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #EC1E79;
+    margin-bottom: 16px;
+}
+
+.gb-home-category-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 1.25;
+    background: linear-gradient(135deg, #2F6BFF 0%, #8A3DFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.gb-home-category-lead-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #64748B;
+}
+
+/* Slider Track Infrastructure Workspace Container */
+.gb-home-category-slider-workspace {
+    position: relative;
+    width: 100%;
+}
+
+.gb-home-category-slider-track {
+    width: 100%;
+    display: flex;
+    gap: 36px; /* Premium spacing boundaries between layout nodes */
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Strip scrollbar on Firefox view layers */
+    padding: 15px 4px; /* Buffers bounding shadows safely */
+    cursor: grab;
+    user-select: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.gb-home-category-slider-track::-webkit-scrollbar {
+    display: none; /* Strip scrollbars entirely on Webkit layout streams */
+}
+
+.gb-home-category-slider-track:active {
+    cursor: grabbing;
+}
+
+/* Circular Card Element Blueprint mapping rules */
+.gb-home-category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+    /* Computes proportional base scaling metrics across high-end desktop layouts */
+    width: calc((100% - (36px * 6)) / 7); 
+    min-width: 140px; 
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+.gb-home-category-circle-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: rgba(248, 258, 252, 0.4);
+    box-shadow: 0 8px 30px rgba(13, 16, 40, 0.03);
+    overflow: hidden;
+    margin-bottom: 20px;
+    transform: translateZ(0); /* Locks core compositor boundary context safely */
+}
+
+/* Microscopic Gradient Ring Layers Border Animation */
+.gb-home-category-ring-gradient {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border: 1px solid rgba(243, 238, 255, 0.9);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 4;
+    transition: border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes gbHomeRingRotation {
+    to { transform: rotate(360deg); }
+}
+
+.gb-home-category-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    transform: scale(1.01);
+    transition: transform 0.55s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+.gb-home-category-glass-glare {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 3;
+}
+
+.gb-home-category-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13.5px;
+    font-weight: 600; /* Poppins SemiBold */
+    color: #334155;
+    letter-spacing: 0.2px;
+    text-align: center;
+    transition: color 0.3s linear;
+}
+
+/* --- HARDWARE-ACCELERATED MICRO INTERACTIVE HOVER ACTIONS --- */
+@keyframes gbHomeCardFloating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+.gb-home-category-card:hover {
+    transform: translateY(-4px);
+    animation: gbHomeCardFloating 3s ease-in-out infinite alternate 0.4s;
+}
+
+.gb-home-category-card:hover .gb-home-category-image {
+    transform: scale(1.05);
+}
+
+.gb-home-category-card:hover .gb-home-category-ring-gradient {
+    border-color: rgba(47, 107, 255, 0.4);
+    box-shadow: 0 0 15px rgba(0, 87, 255, 0.06);
+}
+
+.gb-home-category-card:hover .gb-home-category-title {
+    color: #0057FF;
+}
+
+/* Directional Control Utility Button Arrows */
+.gb-home-category-arrow {
+    position: absolute;
+    top: calc(50% - 20px);
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(232, 232, 232, 0.8);
+    color: #334155;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    outline: none;
+    box-shadow: 0 4px 15px rgba(13, 16, 40, 0.05);
+    transition: background-color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                border-color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                opacity 0.3s linear;
+}
+
+.gb-home-category-arrow i {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2px;
+}
+
+.gb-home-category-arrow-left { left: -23px; }
+.gb-home-category-arrow-right { right: -23px; }
+
+.gb-home-category-arrow:hover {
+    background-color: #0D0D0D;
+    border-color: #0D0D0D;
+    color: #FFFFFF;
+}
+
+/* Focus Indicator Outlines Accessibility */
+.gb-home-category-card:focus-visible,
+.gb-home-category-arrow:focus-visible {
+    outline: 2px dashed #8A3DFF;
+    outline-offset: 4px;
+}
+
+/* --- PERFORMANCE ASYNCHRONOUS SCROLL REVEAL STATES --- */
+.gb-home-category-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+}
+
+.gb-home-category-visible.gb-home-category-reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================================================
+   RESPONSIVE GRID TUNING LAYOUT INTERCEPTS MATRIX
+======================================================== */
+@media (max-width: 1200px) {
+    .gb-home-category-wrapper { padding: 0 40px; }
+    .gb-home-category-card {
+        width: calc((100% - (28px * 4)) / 5); /* 5 cards view base */
+        gap: 28px;
+    }
+    .gb-home-category-slider-track { gap: 28px; }
+}
+
+@media (max-width: 992px) {
+    .gb-home-category-card {
+        width: calc((100% - (24px * 3)) / 4); /* 4 cards view base on tablets */
+    }
+    .gb-home-category-slider-track { gap: 24px; }
+    .gb-home-category-arrow { display: none; } /* Drop hard button controls entirely on gesture environments */
+    .gb-home-category-main-title { font-size: 36px; }
+    .gb-home-category { padding: 75px 0; }
+}
+
+@media (max-width: 576px) {
+    .gb-home-category-wrapper { padding: 0 24px; }
+    .gb-home-category { padding: 60px 0; }
+    .gb-home-category-header { margin-bottom: 45px; }
+    .gb-home-category-main-title { font-size: 28px; }
+    
+    /* Strict Mobile Constraint Parameterizations: Displays exactly 2.5 cards on mobile */
+    .gb-home-category-card {
+        width: calc((100% - (20px * 2)) / 2.5); 
+        min-width: auto;
+    }
+    .gb-home-category-slider-track {
+        gap: 20px;
+        padding-bottom: 20px; /* Buffers horizontal touch glide margins safely */
+    }
+}
+
 /* ==========================================================================
    MEDIA QUERIES - BREAKPOINT INTERCEPT MATRIX (992px Grid Adaptive Mode)
    ========================================================================== */

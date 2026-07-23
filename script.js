@@ -721,3 +721,120 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Navbar active link script failed', e);
     }
 });
+
+/* ========================================================
+   HOME PAGE - SHOP BY CATEGORIES MODULE DRIVER
+======================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    'use strict';
+
+    // Synchronize newly embedded lucide node vectors safely
+    if (window.lucide) {
+        window.lucide.createIcons();
+    }
+
+    const sliderWorkspace = document.querySelector('.gb-home-category-slider-workspace');
+    const trackView = document.getElementById('gb-home-cat-track-view');
+    const arrowPrev = document.getElementById('gb-home-cat-arrow-prev');
+    const arrowNext = document.getElementById('gb-home-cat-arrow-next');
+
+    if (!trackView || !sliderWorkspace) return;
+
+    /* ========================================================
+       1. ARROW UTILITY INCREMENT SCROLL COMPONENT HANDSHAKE
+       ======================================================== */
+    const updateArrowVisibilityStates = () => {
+        // Drop calculations instantly if arrows are intentionally hidden inside media matrices
+        if (window.getComputedStyle(arrowPrev).display === 'none') return;
+
+        const currentScrollLeft = trackView.scrollLeft;
+        const maximumScrollLeft = trackView.scrollWidth - trackView.clientWidth;
+
+        // Buffers micro pixel values to prevent edge clipping handshakes
+        arrowPrev.style.opacity = currentScrollLeft <= 2 ? '0' : '1';
+        arrowPrev.style.pointerEvents = currentScrollLeft <= 2 ? 'none' : 'auto';
+        
+        arrowNext.style.opacity = currentScrollLeft >= maximumScrollLeft - 2 ? '0' : '1';
+        arrowNext.style.pointerEvents = currentScrollLeft >= maximumScrollLeft - 2 ? 'none' : 'auto';
+    };
+
+    const runHorizontalScrollStep = (direction) => {
+        const offsetStepWidth = trackView.clientWidth * 0.65; // Scroll by 65% of screen width chunk metrics
+        const targetScrollLeft = trackView.scrollLeft + (direction === 'next' ? offsetStepWidth : -offsetStepWidth);
+        
+        trackView.scrollTo({
+            left: targetScrollLeft,
+            behavior: 'smooth'
+        });
+    };
+
+    if (arrowPrev && arrowNext) {
+        arrowPrev.addEventListener('click', () => runHorizontalScrollStep('prev'));
+        arrowNext.addEventListener('click', () => runHorizontalScrollStep('next'));
+    }
+
+    // Attach passive scrolling update loops
+    trackView.addEventListener('scroll', updateArrowVisibilityStates, { passive: true });
+    window.addEventListener('resize', updateArrowVisibilityStates, { passive: true });
+
+    /* ========================================================
+       2. FLUID MOUSE DRAG VELOCITY PHYSICS ENGINE
+       ======================================================== */
+    let isDraggingActive = false;
+    let cursorPositionStartX = 0;
+    let trackPositionScrollStartX = 0;
+
+    trackView.addEventListener('mousedown', (event) => {
+        // Prevent event triggering if middle click parameter is matched
+        if (event.button !== 0) return;
+
+        isDraggingActive = true;
+        trackView.style.scrollBehavior = 'auto'; // Temporarily drop smooth easing variables to follow pointer values instantly
+        
+        cursorPositionStartX = event.pageX - trackView.offsetLeft;
+        trackPositionScrollStartX = trackView.scrollLeft;
+    });
+
+    const terminateDragGestureLoop = () => {
+        if (!isDraggingActive) return;
+        isDraggingActive = false;
+        trackView.style.scrollBehavior = 'smooth'; // Restore framework easing handshakes
+    };
+
+    trackView.addEventListener('mouseleave', terminateDragGestureLoop);
+    trackView.addEventListener('mouseup', terminateDragGestureLoop);
+
+    trackView.addEventListener('mousemove', (event) => {
+        if (!isDraggingActive) return;
+        event.preventDefault();
+
+        const currentCursorX = event.pageX - trackView.offsetLeft;
+        const calculatedDistanceTravelledX = (currentCursorX - cursorPositionStartX) * 1.5; // Integrates custom drag sensitivity modifier multipliers
+        
+        trackView.scrollLeft = trackPositionScrollStartX - calculatedDistanceTravelledX;
+    });
+
+    /* ========================================================
+       3. NATIVE VISIBLE INTERSECTION OBSERVATION LAYER
+       ======================================================== */
+    const intersectionConfig = {
+        root: null,
+        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.1
+    };
+
+    const handleEntranceRevealIntersection = (entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('gb-home-category-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const moduleRevealObserver = new IntersectionObserver(handleEntranceRevealIntersection, intersectionConfig);
+    moduleRevealObserver.observe(sliderWorkspace);
+
+    // Run initial rendering layout configuration cycles
+    setTimeout(updateArrowVisibilityStates, 200);
+});
