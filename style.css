@@ -1193,7 +1193,7 @@ body {
 ====================================================== */
 @media (max-width: 1200px) {
     .gb-why {
-        padding: 100px 0;
+        padding: 10px 0;
     }
     .gb-why-grid {
         gap: 30px;
@@ -1205,7 +1205,7 @@ body {
 
 @media (max-width: 992px) {
     .gb-why-container {
-        padding: 0 40px;
+        padding: 0 10px;
     }
     /* Shift matrix to 2 columns */
     .gb-why-grid {
@@ -1231,7 +1231,7 @@ body {
         padding: 0 24px;
     }
     .gb-why {
-        padding: 80px 0;
+        padding: 4px 0;
     }
     /* Shift matrix to linear single column layout stack */
     .gb-why-grid {
@@ -1875,7 +1875,7 @@ body {
         padding: 0 24px;
     }
     .gb-product {
-        padding: 120px 0 80px 0;
+        padding: 20px 0 80px 0;
     }
     /* Collapse down to clean 1-column layout matrix flows */
     .gb-product-grid {
