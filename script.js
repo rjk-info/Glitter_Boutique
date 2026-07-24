@@ -866,3 +866,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Run initial rendering layout configuration cycles
     setTimeout(updateArrowVisibilityStates, 200);
 });
+
+// WhatsApp floating button - dynamic link with pre-filled message
+document.addEventListener("DOMContentLoaded", function () {
+    const waButton = document.getElementById("whatsapp-float");
+
+    const phoneNumber = "919999999999"; // ✅ apna number yaha daalo (country code ke sath, + ya 00 mat lagana)
+    const message = "Hi! Main aapke products ke baare mein jaanna chahta/chahti hoon."; // ✅ apna pre-filled message yaha likho
+
+    const encodedMessage = encodeURIComponent(message);
+    waButton.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+});

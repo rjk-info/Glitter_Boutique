@@ -98,7 +98,7 @@ body {
 
 .gb-navbar-logo-img {
     display: block;
-    height: 90px;
+    height: 70px;
     width: auto;
     max-width: 220px;
     object-fit: contain;
@@ -1586,6 +1586,7 @@ body {
     background: rgba(255, 255, 255, 0.85);
     /* Dual gradient boundary micro border architecture */
     border: 1px solid rgba(243, 238, 255, 0.8); 
+     height: 100%;
     border-radius: 22px;
     padding: 0 24px 35px 24px;
     display: flex;
@@ -1603,11 +1604,10 @@ body {
 }
 
 /* Overlapping Floating Product Image Container */
-./* Overlapping Floating Product Image Container */
 .gb-product-image-container {
     position: relative;
     width: calc(100% - 12px);
-    aspect-ratio: 1 / 1;
+    height: 240px;              /* ✅ FIXED height sab cards ke liye same */
     border-radius: 18px;
     overflow: hidden;
     margin-top: -50px;
@@ -1769,6 +1769,10 @@ body {
     color: #2B2B2B;
     margin-bottom: 8px;
     letter-spacing: -0.1px;
+    white-space: nowrap;       /* ✅ ADD */
+    overflow: hidden;          /* ✅ ADD */
+    text-overflow: ellipsis;   /* ✅ ADD (lamba naam ho to ... aa jayega) */
+    max-width: 100%;           /* ✅ ADD */
 }
 
 .gb-product-short-desc {
@@ -1779,6 +1783,11 @@ body {
     color: #8A7A7A;
     margin-bottom: 14px;
     padding: 0 8px;
+    display: -webkit-box;          /* ✅ ADD */
+    -webkit-line-clamp: 2;         /* ✅ ADD — sirf 2 line dikhegi */
+    -webkit-box-orient: vertical;  /* ✅ ADD */
+    overflow: hidden;              /* ✅ ADD */
+    min-height: 39px;              /* ✅ ADD (2 line ki fixed space) */
 }
 
 /* Elegant Sparkle Gold Ratings Ring */
@@ -1826,7 +1835,7 @@ body {
   position: relative;
   width: 100%;
   min-height: 42px;
-  margin-top: 14px;
+  margin-top: auto;
   padding: 0 16px;
   border: 0;
   border-radius: 30px;
@@ -2122,7 +2131,7 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 28px;
     font-weight: 600;
-    color: #2B2B2B;
+    color: #EE3A8A;
     margin-bottom: 24px;
     letter-spacing: -0.2px;
 }
@@ -3205,7 +3214,7 @@ body {
     width: 100%;
     background: linear-gradient(180deg, var(--gb-footer-bg-main) 0%, var(--gb-footer-bg-deep) 60%, #140C16 100%);
     border-radius: 30px 30px 0 0;
-    padding: 120px 0 40px 0;
+    padding: 20px 0 20px 0;
     overflow: hidden;
     color: var(--gb-footer-text-light);
     box-sizing: border-box;
@@ -3224,6 +3233,74 @@ body {
     z-index: 1;
 }
 
+/* Floating WhatsApp Button */
+#whatsapp-float {
+    position: fixed;
+    bottom: 125px;
+    right: 25px;
+    width: 58px;
+    height: 58px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+    text-decoration: none;
+    animation: wa-pulse 2s infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#whatsapp-float:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.wa-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Small hover tooltip */
+.wa-tooltip {
+    position: absolute;
+    right: 68px;
+    background-color: #2B2B2B;
+    color: #FFFFFF;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#whatsapp-float:hover .wa-tooltip {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Pulse animation for attention */
+@keyframes wa-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+    70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Mobile responsive */
+@media (max-width: 576px) {
+    #whatsapp-float {
+        width: 52px;
+        height: 52px;
+        bottom: 18px;
+        right: 18px;
+    }
+}
 .gb-footer-sparkle-overlay {
     position: absolute;
     top: 0;
@@ -3264,6 +3341,7 @@ body {
     text-align: center;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
     box-sizing: border-box;
+    display: none;
 }
 
 .gb-footer-newsletter-header {
@@ -3432,7 +3510,7 @@ body {
 
 .gb-footer-logo-img {
     display: block;
-    height: 56px;
+    height: 70px;
     width: auto;
     max-width: 220px;
     object-fit: contain;
@@ -3538,7 +3616,11 @@ body {
     padding: 2px 0;
     transition: color var(--gb-footer-duration) var(--gb-footer-ease);
 }
-
+.gb-footer-social-btn svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2px;
+}
 /* Micro Interaction: Smooth Luxury Underline Track */
 .gb-footer-link::after {
     content: '';
@@ -3628,7 +3710,7 @@ body {
 ====================================================== */
 @media (max-width: 1200px) {
     .gb-footer {
-        padding: 90px 0 35px 0;
+        padding: 15px 0 15px 0;
     }
     .gb-footer-wrapper {
         padding: 0 40px;
