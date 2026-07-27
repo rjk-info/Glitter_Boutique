@@ -47,7 +47,7 @@
                 <a href="/account" class="gb-navbar-utility-btn" aria-label="View Account Profile">
                     <i data-lucide="user" class="gb-navbar-icon"></i>
                 </a>
-                <a href="/cart" class="gb-navbar-utility-btn gb-navbar-cart-trigger" aria-label="View Shopping Cart, 3 items inside">
+                <a href="/cart.html" class="gb-navbar-utility-btn gb-navbar-cart-trigger" aria-label="View Shopping Cart, 3 items inside">
                     <i data-lucide="shopping-bag" class="gb-navbar-icon"></i>
                     <span class="gb-navbar-cart-badge" aria-hidden="true">3</span>
                 </a>
@@ -113,190 +113,355 @@
     </div>
 
 
-    <!-- SECTION 1: EDITORIAL PAGE HERO -->
-    <section class="gb-contact-hero" aria-labelledby="gb-contact-hero-title">
-        <div class="gb-contact-hero-bg-wrapper">
-            <img class="gb-contact-hero-image" src="assets/images/contact-banner.jpg" alt="Luxury premium editorial beauty showcase background" loading="eager" decoding="async">
-            <div class="gb-contact-hero-overlay" aria-hidden="true"></div>
-        </div>
-        <div class="gb-contact-hero-content">
-            <span class="gb-contact-label">Contact</span>
-            <h1 id="gb-contact-hero-title" class="gb-contact-hero-main">We'd Love To Hear From You</h1>
-            <p class="gb-contact-hero-desc">
-                Have a question about our products, orders or collaborations? <br>Our specialist team is here to assist you seamlessly.
-            </p>
-        </div>
-    </section>
 
-    <!-- SECTION 2: CORE INTERACTIVE WORKSPACE (INFO CARDS VS FORM INPUT GRID) -->
-    <main class="gb-contact-workspace" aria-label="Contact Channels Hub Matrix">
-        <div class="gb-contact-workspace-container">
-            
-            <!-- LEFT COLUMN: SYSTEM INFORMATIONAL GLASS CARDS LAYOUT -->
-            <div class="gb-contact-info-column">
-                
-                <!-- Card 1: Phone -->
-                <article class="gb-contact-info-card">
-                    <div class="gb-contact-card-glow" aria-hidden="true"></div>
-                    <div class="gb-contact-card-icon-box">
-                        <i data-lucide="phone" class="gb-contact-card-icon"></i>
-                    </div>
-                    <div class="gb-contact-card-meta">
-                        <h3 class="gb-contact-card-title">Phone</h3>
-                        <a href="tel:+919876543210" class="gb-contact-card-link">+91 98765 43210</a>
-                    </div>
-                </article>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Glitter Boutique | Luxury Fashion Accessories</title>
+    
+    <!-- Google Fonts Framework Integration (Luxury Profiles) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Isolated Structural Page Sheet -->
+    <link rel="stylesheet" href="contact.css">
+    
+    <!-- Lucide Vector Icons Engine Script -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="gb-contact-body">
 
-                <!-- Card 2: Email -->
-                <article class="gb-contact-info-card">
-                    <div class="gb-contact-card-glow" aria-hidden="true"></div>
-                    <div class="gb-contact-card-icon-box">
-                        <i data-lucide="mail" class="gb-contact-card-icon"></i>
-                    </div>
-                    <div class="gb-contact-card-meta">
-                        <h3 class="gb-contact-card-title">Email</h3>
-                        <a href="mailto:support@glitterboutique.com" class="gb-contact-card-link">support@glitterboutique.com</a>
-                    </div>
-                </article>
+    <!-- PAGE CORE STRUCTURE BLOCK -->
+    <div class="gb-contact-page-viewport">
 
-                <!-- Card 3: Location -->
-                <article class="gb-contact-info-card">
-                    <div class="gb-contact-card-glow" aria-hidden="true"></div>
-                    <div class="gb-contact-card-icon-box">
-                        <i data-lucide="map-pin" class="gb-contact-card-icon"></i>
-                    </div>
-                    <div class="gb-contact-card-meta">
-                        <h3 class="gb-contact-card-title">Location</h3>
-                        <p class="gb-contact-card-text">New Delhi, India</p>
-                    </div>
-                </article>
-
-                <!-- Card 4: Working Hours -->
-                <article class="gb-contact-info-card">
-                    <div class="gb-contact-card-glow" aria-hidden="true"></div>
-                    <div class="gb-contact-card-icon-box">
-                        <i data-lucide="clock" class="gb-contact-card-icon"></i>
-                    </div>
-                    <div class="gb-contact-card-meta">
-                        <h3 class="gb-contact-card-title">Working Hours</h3>
-                        <p class="gb-contact-card-text">Mon &ndash; Sat</p>
-                        <p class="gb-contact-card-subtext">10 AM &ndash; 7 PM</p>
-                    </div>
-                </article>
-
+        <!-- SECTION 1: LUXURY EDITORIAL HERO BANNER -->
+        <section class="gb-contact-hero" aria-labelledby="gb-contact-hero-title">
+            <div class="gb-contact-hero-canvas">
+                <div class="gb-contact-hero-mesh" aria-hidden="true"></div>
+                <div class="gb-contact-hero-glitter-field" id="gb-contact-glitter-space" aria-hidden="true"></div>
             </div>
+            <div class="gb-contact-hero-overlay-mask" aria-hidden="true"></div>
+            <div class="gb-contact-hero-container">
+                <nav class="gb-contact-breadcrumb" aria-label="Hero Breadcrumb Track">
+                    <ol class="gb-contact-breadcrumb-list">
+                        <li><a href="index.html" class="gb-contact-breadcrumb-link">Home</a></li>
+                        <li class="gb-contact-breadcrumb-current" aria-current="page">Contact</li>
+                    </ol>
+                </nav>
+                <h1 id="gb-contact-hero-title" class="gb-contact-hero-main">Let's Connect</h1>
+                <p class="gb-contact-hero-sub">We're here to answer your questions, assist with orders, and help you discover the perfect sparkle.</p>
+            </div>
+        </section>
 
-            <!-- RIGHT COLUMN: HIGH END CUSTOM PREMIUM FORM CONTEXT -->
-            <div class="gb-contact-form-column">
-                <form class="gb-contact-form" id="gb-contact-main-form" novalidate>
+        <!-- NOISE AND SECTIONAL WRAPPER LAYER -->
+        <div class="gb-contact-runway">
+            <div class="gb-contact-noise-overlay" aria-hidden="true"></div>
+
+            <!-- SECTION 2: MODERN GLASSMORPHISM CONTACT INFO CARDS -->
+            <section class="gb-contact-space-block" aria-label="Contact Information Metrics Channels">
+                <div class="gb-contact-container">
+                    <div class="gb-contact-cards-grid">
+                        
+                        <!-- Card 1: Visit Us -->
+                        <article class="gb-contact-info-card gb-contact-reveal">
+                            <div class="gb-contact-card-border" aria-hidden="true"></div>
+                            <div class="gb-contact-card-halo" aria-hidden="true"></div>
+                            <div class="gb-contact-card-icon-box">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <h3 class="gb-contact-card-title">Visit Us</h3>
+                            <p class="gb-contact-card-data">123 Fashion Street<br>New Delhi, India</p>
+                        </article>
+
+                        <!-- Card 2: Phone -->
+                        <article class="gb-contact-info-card gb-contact-reveal">
+                            <div class="gb-contact-card-border" aria-hidden="true"></div>
+                            <div class="gb-contact-card-halo" aria-hidden="true"></div>
+                            <div class="gb-contact-card-icon-box">
+                                <i data-lucide="phone"></i>
+                            </div>
+                            <h3 class="gb-contact-card-title">Phone</h3>
+                            <p class="gb-contact-card-data"><a href="tel:+919876543210" class="gb-contact-card-link">+91 98765 43210</a></p>
+                        </article>
+
+                        <!-- Card 3: Email -->
+                        <article class="gb-contact-info-card gb-contact-reveal">
+                            <div class="gb-contact-card-border" aria-hidden="true"></div>
+                            <div class="gb-contact-card-halo" aria-hidden="true"></div>
+                            <div class="gb-contact-card-icon-box">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <h3 class="gb-contact-card-title">Email</h3>
+                            <p class="gb-contact-card-data"><a href="mailto:support@glitterboutique.com" class="gb-contact-card-link">support@glitterboutique.com</a></p>
+                        </article>
+
+                        <!-- Card 4: Working Hours -->
+                        <article class="gb-contact-info-card gb-contact-reveal">
+                            <div class="gb-contact-card-border" aria-hidden="true"></div>
+                            <div class="gb-contact-card-halo" aria-hidden="true"></div>
+                            <div class="gb-contact-card-icon-box">
+                                <i data-lucide="clock"></i>
+                            </div>
+                            <h3 class="gb-contact-card-title">Working Hours</h3>
+                            <p class="gb-contact-card-data">Monday &ndash; Saturday<br><span class="gb-contact-time-highlight">10:00 AM &ndash; 7:00 PM</span></p>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: TWO-COLUMN LUXURY CONTACT FORM WORKSPACE -->
+            <section class="gb-contact-space-block gb-contact-bg-alternate" aria-labelledby="gb-contact-form-section-title">
+                <div class="gb-contact-container">
+                    <div class="gb-contact-form-grid">
+                        
+                        <!-- Left: High-Fashion Luxury Illustration Placeholder Frame -->
+                        <div class="gb-contact-form-illustration gb-contact-reveal">
+                            <div class="gb-contact-illustration-frame">
+                                <img class="gb-contact-illustration-img" src="assets/images/contact-editorial.jpg" alt="Luxury editorial fashion cosmetics illustration placeholder">
+                                <div class="gb-contact-illustration-shade" aria-hidden="true"></div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Modern Floating Labels Concierge Form -->
+                        <div class="gb-contact-form-workspace gb-contact-reveal">
+                            <h2 id="gb-contact-form-section-title" class="gb-contact-editorial-title">Send Us A Message</h2>
+                            
+                            <form class="gb-contact-form" id="gb-contact-concierge-form" novalidate>
+                                
+                                <div class="gb-contact-input-group">
+                                    <input type="text" id="gb-fullname" name="fullname" class="gb-contact-field" placeholder=" " required>
+                                    <label for="gb-fullname" class="gb-contact-input-label">Full Name *</label>
+                                    <span class="gb-contact-error-msg" id="err-gb-fullname" role="status"></span>
+                                </div>
+
+                                <div class="gb-contact-input-group">
+                                    <input type="email" id="gb-email" name="email" class="gb-contact-field" placeholder=" " required>
+                                    <label for="gb-email" class="gb-contact-input-label">Email Address *</label>
+                                    <span class="gb-contact-error-msg" id="err-gb-email" role="status"></span>
+                                </div>
+
+                                <div class="gb-contact-input-group">
+                                    <input type="tel" id="gb-phone" name="phone" class="gb-contact-field" placeholder=" " placeholder="E.g., +91 98765 43210">
+                                    <label for="gb-phone" class="gb-contact-input-label">Phone Number</label>
+                                    <span class="gb-contact-error-msg" id="err-gb-phone" role="status"></span>
+                                </div>
+
+                                <div class="gb-contact-input-group">
+                                    <input type="text" id="gb-subject" name="subject" class="gb-contact-field" placeholder=" " required>
+                                    <label for="gb-subject" class="gb-contact-input-label">Subject *</label>
+                                    <span class="gb-contact-error-msg" id="err-gb-subject" role="status"></span>
+                                </div>
+
+                                <div class="gb-contact-input-group">
+                                    <textarea id="gb-message" name="message" class="gb-contact-field gb-contact-textarea" placeholder=" " rows="5" required></textarea>
+                                    <label for="gb-message" class="gb-contact-input-label">Your Message *</label>
+                                    <span class="gb-contact-error-msg" id="err-gb-message" role="status"></span>
+                                </div>
+
+                                <button type="submit" class="gb-contact-submit-btn" id="gb-contact-btn-submit-trigger">
+                                    <span class="gb-contact-btn-text">Send Message</span>
+                                    <span class="gb-contact-btn-loader" aria-hidden="true"></span>
+                                </button>
+
+                                <div class="gb-contact-response-banner" id="gb-contact-banner-feedback" role="status" aria-live="polite"></div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: PREMIUM GEOLOCATION CORE MAP ANCHOR -->
+            <section class="gb-contact-space-block" aria-labelledby="gb-contact-map-heading">
+                <div class="gb-contact-container">
+                    <header class="gb-contact-center-header">
+                        <span class="gb-contact-mini-tag">Boutique Radar</span>
+                        <h2 id="gb-contact-map-heading" class="gb-contact-section-title">Our Boutique Location</h2>
+                    </header>
                     
-                    <div class="gb-contact-form-row">
-                        <div class="gb-contact-input-group">
-                            <label for="gb-firstname" class="gb-contact-input-label">First Name *</label>
-                            <input type="text" id="gb-firstname" name="firstname" class="gb-contact-field" placeholder="E.g., Ananya" required>
-                            <span class="gb-contact-field-error" id="err-gb-firstname" role="status"></span>
+                    <div class="gb-contact-map-wrapper gb-contact-reveal">
+                        <iframe 
+                            class="gb-contact-iframe"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.8361546961!2d77.06889758925501!3d28.527280345155106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Glitter Boutique Flags Headquarters Coordinates Wing">
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: MODERN GLASS EXTENSION INTERACTIVE ACCORDION HELP HUB (FAQs) -->
+            <section class="gb-contact-space-block gb-contact-bg-alternate" aria-labelledby="gb-contact-faq-heading">
+                <div class="gb-contact-container">
+                    <header class="gb-contact-center-header">
+                        <span class="gb-contact-mini-tag">Help Center</span>
+                        <h2 id="gb-contact-faq-heading" class="gb-contact-section-title">Frequently Asked Questions</h2>
+                    </header>
+
+                    <div class="gb-contact-accordion-hub gb-contact-reveal" role="tablist" aria-label="Frequently Asked Questions Options Profile">
+                        
+                        <!-- Item 1 -->
+                        <div class="gb-contact-faq-item">
+                            <button class="gb-contact-faq-trigger" id="faq-t-1" aria-expanded="false" aria-controls="faq-p-1" role="tab">
+                                <span class="gb-contact-faq-q">How long does shipping take?</span>
+                                <span class="gb-contact-faq-icon" aria-hidden="true"><i data-lucide="plus"></i></span>
+                            </button>
+                            <div class="gb-contact-faq-panel" id="faq-p-1" aria-labelledby="faq-t-1" role="tabpanel" aria-hidden="true">
+                                <div class="gb-contact-faq-inner">
+                                    <p class="gb-contact-faq-text">Our standard premium shipping across India takes 3&ndash;5 business days. Luxury prioritized overnight tracking dispatch is available for metropolitan selections at terminal checkout gates.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="gb-contact-input-group">
-                            <label for="gb-lastname" class="gb-contact-input-label">Last Name *</label>
-                            <input type="text" id="gb-lastname" name="lastname" class="gb-contact-field" placeholder="E.g., Sharma" required>
-                            <span class="gb-contact-field-error" id="err-gb-lastname" role="status"></span>
+
+                        <!-- Item 2 -->
+                        <div class="gb-contact-faq-item">
+                            <button class="gb-contact-faq-trigger" id="faq-t-2" aria-expanded="false" aria-controls="faq-p-2" role="tab">
+                                <span class="gb-contact-faq-q">Do you offer returns?</span>
+                                <span class="gb-contact-faq-icon" aria-hidden="true"><i data-lucide="plus"></i></span>
+                            </button>
+                            <div class="gb-contact-faq-panel" id="faq-p-2" aria-labelledby="faq-t-2" role="tabpanel" aria-hidden="true">
+                                <div class="gb-contact-faq-inner">
+                                    <p class="gb-contact-faq-text">Yes, we validate a complimentary 14-day return framework window for completely unopened, unsealed luxury accessory containers to guarantee pristine health security standards.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="gb-contact-faq-item">
+                            <button class="gb-contact-faq-trigger" id="faq-t-3" aria-expanded="false" aria-controls="faq-p-3" role="tab">
+                                <span class="gb-contact-faq-q">Can I customize accessories?</span>
+                                <span class="gb-contact-faq-icon" aria-hidden="true"><i data-lucide="plus"></i></span>
+                            </button>
+                            <div class="gb-contact-faq-panel" id="faq-p-3" aria-labelledby="faq-t-3" role="tabpanel" aria-hidden="true">
+                                <div class="gb-contact-faq-inner">
+                                    <p class="gb-contact-faq-text">Bespoke dynamic design configuration options are reserved for premium corporate clients, bridal fashion architectures, and major runway mainstage festival events. Connect directly via our concierge desk wires.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="gb-contact-faq-item">
+                            <button class="gb-contact-faq-trigger" id="faq-t-4" aria-expanded="false" aria-controls="faq-p-4" role="tab">
+                                <span class="gb-contact-faq-q">How can I track my order?</span>
+                                <span class="gb-contact-faq-icon" aria-hidden="true"><i data-lucide="plus"></i></span>
+                            </button>
+                            <div class="gb-contact-faq-panel" id="faq-p-4" aria-labelledby="faq-t-4" role="tabpanel" aria-hidden="true">
+                                <div class="gb-contact-faq-inner">
+                                    <p class="gb-contact-faq-text">Once your crystal order configuration enters active dispatch, a real-time localized tracking map path parameter is routed smoothly to your verified email dashboard context.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 5 -->
+                        <div class="gb-contact-faq-item">
+                            <button class="gb-contact-faq-trigger" id="faq-t-5" aria-expanded="false" aria-controls="faq-p-5" role="tab">
+                                <span class="gb-contact-faq-q">Payment methods?</span>
+                                <span class="gb-contact-faq-icon" aria-hidden="true"><i data-lucide="plus"></i></span>
+                            </button>
+                            <div class="gb-contact-faq-panel" id="faq-p-5" aria-labelledby="faq-t-5" role="tabpanel" aria-hidden="true">
+                                <div class="gb-contact-faq-inner">
+                                    <p class="gb-contact-faq-text">We process secure multi-tier merchant payments smoothly via all leading parameters including credit cards (Visa, Mastercard), UPI networks, Net Banking vault systems, and secure PayPal gateways.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 6: ELEVENTH CORE PATHWAY DIGITAL CONNECTORS (SOCIAL MEDIA) -->
+            <section class="gb-contact-space-block" aria-labelledby="gb-contact-social-heading">
+                <div class="gb-contact-container">
+                    <div class="gb-contact-social-wrapper gb-contact-reveal">
+                        <h2 id="gb-contact-social-heading" class="gb-contact-social-title">Follow Our Journey</h2>
+                        <div class="gb-contact-social-cluster">
+                            <a href="https://instagram.com" target="_blank" rel="noopener" class="gb-contact-social-btn" aria-label="Follow us on Instagram"><i data-lucide="instagram"></i></a>
+                            <a href="https://facebook.com" target="_blank" rel="noopener" class="gb-contact-social-btn" aria-label="Follow us on Facebook"><i data-lucide="facebook"></i></a>
+                            <a href="https://pinterest.com" target="_blank" rel="noopener" class="gb-contact-social-btn" aria-label="Follow us on Pinterest"><i data-lucide="pin"></i></a>
+                            <a href="https://youtube.com" target="_blank" rel="noopener" class="gb-contact-social-btn" aria-label="Subscribe on YouTube"><i data-lucide="youtube"></i></a>
+                            <a href="https://whatsapp.com" target="_blank" rel="noopener" class="gb-contact-social-btn" aria-label="Connect via WhatsApp"><i data-lucide="phone-call"></i></a>
                         </div>
                     </div>
+                </div>
+            </section>
 
-                    <div class="gb-contact-form-row">
-                        <div class="gb-contact-input-group">
-                            <label for="gb-email" class="gb-contact-input-label">Email Address *</label>
-                            <input type="email" id="gb-email" name="email" class="gb-contact-field" placeholder="name@domain.com" required>
-                            <span class="gb-contact-field-error" id="err-gb-email" role="status"></span>
+            <!-- SECTION 7: LUXURY GLASSMORPHISM NEWSLETTER SUBSYSTEM -->
+            <section class="gb-contact-space-block gb-contact-bg-alternate" aria-labelledby="gb-contact-news-heading">
+                <div class="gb-contact-container">
+                    <div class="gb-contact-news-card gb-contact-reveal">
+                        <div class="gb-contact-news-border" aria-hidden="true"></div>
+                        <h2 id="gb-contact-news-heading" class="gb-contact-news-title">Stay Sparkling</h2>
+                        <p class="gb-contact-news-sub">Subscribe for exclusive offers, new arrivals, and fashion inspiration.</p>
+                        
+                        <form class="gb-contact-news-form" id="gb-contact-news-sub-form" novalidate>
+                            <input type="email" class="gb-contact-news-input" id="gb-contact-news-email" placeholder="Enter your luxury email" aria-label="Luxury email newsletter parameter" required>
+                            <button type="submit" class="gb-contact-news-btn">Subscribe</button>
+                        </form>
+                        <div class="gb-contact-news-status" id="gb-contact-news-status-msg" role="status" aria-live="polite"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 8: TRUST VERIFICATION MATRIX SPECIFICATION SHILLS -->
+            <section class="gb-contact-space-block" aria-label="Corporate Trust Verification Badges Wing">
+                <div class="gb-contact-container">
+                    <div class="gb-contact-trust-grid">
+                        
+                        <div class="gb-contact-trust-item gb-contact-reveal">
+                            <i data-lucide="lock" class="gb-contact-trust-icon"></i>
+                            <h4>Secure Payments</h4>
+                            <p>Encrypted checkout vaults.</p>
                         </div>
-                        <div class="gb-contact-input-group">
-                            <label for="gb-phone" class="gb-contact-input-label">Phone Number</label>
-                            <input type="tel" id="gb-phone" name="phone" class="gb-contact-field" placeholder="98765 43210">
-                            <span class="gb-contact-field-error" id="err-gb-phone" role="status"></span>
+
+                        <div class="gb-contact-trust-item gb-contact-reveal">
+                            <i data-lucide="zap" class="gb-contact-trust-icon"></i>
+                            <h4>Fast Shipping</h4>
+                            <p>Priority delivery parameters.</p>
                         </div>
-                    </div>
 
-                    <div class="gb-contact-input-group">
-                        <label for="gb-subject" class="gb-contact-input-label">Subject *</label>
-                        <input type="text" id="gb-subject" name="subject" class="gb-contact-field" placeholder="What is your request about?" required>
-                        <span class="gb-contact-field-error" id="err-gb-subject" role="status"></span>
-                    </div>
+                        <div class="gb-contact-trust-item gb-contact-reveal">
+                            <i data-lucide="refresh-cw" class="gb-contact-trust-icon"></i>
+                            <h4>Easy Returns</h4>
+                            <p>Complimentary 14-day returns.</p>
+                        </div>
 
-                    <div class="gb-contact-input-group">
-                        <label for="gb-message" class="gb-contact-input-label">Message *</label>
-                        <textarea id="gb-message" name="message" class="gb-contact-field gb-contact-textarea" placeholder="Write your thoughts here..." rows="6" required></textarea>
-                        <span class="gb-contact-field-error" id="err-gb-message" role="status"></span>
-                    </div>
+                        <div class="gb-contact-trust-item gb-contact-reveal">
+                            <i data-lucide="headset" class="gb-contact-trust-icon"></i>
+                            <h4>24/7 Support</h4>
+                            <p>Dedicated luxury concierge desk.</p>
+                        </div>
 
-                    <button type="submit" class="gb-contact-submit-btn" id="gb-contact-submit-trigger">
-                        <span class="gb-contact-btn-text">Send Message</span>
-                        <span class="gb-contact-btn-loader" aria-hidden="true"></span>
+                        <div class="gb-contact-trust-item gb-contact-reveal">
+                            <i data-lucide="award" class="gb-contact-trust-icon"></i>
+                            <h4>Premium Products</h4>
+                            <p>Fine hand-checked craftsmanship.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 9: HIGH-SPEC INTEGRATED FINAL CALL TO ACTION BRIDGES -->
+            <section class="gb-contact-final-cta" aria-labelledby="gb-contact-final-cta-heading">
+                <div class="gb-contact-cta-canvas" aria-hidden="true">
+                    <div class="gb-contact-cta-glow"></div>
+                </div>
+                <div class="gb-contact-cta-content">
+                    <h2 id="gb-contact-final-cta-heading" class="gb-contact-cta-title">We'd Love to Hear From You</h2>
+                    <button class="gb-contact-cta-btn" id="gb-contact-btn-scroll-top" aria-label="Scroll smoothly back onto contact layout options">
+                        <span>Contact Our Team</span><i data-lucide="arrow-up"></i>
                     </button>
-
-                    <div class="gb-contact-response-banner" id="gb-contact-form-response" role="status" aria-live="polite"></div>
-                </form>
-            </div>
+                </div>
+            </section>
 
         </div>
-    </main>
+    </div>
 
-    <!-- SECTION 3: SOCIAL MEDIA INTEGRITY CONSOLE -->
-    <section class="gb-contact-social" aria-labelledby="gb-contact-social-heading">
-        <div class="gb-contact-social-wrapper">
-            <h2 id="gb-contact-social-heading" class="gb-contact-social-title">Follow Our Journey</h2>
-            <div class="gb-contact-social-cluster">
-                <a href="https://instagram.com" class="gb-contact-social-link" target="_blank" rel="noopener" aria-label="Connect with Glitter Boutique via Instagram">
-                    <i data-lucide="instagram"></i>
-                </a>
-                <a href="https://facebook.com" class="gb-contact-social-link" target="_blank" rel="noopener" aria-label="Connect with Glitter Boutique via Facebook">
-                    <i data-lucide="facebook"></i>
-                </a>
-                <a href="https://pinterest.com" class="gb-contact-social-link" target="_blank" rel="noopener" aria-label="Connect with Glitter Boutique via Pinterest">
-                    <i data-lucide="pin"></i>
-                </a>
-                <a href="https://tiktok.com" class="gb-contact-social-link" target="_blank" rel="noopener" aria-label="Connect with Glitter Boutique via TikTok">
-                    <i data-lucide="music-2"></i>
-                </a>
-                <a href="https://youtube.com" class="gb-contact-social-link" target="_blank" rel="noopener" aria-label="Connect with Glitter Boutique via YouTube Channel">
-                    <i data-lucide="youtube"></i>
-                </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- SECTION 4: MAP & GEOLOCATION ANCHOR -->
-    <section class="gb-contact-map-section" aria-label="Flagship Store Location Coordinates">
-        <div class="gb-contact-map-container">
-            <!-- Accessible Embedded Mapping Resource Holder -->
-            <iframe 
-                class="gb-contact-map-iframe"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m10!1m3!1d224345.8361546961!2d77.06889758925501!3d28.527280345155106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Glitter Boutique Corporate Headquarters Map Matrix Location">
-            </iframe>
-        </div>
-        <address class="gb-contact-address-footer">
-            <i data-lucide="map-pin" aria-hidden="true"></i>
-            <span>Connaught Place, Luxury Retail Wing, New Delhi, 110001, India</span>
-        </address>
-    </section>
 
-    <!-- SECTION 5: PREMIUM GRADIENT ESCALATION BRIDGE (SUPPORT STRIP) -->
-    <aside class="gb-contact-support-strip" aria-labelledby="gb-contact-strip-heading">
-        <div class="gb-contact-strip-blur" aria-hidden="true"></div>
-        <div class="gb-contact-strip-content">
-            <h2 id="gb-contact-strip-heading" class="gb-contact-strip-title">Need Immediate Help?</h2>
-            <p class="gb-contact-strip-desc">Skip the message queue. Our dedicated luxury concierge desk responds to direct emails instantly.</p>
-            <a href="mailto:concierge@glitterboutique.com" class="gb-contact-strip-button">
-                <span>Email Support</span>
-                <i data-lucide="arrow-up-right" aria-hidden="true"></i>
-            </a>
-        </div>
-    </aside>
-
-====================================================== -->
 <footer class="gb-footer" aria-labelledby="gb-footer-community-heading">
     <!-- Luxury Ambient Gradient Mesh & Sparkle Effects -->
     <div class="gb-footer-ambient-mesh" aria-hidden="true"></div>
@@ -446,6 +611,8 @@
    FOOTER END
 ====================================================== -->
     <!-- Component Logic Injection -->
+    <script src="cart-manager.js"></script>
     <script src="script.js"></script>
+    <script src="contact.js"></script>
 </body>
 </html>

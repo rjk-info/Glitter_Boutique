@@ -134,7 +134,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (purchaseForm) {
         purchaseForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            console.log('flawless micro API bag check operation dispatched securely.');
+            
+            // Extract product details from page
+            const productTitle = document.querySelector('.gb-pdp-product-title')?.textContent || 
+                                document.querySelector('h1')?.textContent || 'Product';
+            const productPrice = document.querySelector('.gb-pdp-price-current')?.textContent || '0';
+            const qtyInput = document.getElementById('gb-pdp-qty-stepper');
+            const quantity = parseInt(qtyInput?.value || '1');
+            
+            // Use unified cart manager
+            if (typeof GlitterCartManager !== 'undefined') {
+                GlitterCartManager.addToCart(`product-${productTitle}-${Date.now()}`, productTitle, productPrice, quantity);
+            }
+            
+            console.log('Product added to cart successfully.');
         });
     }
 });

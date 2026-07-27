@@ -1,0 +1,914 @@
+/* ==========================================================================
+   GLITTER BOUTIQUE - CORE CONTACT US PAGE SPECIFICATION STYLESHEET
+   Architectural System: Section-Isolated Luxury BEM Framework Architecture
+   ========================================================================== */
+
+/* --- CORE CUSTOM THEME PARAMETERS VARIABLES --- */
+:root {
+    --gb-c-black: #0D0D0D;
+    --gb-c-deep-black: #050505;
+    --gb-c-white: #FFFFFF;
+    --gb-c-gold: #D4AF37;
+    --gb-c-gold-hover: #F3E5AB;
+    --gb-c-pink-soft: #FFF0F5;
+    --gb-c-pink-accent: #FFC0CB;
+    
+    --gb-c-text-prime: #111111;
+    --gb-c-text-second: #555555;
+    --gb-c-text-muted: #888888;
+    
+    --gb-f-display: 'Playfair Display', serif;
+    --gb-f-body: 'Poppins', sans-serif;
+    
+    --gb-trans-luxury: cubic-bezier(0.25, 1, 0.5, 1);
+    --gb-trans-dur: 0.35s;
+    --gb-shadow-lux: 0 15px 40px rgba(13, 13, 13, 0.04);
+}
+
+/* Core Structural Elements Layout Resets */
+.gb-contact-body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--gb-c-white);
+    font-family: var(--gb-f-body);
+    color: var(--gb-c-text-prime);
+    -webkit-font-smoothing: antialiased;
+}
+
+.gb-contact-page-viewport *,
+.gb-contact-page-viewport *::before,
+.gb-contact-page-viewport *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.gb-contact-runway {
+    position: relative;
+    width: 100%;
+}
+
+/* Reusable Compact Section Spacing Anchors */
+.gb-contact-space-block {
+    padding: 100px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.gb-contact-bg-alternate {
+    background-color: #FAF6F8; /* Subtle pink-tinted warm gray off-white track */
+}
+
+.gb-contact-container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.gb-contact-noise-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0.015;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ==========================================================================
+   SECTION 1: HERO BANNER EDITORIAL LAYOUT
+========================================================================== */
+.gb-contact-hero {
+    position: relative;
+    width: 100%;
+    height: 520px; /* Highly optimized 1920x520 premium landscape format clearance */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background-color: var(--gb-c-black);
+}
+
+.gb-contact-hero-canvas {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+}
+
+.gb-contact-hero-mesh {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.15) 0%, rgba(255, 192, 203, 0.08) 40%, transparent 80%);
+}
+
+.gb-contact-hero-glitter-field {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+}
+
+.gb-contact-hero-overlay-mask {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(180deg, rgba(5, 5, 5, 0.2) 0%, rgba(5, 5, 5, 0.7) 100%);
+    z-index: 2;
+}
+
+.gb-contact-hero-container {
+    position: relative;
+    z-index: 3;
+    max-width: 820px;
+    padding: 0 40px;
+    margin-top: 20px;
+}
+
+/* Symmetrical Minimal Breadcrumb Context Track */
+.gb-contact-breadcrumb {
+    display: inline-flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.gb-contact-breadcrumb-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+    padding: 6px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 30px;
+}
+
+.gb-contact-breadcrumb-link {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.3s var(--gb-trans-luxury);
+}
+
+.gb-contact-breadcrumb-link:hover { color: var(--gb-c-gold); }
+
+.gb-contact-breadcrumb-list li:not(:last-child)::after {
+    content: '>';
+    margin-left: 10px;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.gb-contact-breadcrumb-current {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gb-c-white);
+    pointer-events: none;
+}
+
+.gb-contact-hero-main {
+    font-family: var(--gb-f-head);
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--gb-c-white);
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gb-contact-hero-sub {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   SECTION 2: GLASSMORPHISM INFORMATIONAL CARDS GRID
+========================================================================== */
+.gb-contact-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.gb-contact-info-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 24px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: var(--gb-shadow-lux);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    overflow: hidden;
+    transition: transform var(--gb-trans-dur) var(--gb-trans-luxury),
+                box-shadow var(--gb-trans-dur) var(--gb-trans-luxury);
+    will-change: transform, box-shadow;
+}
+
+.gb-contact-card-border {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border: 1px solid rgba(13, 13, 13, 0.05);
+    border-radius: 24px;
+    pointer-events: none;
+    z-index: 4;
+    transition: border-color var(--gb-trans-dur) var(--gb-trans-luxury);
+}
+
+.gb-contact-card-halo {
+    position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.03) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gb-contact-card-icon-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gb-c-black);
+    color: var(--gb-c-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 2;
+    transition: transform var(--gb-trans-dur) var(--gb-trans-luxury), background-color var(--gb-trans-dur) var(--gb-trans-luxury);
+}
+
+.gb-contact-card-icon-box i {
+    width: 18px;
+    height: 18px;
+    stroke-width: 1.8px;
+}
+
+.gb-contact-card-title {
+    font-family: var(--gb-f-body);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gb-c-text-second);
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.gb-contact-card-data {
+    font-size: 14.5px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--gb-c-text-prime);
+    position: relative;
+    z-index: 2;
+}
+
+.gb-contact-card-link {
+    color: var(--gb-c-text-prime);
+    text-decoration: none;
+    transition: color 0.2s linear;
+}
+
+.gb-contact-card-link:hover { color: var(--gb-c-gold); }
+.gb-contact-time-highlight { font-weight: 500; }
+
+/* Cards Kinetic Hover Actions Engines */
+.gb-contact-info-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(212, 175, 55, 0.06), 0 1px 3px rgba(13, 13, 13, 0.01);
+}
+
+.gb-contact-info-card:hover .gb-contact-card-border { border-color: rgba(212, 175, 55, 0.3); }
+.gb-contact-info-card:hover .gb-contact-card-icon-box { transform: scale(1.05); background-color: var(--gb-c-gold); color: var(--gb-c-black); }
+
+/* ==========================================================================
+   SECTION 3: TWO-COLUMN LUXURY CONCIERGE FORM WORKSPACE
+========================================================================== */
+.gb-contact-form-grid {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: 70px;
+    align-items: center;
+}
+
+/* Left Canvas Column Layer */
+.gb-contact-form-illustration {
+    width: 100%;
+}
+
+.gb-contact-illustration-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 4.8;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: var(--gb-shadow-lux);
+    background-color: var(--gb-contact-bg-alternate);
+}
+
+.gb-contact-illustration-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.gb-contact-illustration-shade {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(180deg, transparent 60%, rgba(13, 13, 13, 0.1) 100%);
+}
+
+/* Right Column Layer Form Elements */
+.gb-contact-form-workspace {
+    width: 100%;
+}
+
+.gb-contact-editorial-title {
+    font-family: var(--gb-f-head);
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--gb-c-black);
+    margin-bottom: 40px;
+    letter-spacing: -0.5px;
+}
+
+.gb-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.gb-contact-input-group {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* High-Spec Luxury Floating Labels Infrastructure */
+.gb-contact-field {
+    width: 100%;
+    height: 52px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(13, 13, 13, 0.15);
+    padding: 10px 0;
+    font-family: var(--gb-f-body);
+    font-size: 14px;
+    color: var(--gb-c-text-prime);
+    outline: none;
+    transition: border-color var(--gb-trans-dur) var(--gb-trans-luxury);
+    position: relative;
+    z-index: 2;
+}
+
+.gb-contact-textarea {
+    height: auto;
+    padding-top: 14px;
+    resize: none;
+}
+
+.gb-contact-input-label {
+    position: absolute;
+    left: 0; top: 14px;
+    font-family: var(--gb-f-body);
+    font-size: 13.5px;
+    font-weight: 400;
+    color: var(--gb-c-text-second);
+    pointer-events: none;
+    z-index: 1;
+    transition: transform var(--gb-trans-dur) var(--gb-trans-luxury), color var(--gb-trans-dur) var(--gb-trans-luxury);
+    transform-origin: left top;
+}
+
+/* Floating Actions States Transformations */
+.gb-contact-field:focus ~ .gb-contact-input-label,
+.gb-contact-field:not(:placeholder-shown) ~ .gb-contact-input-label {
+    transform: translateY(-24px) scale(0.85);
+    color: var(--gb-c-gold);
+    font-weight: 500;
+}
+
+.gb-contact-field:focus {
+    border-bottom-color: var(--gb-c-gold);
+}
+
+/* Validation Visual Hooks Alert Settings */
+.gb-contact-error-msg {
+    font-size: 11.5px;
+    font-weight: 400;
+    color: #EF4444;
+    margin-top: 4px;
+    min-height: 16px;
+    display: block;
+}
+
+.gb-contact-field.invalid-state {
+    border-bottom-color: #EF4444 !important;
+}
+
+/* Premium Primary Trigger Action Button */
+.gb-contact-submit-btn {
+    position: relative;
+    width: 100%;
+    height: 54px;
+    background-color: var(--gb-c-black);
+    color: var(--gb-c-white);
+    border: none;
+    border-radius: 12px;
+    font-family: var(--gb-f-body);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 3;
+    transition: transform var(--gb-trans-dur) var(--gb-trans-luxury), box-shadow var(--gb-trans-dur) var(--gb-trans-luxury), background-color var(--gb-trans-dur) var(--gb-trans-luxury);
+}
+
+.gb-contact-submit-btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, var(--gb-c-gold) 0%, #F3E5AB 100%);
+    color: var(--gb-c-black);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+}
+
+/* Spinner Loops Keyframes Parameters */
+.gb-contact-btn-loader {
+    display: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: currentColor;
+    position: absolute;
+    animation: gbContactSpin 0.75s linear infinite;
+}
+
+@keyframes gbContactSpin { to { transform: rotate(360deg); } }
+
+.gb-contact-submit-btn.loading-active .gb-contact-btn-text { opacity: 0; }
+.gb-contact-submit-btn.loading-active .gb-contact-btn-loader { display: block; }
+
+.gb-contact-banner-feedback { font-size: 13.5px; font-weight: 500; text-align: center; min-height: 20px; margin-top: 8px; }
+.gb-contact-banner-feedback.success { color: #10B981; }
+.gb-contact-banner-feedback.error { color: #EF4444; }
+
+/* ==========================================================================
+   SECTION 4: GEOLOCATION STRUCTURAL IFRAME ANCHOR
+========================================================================== */
+.gb-contact-center-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 55px auto;
+}
+
+.gb-contact-mini-tag {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gb-c-gold);
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.gb-contact-section-title {
+    font-family: var(--gb-f-head);
+    font-size: 38px;
+    font-weight: 400;
+    color: var(--gb-c-black);
+    letter-spacing: -0.3px;
+}
+
+.gb-contact-map-wrapper {
+    width: 100%;
+    height: 480px;
+    border-radius: 26px;
+    overflow: hidden;
+    box-shadow: var(--gb-shadow-lux);
+    border: 1px solid rgba(13, 13, 13, 0.06);
+}
+
+.gb-contact-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* ==========================================================================
+   SECTION 5: INTERACTIVE ACCORDION SPECIFICATION DETAILS (FAQs)
+========================================================================== */
+.gb-contact-accordion-hub {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.gb-contact-faq-item {
+    background: var(--gb-c-white);
+    border: 1px solid rgba(13, 13, 13, 0.05);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(13, 13, 13, 0.01);
+    transition: transform var(--gb-trans-dur) var(--gb-trans-luxury), border-color var(--gb-trans-dur) var(--gb-trans-luxury);
+}
+
+.gb-contact-faq-trigger {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 24px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    text-align: left;
+    outline: none;
+}
+
+.gb-contact-faq-q {
+    font-family: var(--gb-f-body);
+    font-size: 15.5px;
+    font-weight: 500;
+    color: var(--gb-c-text-prime);
+    padding-right: 20px;
+}
+
+.gb-contact-faq-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--gb-c-pink-soft);
+    color: var(--gb-c-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.4s var(--gb-trans-luxury), background-color 0.4s var(--gb-trans-luxury), color 0.4s var(--gb-trans-luxury);
+}
+
+.gb-contact-faq-icon i { width: 14px; height: 14px; stroke-width: 2.5px; }
+
+.gb-contact-faq-panel {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.4s var(--gb-trans-luxury), opacity 0.3s ease, visibility 0.3s ease;
+    will-change: max-height, opacity;
+}
+
+.gb-contact-faq-inner { padding: 0 30px 24px 30px; }
+.gb-contact-faq-text { font-size: 14px; font-weight: 400; line-height: 1.7; color: var(--gb-c-text-second); }
+
+/* Expansion Target State Classes Modifiers */
+.gb-contact-faq-item-active {
+    border-color: rgba(212, 175, 55, 0.25);
+    transform: translateY(-1px);
+}
+.gb-contact-faq-item-active .gb-contact-faq-icon {
+    background-color: var(--gb-c-gold);
+    color: var(--gb-c-black);
+    transform: rotate(135deg);
+}
+.gb-contact-faq-item-active .gb-contact-faq-panel { opacity: 1; visibility: visible; }
+.gb-contact-faq-item:not(.gb-contact-faq-item-active):hover { border-color: rgba(212, 175, 55, 0.2); transform: translateY(-2px); }
+
+/* ==========================================================================
+   SECTION 6: SOCIAL MEDIA JOURNEY CONNECTORS
+========================================================================== */
+.gb-contact-social-wrapper {
+    text-align: center;
+    width: 100%;
+}
+
+.gb-contact-social-title {
+    font-family: var(--gb-f-head);
+    font-size: 34px;
+    font-weight: 400;
+    margin-bottom: 35px;
+    letter-spacing: -0.5px;
+}
+
+.gb-contact-social-cluster {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.gb-contact-social-link {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: var(--gb-c-white);
+    border: 1px solid rgba(13, 13, 13, 0.08);
+    color: var(--gb-c-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(13, 13, 13, 0.01);
+    transition: transform var(--gb-trans-dur) var(--gb-trans-luxury), background var(--gb-trans-dur) var(--gb-trans-luxury), color var(--gb-trans-dur) var(--gb-trans-luxury), border-color var(--gb-trans-dur) var(--gb-trans-luxury), box-shadow var(--gb-trans-dur) var(--gb-trans-luxury);
+}
+
+.gb-contact-social-link i { width: 18px; height: 18px; stroke-width: 1.8px; }
+
+.gb-contact-social-link:hover {
+    transform: translateY(-4px) scale(1.04);
+    background-color: var(--gb-c-black);
+    color: var(--gb-c-gold);
+    border-color: var(--gb-c-black);
+    box-shadow: 0 10px 20px rgba(13, 13, 13, 0.15);
+}
+
+/* ==========================================================================
+   SECTION 7: LUXURY GLASSMORPHISM NEWSLETTER SUBSYSTEM
+========================================================================== */
+.gb-contact-news-card {
+    position: relative;
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(13, 13, 13, 0.05);
+    border-radius: 26px;
+    padding: 55px 60px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--gb-shadow-lux);
+}
+
+.gb-contact-news-border {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border: 1px solid rgba(255, 240, 245, 0.8);
+    border-radius: 26px;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.gb-contact-news-title {
+    font-family: var(--gb-f-head);
+    font-size: 34px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, var(--gb-c-black) 40%, var(--gb-c-text-second) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gb-contact-news-sub { font-size: 14px; font-weight: 400; color: var(--gb-c-text-second); margin-bottom: 30px; }
+
+.gb-contact-news-form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+.gb-contact-news-input {
+    flex: 1;
+    height: 50px;
+    border-radius: 25px;
+    background-color: var(--gb-c-white);
+    border: 1px solid rgba(13, 13, 13, 0.1);
+    padding: 0 20px;
+    font-family: var(--gb-f-body);
+    font-size: 13.5px;
+    color: var(--gb-c-text-prime);
+    outline: none;
+    transition: border-color var(--gb-trans-dur) var(--gb-trans-luxury);
+}
+.gb-contact-news-input:focus { border-color: var(--gb-c-gold); }
+
+.gb-contact-news-btn {
+    height: 50px;
+    padding: 0 28px;
+    border-radius: 25px;
+    background-color: var(--gb-c-black);
+    color: var(--gb-c-white);
+    border: none;
+    font-family: var(--gb-f-body);
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color 0.2s linear, color 0.2s linear;
+}
+.gb-contact-news-btn:hover { background-color: var(--gb-c-gold); color: var(--gb-c-black); }
+.gb-contact-news-status { font-size: 12.5px; font-weight: 500; margin-top: 12px; min-height: 18px; }
+.gb-contact-news-status.success { color: #10B981; }
+.gb-contact-news-status.error { color: #EF4444; }
+
+/* ==========================================================================
+   SECTION 8: TRUST VERIFICATION MATRIX GRID
+========================================================================== */
+.gb-contact-trust-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+.gb-contact-trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.gb-contact-trust-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--gb-c-gold);
+    stroke-width: 1.5px;
+    margin-bottom: 16px;
+}
+
+.gb-contact-trust-item h4 {
+    font-family: var(--gb-f-body);
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--gb-c-text-prime);
+    margin-bottom: 6px;
+}
+
+.gb-contact-trust-item p { font-size: 12px; font-weight: 400; color: var(--gb-c-text-second); }
+
+/* ==========================================================================
+   SECTION 9: PREMIUM FINAL CTA BRIDGES STRIP
+========================================================================== */
+.gb-contact-final-cta {
+    position: relative;
+    width: 100%;
+    background-color: var(--gb-c-black);
+    padding: 90px 40px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.gb-contact-cta-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+.gb-contact-cta-glow {
+    position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 65%);
+    pointer-events: none;
+}
+
+.gb-contact-cta-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
+
+.gb-contact-cta-title {
+    font-family: var(--gb-f-head);
+    font-size: 38px;
+    font-weight: 400;
+    color: var(--gb-c-white);
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+}
+
+.gb-contact-cta-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    height: 52px;
+    padding: 0 34px;
+    border-radius: 30px;
+    color: var(--gb-c-white);
+    font-family: var(--gb-f-body);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    outline: none;
+    transition: transform var(--gb-trans-dur) var(--gb-trans-luxury), border-color var(--gb-trans-dur) var(--gb-trans-luxury), background-color var(--gb-trans-dur) var(--gb-trans-luxury);
+}
+
+.gb-contact-cta-btn i { width: 14px; height: 14px; stroke-width: 2.5px; transition: transform var(--gb-trans-dur) var(--gb-trans-luxury); }
+.gb-contact-cta-btn:hover { transform: translateY(-2px); border-color: var(--gb-c-gold); background-color: rgba(255,255,255,0.03); }
+.gb-contact-cta-btn:hover i { transform: translateY(-3px); }
+
+/* --- EXTRA PREMIUM: GHOST AND EXTRA ARCHITECTURAL LINES --- */
+.gb-contact-ghost-text {
+    position: absolute;
+    font-family: var(--gb-f-display);
+    font-size: 14vw;
+    font-weight: 700;
+    color: var(--gb-c-black);
+    opacity: 0.015;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+}
+.gb-contact-ghost-pos-1 { top: 5%; left: -2vw; }
+.gb-contact-ghost-pos-2 { top: 48%; right: -3vw; }
+.gb-contact-ghost-pos-3 { bottom: 6%; left: 8vw; }
+
+/* Keyboard Accessibility Focus Framework Rings */
+.gb-contact-field:focus-visible,
+.gb-contact-submit-btn:focus-visible,
+.gb-contact-faq-trigger:focus-visible,
+.gb-contact-social-link:focus-visible,
+.gb-contact-news-input:focus-visible,
+.gb-contact-news-btn:focus-visible,
+.gb-contact-cta-btn:focus-visible {
+    outline: 2px dashed var(--gb-c-gold);
+    outline-offset: 4px;
+}
+
+/* --- PERFORMANCE STAGGERED INTRO REVEAL DECAY NODES --- */
+.gb-contact-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.85s var(--gb-trans-luxury), transform 0.85s var(--gb-trans-luxury);
+    will-change: opacity, transform;
+}
+
+.gb-contact-visible.gb-contact-reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   MEDIA QUERIES - BREAKPOINT INTERCEPT matrix LAYOUT ADAPTS
+========================================================================== */
+@media (max-width: 1200px) {
+    .gb-contact-container { padding: 0 40px; }
+    .gb-contact-cards-grid { gap: 20px; }
+    .gb-contact-form-grid { gap: 40px; }
+    .gb-contact-trust-grid { gap: 16px; }
+    .gb-contact-hero-main { font-size: 46px; }
+}
+
+@media (max-width: 992px) {
+    /* Collapse 4 columns informational blocks grid down to tablet 2x2 layer matrices */
+    .gb-contact-cards-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    
+    /* Collapse form split grid runway down safely to vertical stack rows channels */
+    .gb-contact-form-grid { grid-template-columns: 1fr; gap: 50px; max-width: 680px; margin: 0 auto; }
+    .gb-contact-form-illustration { max-width: 420px; margin: 0 auto; }
+    
+    /* Collapse trust matrix shills grid down into 3-column rows distribution */
+    .gb-contact-trust-grid { grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    
+    .gb-contact-space-block { padding: 75px 0; }
+    .gb-contact-section-title { font-size: 32px; }
+    .gb-contact-ghost-text { display: none; } /* Strip ghost paths background items on mid layers */
+}
+
+@media (max-width: 680px) {
+    .gb-contact-trust-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .gb-contact-news-card { padding: 40px 24px; }
+    .gb-contact-news-form { flex-direction: column; width: 100%; gap: 12px; }
+    .gb-contact-news-input, .gb-contact-news-btn { width: 100%; }
+    .gb-contact-faq-trigger { padding: 20px; }
+    .gb-contact-faq-inner { padding: 0 20px 20px 20px; }
+}
+
+@media (max-width: 520px) {
+    .gb-contact-container { padding: 0 24px; }
+    .gb-contact-space-block { padding: 60px 0; }
+    .gb-contact-hero { height: 440px; }
+    .gb-contact-hero-main { font-size: 34px; }
+    .gb-contact-editorial-title { font-size: 28px; margin-bottom: 30px; }
+    .gb-contact-section-title { font-size: 26px; }
+    .gb-contact-cta-title { font-size: 28px; }
+    
+    /* Collapse cards grid lines completely down to linear full width portrait tracks */
+    .gb-contact-cards-grid { grid-template-columns: 1fr; gap: 16px; }
+    .gb-contact-info-card { padding: 30px 20px; border-radius: 18px; }
+    .gb-contact-card-border { border-radius: 18px; }
+    
+    /* Collapse remaining subgrids metrics layers down safely */
+    .gb-contact-trust-grid { grid-template-columns: 1fr; gap: 20px; max-width: 240px; margin: 0 auto; }
+    .gb-contact-map-wrapper { height: 350px; border-radius: 18px; }
+}

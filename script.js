@@ -349,23 +349,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!card) return;
 
             const productTitle = card.querySelector('.gb-product-title')?.textContent || 'Product';
+            const productPrice = card.querySelector('.gb-product-price-current')?.textContent || '0';
             const labelSpan = addCartBtn.querySelector('span');
 
             addCartBtn.classList.add('gb-product-add-cart-added');
             if (labelSpan) labelSpan.textContent = 'Added';
 
-            // Minimal cart persistence + navbar badge update
-            try {
-                const key = 'gb_cart_home';
-                const current = JSON.parse(localStorage.getItem(key) || '[]');
-                current.push({ title: productTitle, ts: Date.now() });
-                localStorage.setItem(key, JSON.stringify(current));
-
-                const cartBadge = document.querySelector('.gb-navbar-cart-badge');
-                if (cartBadge) cartBadge.textContent = String(current.length);
-            } catch (e) {
-                // fail silently
-            }
+            // Use unified cart manager for consistent badge updates across all pages
+            GlitterCartManager.addToCart(`product-${productTitle}-${Date.now()}`, productTitle, productPrice);
 
             console.log(`Add to cart action triggered for: ${productTitle}`);
         }
