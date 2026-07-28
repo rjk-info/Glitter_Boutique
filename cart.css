@@ -145,7 +145,7 @@
     font-family: var(--gb-cart-f-display);
     font-size: 42px;
     font-weight: 400;
-    background: linear-gradient(135deg, #2F6BFF 0%, #8A3DFF 100%);
+    background: linear-gradient(135deg, #dc2fff 0%, #d01add 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: -0.5px;
@@ -243,7 +243,7 @@
     font-family: var(--gb-cart-f-display);
     font-size: 20px;
     font-weight: 600;
-    color: var(--gb-cart-text-dark);
+    color: #EC1E79;
     letter-spacing: -0.2px;
 }
 
@@ -456,7 +456,7 @@
 .gb-cart-summary-row-total #gb-cart-val-total {
     font-size: 24px;
     font-weight: 600;
-    color: var(--gb-cart-c-royal);
+    color: #EC1E79;
 }
 
 .gb-cart-summary-actions { display: flex; flex-direction: column; gap: 14px; width: 100%; }
@@ -486,10 +486,10 @@
 .gb-cart-btn-gradient {
     background: linear-gradient(135deg, var(--gb-cart-c-royal) 0%, var(--gb-cart-c-purple) 100%);
     color: var(--gb-cart-c-white);
-    box-shadow: 0 4px 15px rgba(0, 87, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(174, 12, 199, 0.2);
 }
 .gb-cart-btn-gradient i { width: 14px; height: 14px; stroke-width: 2.5px; transition: transform var(--gb-cart-duration) var(--gb-cart-ease-lux); }
-.gb-cart-btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 87, 255, 0.3); }
+.gb-cart-btn-gradient:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(203, 14, 210, 0.3); }
 .gb-cart-btn-gradient:hover i { transform: translateX(4px); }
 
 .gb-cart-btn-outline { background: transparent; border: 1px solid var(--gb-cart-text-dark); color: var(--gb-cart-text-dark); }
