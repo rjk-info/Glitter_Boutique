@@ -141,10 +141,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const productPrice = document.querySelector('.gb-pdp-price-current')?.textContent || '0';
             const qtyInput = document.getElementById('gb-pdp-qty-stepper');
             const quantity = parseInt(qtyInput?.value || '1');
+            const productImage = document.getElementById('gb-pdp-main-img-target')?.src || document.querySelector('.gb-pdp-gallery-large-img')?.src || '';
+            const productImageAlt = document.getElementById('gb-pdp-main-img-target')?.alt || document.querySelector('.gb-pdp-gallery-large-img')?.alt || productTitle;
+            const productCategory = document.querySelector('.gb-pdp-collection-tag')?.textContent || '';
             
             // Use unified cart manager
             if (typeof GlitterCartManager !== 'undefined') {
-                GlitterCartManager.addToCart(`product-${productTitle}-${Date.now()}`, productTitle, productPrice, quantity);
+                const productId = GlitterCartManager.createProductId
+                    ? GlitterCartManager.createProductId(productTitle)
+                    : `product-${String(productTitle).toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+                GlitterCartManager.addToCart(productId, productTitle, productPrice, quantity, {
+                    image: productImage,
+                    alt: productImageAlt,
+                    category: productCategory,
+                    sourceUrl: window.location.href
+                });
             }
             
             console.log('Product added to cart successfully.');

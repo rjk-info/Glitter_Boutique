@@ -350,13 +350,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const productTitle = card.querySelector('.gb-product-title')?.textContent || 'Product';
             const productPrice = card.querySelector('.gb-product-price-current')?.textContent || '0';
+            const productImage = card.querySelector('.gb-product-image')?.src || '';
+            const productImageAlt = card.querySelector('.gb-product-image')?.alt || productTitle;
             const labelSpan = addCartBtn.querySelector('span');
+            const productId = typeof GlitterCartManager !== 'undefined' && GlitterCartManager.createProductId
+                ? GlitterCartManager.createProductId(productTitle)
+                : `product-${String(productTitle).toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
 
             addCartBtn.classList.add('gb-product-add-cart-added');
             if (labelSpan) labelSpan.textContent = 'Added';
 
             // Use unified cart manager for consistent badge updates across all pages
-            GlitterCartManager.addToCart(`product-${productTitle}-${Date.now()}`, productTitle, productPrice);
+            GlitterCartManager.addToCart(productId, productTitle, productPrice, 1, {
+                image: productImage,
+                alt: productImageAlt,
+                sourceUrl: window.location.href
+            });
 
             console.log(`Add to cart action triggered for: ${productTitle}`);
         }

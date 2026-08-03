@@ -1,148 +1,189 @@
 /**
  * GLITTER BOUTIQUE - LUXURY SHOPPING CART CONTROLLER
- * Architectural Focus: Dynamic State Computations, Coupon handshakes & Structural Node Erasure
+ * Renders the cart from the shared cart manager state.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     'use strict';
 
-    // Parse newly integrated Lucide vector nodes safely
     if (window.lucide) {
         window.lucide.createIcons();
     }
 
-    // Node Registries Matrix Target Selection
     const cartContentView = document.getElementById('gb-cart-content-view');
     const cartEmptyView = document.getElementById('gb-cart-empty-view');
     const itemsWrapper = document.getElementById('gb-cart-items-wrapper');
     const headerCountLabel = document.getElementById('gb-cart-header-count');
-    
-    // Summary Value Fields Target Selection
     const subtotalValField = document.getElementById('gb-cart-val-subtotal');
     const discountRowNode = document.getElementById('gb-cart-discount-row');
     const discountValField = document.getElementById('gb-cart-val-discount');
     const totalValField = document.getElementById('gb-cart-val-total');
     const mobileTotalField = document.getElementById('gb-cart-mobile-total-price');
-    
-    // Coupon Form Controls Target Selection
+    const taxValField = document.getElementById('gb-cart-val-tax');
     const couponInputField = document.getElementById('gb-cart-coupon-code');
     const couponApplyTrigger = document.getElementById('gb-cart-coupon-apply-trigger');
     const couponStatusLabel = document.getElementById('gb-cart-coupon-status');
 
-    // Internal Operational State Variables
     let appliedDiscountPercentageRate = 0;
     const activeValidCouponsDict = {
-        'SPARKLE20': 0.20, // 20% Off luxury deduction rate code
-        'GLITTER10': 0.10  // 10% Off luxury deduction rate code
+        SPARKLE20: 0.20,
+        GLITTER10: 0.10
     };
 
-    /**
-     * Re-Evaluate and Calculate Global Cart Ledger Metrics
-     */
-    const recalculateCartLedgerTotals = () => {
-        const activeItemsArray = Array.from(itemsWrapper.querySelectorAll('.gb-cart-item'));
-        let computedRunningSubtotal = 0;
-        let cumulativeTotalUnitsCount = 0;
+    const parsePrice = (value) => {
+        const parsed = Number(String(value ?? 0).replace(/[^\d.-]/g, ''));
+        return Number.isFinite(parsed) ? parsed : 0;
+    };
 
-        // Process loops over existing DOM element boundaries
-        activeItemsArray.forEach((itemNode) => {
-            const staticBasePrice = parseFloat(itemNode.getAttribute('data-base-price'));
-            const quantitativeCurrentInput = itemNode.querySelector('.gb-cart-qty-input');
-            const itemUnitsCount = parseInt(quantitativeCurrentInput.value, 10);
+    const escapeHtml = (value) => String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
 
-            computedRunningSubtotal += (staticBasePrice * itemUnitsCount);
-            cumulativeTotalUnitsCount += itemUnitsCount;
-        });
+    const formatMoney = (value) => `₹${Math.round(value || 0).toLocaleString('en-IN')}`;
 
-        // Switch workspace framework view layouts if cart drops empty bounds
-        if (activeItemsArray.length === 0) {
-            if (cartContentView) cartContentView.style.display = 'none';
-            if (cartEmptyView) cartEmptyView.style.display = 'block';
-            if (headerCountLabel) headerCountLabel.textContent = '0 Items';
+    const getCartItems = () => {
+        if (typeof GlitterCartManager !== 'undefined' && GlitterCartManager.getCartItems) {
+            return GlitterCartManager.getCartItems();
+        }
+
+        return [];
+    };
+
+    const getProductImage = (item) => item.image || 'assets/products/Party Stickers/63.jpeg';
+
+    const getItemSubtotal = (item) => parsePrice(item.price) * (parseInt(item.quantity, 10) || 1);
+
+    const renderSummary = (items) => {
+        const subtotal = items.reduce((sum, item) => sum + getItemSubtotal(item), 0);
+        const totalUnits = items.reduce((sum, item) => sum + (parseInt(item.quantity, 10) || 1), 0);
+        const discountValue = subtotal * appliedDiscountPercentageRate;
+        const finalTotal = subtotal - discountValue;
+
+        if (headerCountLabel) {
+            headerCountLabel.textContent = `${totalUnits} ${totalUnits === 1 ? 'Item' : 'Items'}`;
+        }
+
+        if (subtotalValField) subtotalValField.textContent = formatMoney(subtotal);
+
+        if (discountRowNode) {
+            discountRowNode.style.display = discountValue > 0 ? 'flex' : 'none';
+        }
+
+        if (discountValField) discountValField.textContent = `-${formatMoney(discountValue)}`;
+        if (totalValField) totalValField.textContent = formatMoney(finalTotal);
+        if (mobileTotalField) mobileTotalField.textContent = formatMoney(finalTotal);
+        if (taxValField) taxValField.textContent = '₹0';
+    };
+
+    const createItemNode = (item) => {
+        const itemSubtotal = getItemSubtotal(item);
+        const itemQuantity = parseInt(item.quantity, 10) || 1;
+        const article = document.createElement('article');
+        article.className = 'gb-cart-item';
+        article.dataset.cartItemId = item.id;
+        article.dataset.basePrice = String(parsePrice(item.price));
+
+        article.innerHTML = `
+            <div class="gb-cart-item-border" aria-hidden="true"></div>
+            <div class="gb-cart-item-img-holder">
+                <img class="gb-cart-item-img" src="${escapeHtml(getProductImage(item))}" alt="${escapeHtml(item.alt || item.name || 'Cart item image')}">
+            </div>
+            <div class="gb-cart-item-details">
+                <header class="gb-cart-item-header">
+                    <div>
+                        <h3 class="gb-cart-item-title">${escapeHtml(item.name || 'Product')}</h3>
+                        <p class="gb-cart-item-category">${escapeHtml(item.category || 'Selected product')}</p>
+                    </div>
+                    <span class="gb-cart-item-price-display">${formatMoney(parsePrice(item.price))}</span>
+                </header>
+                <div class="gb-cart-item-variant">Quantity: <span class="gb-cart-variant-name">${itemQuantity}</span> | Subtotal: <span class="gb-cart-variant-name">${formatMoney(itemSubtotal)}</span></div>
+                <div class="gb-cart-item-delivery">
+                    <i data-lucide="truck"></i><span>Estimated Delivery: 2-3 Business Days</span>
+                </div>
+                <footer class="gb-cart-item-footer">
+                    <div class="gb-cart-quantity-stepper">
+                        <button type="button" class="gb-cart-qty-btn gb-cart-qty-minus" aria-label="Reduce unit count">-</button>
+                        <input type="number" class="gb-cart-qty-input" value="${itemQuantity}" min="1" max="10" readonly aria-label="Selected product quantities">
+                        <button type="button" class="gb-cart-qty-btn gb-cart-qty-plus" aria-label="Increase unit count">+</button>
+                    </div>
+                    <div class="gb-cart-utility-actions">
+                        <button type="button" class="gb-cart-util-action-btn gb-cart-wishlist-trigger" aria-label="Move item to private wishlist portfolio">
+                            <i data-lucide="heart"></i><span>Save For Later</span>
+                        </button>
+                        <button type="button" class="gb-cart-util-action-btn gb-cart-remove-trigger" aria-label="Extract item permanently from shopping bag">
+                            <i data-lucide="trash-2"></i><span>Remove</span>
+                        </button>
+                    </div>
+                </footer>
+            </div>
+        `;
+
+        return article;
+    };
+
+    const renderCart = () => {
+        if (!itemsWrapper || !cartContentView || !cartEmptyView) return;
+
+        const items = getCartItems();
+        itemsWrapper.innerHTML = '';
+
+        if (!items.length) {
+            cartContentView.style.display = 'none';
+            cartEmptyView.style.display = 'block';
+            renderSummary([]);
+            if (window.lucide) window.lucide.createIcons();
             return;
         }
 
-        // Synchronize count text nodes labels parameters
-        if (headerCountLabel) {
-            headerCountLabel.textContent = `${activeItemsArray.length} ${activeItemsArray.length === 1 ? 'Item' : 'Items'}`;
-        }
+        items.forEach((item) => {
+            itemsWrapper.appendChild(createItemNode(item));
+        });
 
-        // Apply discount matrix deductions handshakes
-        let calculatedDiscountValue = computedRunningSubtotal * appliedDiscountPercentageRate;
-        let finalComputedGrandTotal = computedRunningSubtotal - calculatedDiscountValue;
+        cartEmptyView.style.display = 'none';
+        cartContentView.style.display = 'grid';
+        renderSummary(items);
 
-        // Process formats strings into local monetary templates
-        if (subtotalValField) subtotalValField.textContent = `₹${computedRunningSubtotal.toLocaleString()}`;
-        
-        if (calculatedDiscountValue > 0) {
-            if (discountRowNode) discountRowNode.style.display = 'flex';
-            if (discountValField) discountValField.textContent = `-₹${Math.floor(calculatedDiscountValue).toLocaleString()}`;
-        } else {
-            if (discountRowNode) discountRowNode.style.display = 'none';
-        }
-
-        if (totalValField) totalValField.textContent = `₹${Math.floor(finalComputedGrandTotal).toLocaleString()}`;
-        if (mobileTotalField) mobileTotalField.textContent = `₹${Math.floor(finalComputedGrandTotal).toLocaleString()}`;
+        if (window.lucide) window.lucide.createIcons();
     };
 
-    /* =========================================================
-       1. QUANTITY INCREMENT STEPPER DELEGATES HANDLER
-       ========================================================= */
     if (itemsWrapper) {
         itemsWrapper.addEventListener('click', (event) => {
+            const itemCard = event.target.closest('.gb-cart-item');
+            if (!itemCard) return;
+
+            const itemId = itemCard.getAttribute('data-cart-item-id');
             const plusBtnTarget = event.target.closest('.gb-cart-qty-plus');
             const minusBtnTarget = event.target.closest('.gb-cart-qty-minus');
-
-            if (!plusBtnTarget && !minusBtnTarget) return;
-
-            const targetItemCard = event.target.closest('.gb-cart-item');
-            const qtyInputField = targetItemCard.querySelector('.gb-cart-qty-input');
-            let currentIntUnitsValue = parseInt(qtyInputField.value, 10);
-            
-            const operationalMaxLimit = parseInt(qtyInputField.getAttribute('max'), 10) || 10;
-            const operationalMinLimit = parseInt(qtyInputField.getAttribute('min'), 10) || 1;
-
-            if (plusBtnTarget && currentIntUnitsValue < operationalMaxLimit) {
-                qtyInputField.value = currentIntUnitsValue + 1;
-            } else if (minusBtnTarget && currentIntUnitsValue > operationalMinLimit) {
-                qtyInputField.value = currentIntUnitsValue - 1;
-            }
-
-            recalculateCartLedgerTotals();
-        });
-    }
-
-    /* =========================================================
-       2. ITEM ERASURE SUBROUTINES WITH KINETIC DISMISSAL HOOKS
-       ========================================================= */
-    if (itemsWrapper) {
-        itemsWrapper.addEventListener('click', (event) => {
             const removeActionBtn = event.target.closest('.gb-cart-remove-trigger');
             const wishlistActionBtn = event.target.closest('.gb-cart-wishlist-trigger');
 
-            if (!removeActionBtn && !wishlistActionBtn) return;
+            if (plusBtnTarget || minusBtnTarget) {
+                const qtyInputField = itemCard.querySelector('.gb-cart-qty-input');
+                const currentUnitsValue = parseInt(qtyInputField.value, 10) || 1;
+                const nextUnitsValue = plusBtnTarget ? Math.min(currentUnitsValue + 1, 10) : Math.max(currentUnitsValue - 1, 1);
 
-            const targetItemCard = event.target.closest('.gb-cart-item');
-            
-            if (wishlistActionBtn) {
-                const itemTitle = targetItemCard.querySelector('.gb-cart-item-title').textContent;
-                console.log(`Database tracking transaction: Relocate product [${itemTitle}] to client private wishlist repository.`);
+                if (typeof GlitterCartManager !== 'undefined' && GlitterCartManager.updateItemQuantity) {
+                    GlitterCartManager.updateItemQuantity(itemId, nextUnitsValue);
+                }
+
+                return;
             }
 
-            // Engage hardware-accelerated fluid erasure transitions
-            targetItemCard.classList.add('gb-cart-item-dismissed');
+            if (wishlistActionBtn) {
+                const itemTitle = itemCard.querySelector('.gb-cart-item-title')?.textContent || 'Item';
+                console.log(`Database tracking transaction: Relocate product [${itemTitle}] to client private wishlist repository.`);
+                return;
+            }
 
-            // Defer physical removal parameters to synchronize with transition timelines
-            setTimeout(() => {
-                targetItemCard.remove();
-                recalculateCartLedgerTotals();
-            }, 350);
+            if (removeActionBtn && typeof GlitterCartManager !== 'undefined' && GlitterCartManager.removeFromCart) {
+                GlitterCartManager.removeFromCart(itemId);
+            }
         });
     }
 
-    /* =========================================================
-       3. CONCIERGE DISCOUNT COUPON VERIFICATION handshakes
-       ========================================================= */
     if (couponApplyTrigger && couponInputField && couponStatusLabel) {
         couponApplyTrigger.addEventListener('click', () => {
             const processRawInputString = couponInputField.value.trim().toUpperCase();
@@ -156,24 +197,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            if (activeValidCouponsDict.hasOwnProperty(processRawInputString)) {
+            if (Object.prototype.hasOwnProperty.call(activeValidCouponsDict, processRawInputString)) {
                 appliedDiscountPercentageRate = activeValidCouponsDict[processRawInputString];
-                
+
                 couponStatusLabel.textContent = `Promo Code "${processRawInputString}" linked successfully.`;
                 couponStatusLabel.classList.add('success');
-                
-                // Lockdown input structures once active code passes validation checks
+
                 couponInputField.disabled = true;
                 couponApplyTrigger.disabled = true;
                 couponApplyTrigger.style.opacity = '0.5';
 
-                recalculateCartLedgerTotals();
+                renderCart();
             } else {
                 couponStatusLabel.textContent = 'Invalid promo code context sequence.';
                 couponStatusLabel.classList.add('error');
                 appliedDiscountPercentageRate = 0;
-                recalculateCartLedgerTotals();
+                renderCart();
             }
         });
     }
+
+    document.addEventListener('gb:cart-updated', renderCart);
+    window.addEventListener('storage', (event) => {
+        if (event.key === 'gb_cart_items') {
+            renderCart();
+        }
+    });
+
+    renderCart();
 });

@@ -320,13 +320,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 const card = addCartButton.closest('[data-gb-products-card]');
                 const productName = card?.querySelector('.gb-products-card-title')?.textContent || 'Product';
                 const productPrice = parseInt(card?.querySelector('.gb-products-card-price')?.textContent?.replace(/[^\d]/g, '') || '0');
+                const productImage = card?.querySelector('.gb-products-card-image')?.src || '';
+                const productImageAlt = card?.querySelector('.gb-products-card-image')?.alt || productName;
                 const label = addCartButton.querySelector('span'); 
                 addCartButton.classList.add('gb-products-card-link-added'); 
                 if (label) label.textContent = 'Added';
                 
                 // Use unified cart manager for consistent badge updates
                 if (typeof GlitterCartManager !== 'undefined') {
-                    GlitterCartManager.addToCart(`product-${productName}-${Date.now()}`, productName, productPrice);
+                    const productId = GlitterCartManager.createProductId
+                        ? GlitterCartManager.createProductId(productName)
+                        : `product-${String(productName).toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+                    GlitterCartManager.addToCart(productId, productName, productPrice, 1, {
+                        image: productImage,
+                        alt: productImageAlt,
+                        sourceUrl: window.location.href
+                    });
                 }
             }
         });

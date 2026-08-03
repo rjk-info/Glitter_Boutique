@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glitter Boutique | Luxury Face & Body Gems</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/home_img/logo/Glitter Beauty LOGO PNG.png">
+
+    <!-- Google Fonts: Playfair Display for Headings, Poppins for Navigation -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Development CSS Link -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="account.css">
+
+    <!-- Lucide Icons Development Script -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- PREMIUM GLITTER BOUTIQUE HEADER -->
+    <header class="gb-navbar-header" id="gb-navbar-main">
+        <div class="gb-navbar-container">
+
+            <!-- Brand Identity -->
+            <a href="index.html" class="gb-navbar-logo-link" aria-label="Glitter Boutique Home">
+                <img src="assets/home_img/logo/Glitter Beauty LOGO PNG.png" alt="Glitter Boutique Logo"
+                    class="gb-navbar-logo-img">
+            </a>
+
+            <!-- Central Desktop Navigation Map -->
+            <nav class="gb-navbar-desktop-nav" aria-label="Main Desktop Navigation">
+                <ul class="gb-navbar-menu-list">
+                    <li class="gb-navbar-menu-item"><a href="index.html"
+                            class="gb-navbar-menu-link gb-navbar-active">Home</a>
+                    </li>
+                    <li class="gb-navbar-menu-item"><a href="about_us.html" class="gb-navbar-menu-link">About Us</a>
+                    </li>
+                    <li class="gb-navbar-menu-item"><a href="products.html" class="gb-navbar-menu-link">Products</a>
+                    </li>
+                    <li class="gb-navbar-menu-item"><a href="blog.html" class="gb-navbar-menu-link">Blog</a></li>
+                    <li class="gb-navbar-menu-item"><a href="contact.html" class="gb-navbar-menu-link">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Utility Action Controls -->
+            <div class="gb-navbar-utilities">
+                <button class="gb-navbar-utility-btn" aria-label="Open Search Panel">
+                    <i data-lucide="search" class="gb-navbar-icon"></i>
+                </button>
+                <a href="/account.html" class="gb-navbar-utility-btn" aria-label="View Account Profile">
+                    <i data-lucide="user" class="gb-navbar-icon"></i>
+                </a>
+                <a href="/cart.html" class="gb-navbar-utility-btn gb-navbar-cart-trigger"
+                    aria-label="View Shopping Cart, 3 items inside">
+                    <i data-lucide="shopping-bag" class="gb-navbar-icon"></i>
+                    <span class="gb-navbar-cart-badge" aria-hidden="true">3</span>
+                </a>
+
+                <!-- Hamburger Trigger Mechanism (Visible < 992px) -->
+                <button class="gb-navbar-hamburger-trigger" id="gb-navbar-menu-open" aria-expanded="false"
+                    aria-controls="gb-navbar-mobile-overlay" aria-label="Open Navigation Menu">
+                    <span class="gb-navbar-hamburger-line"></span>
+                    <span class="gb-navbar-hamburger-line"></span>
+                    <span class="gb-navbar-hamburger-line"></span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- FULL SCREEN MOBILE OVERLAY MENU -->
+    <div class="gb-navbar-mobile-overlay" id="gb-navbar-mobile-overlay" aria-hidden="true" role="dialog"
+        aria-label="Mobile Navigation Menu">
+
+        <!-- Glowing Ambient Elements for Festival Aesthetic -->
+        <div class="gb-navbar-mobile-glow-top"></div>
+        <div class="gb-navbar-mobile-glow-bottom"></div>
+
+        <!-- Intercept / Dismiss Controls -->
+        <div class="gb-navbar-mobile-header">
+            <button class="gb-navbar-mobile-close-btn" id="gb-navbar-menu-close" aria-label="Close Navigation Menu">
+                <i data-lucide="x" class="gb-navbar-close-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dynamic Content Context -->
+        <div class="gb-navbar-mobile-content">
+            <nav class="gb-navbar-mobile-nav" aria-label="Main Mobile Navigation">
+                <ul class="gb-navbar-mobile-list">
+                    <li class="gb-navbar-mobile-item"><a href="index.html"
+                            class="gb-navbar-mobile-link gb-navbar-mobile-active">Home</a></li>
+                    <li class="gb-navbar-mobile-item"><a href="about_us.html" class="gb-navbar-mobile-link">About Us</a>
+                    </li>
+                    <li class="gb-navbar-mobile-item"><a href="products.html" class="gb-navbar-mobile-link">Products</a>
+                    </li>
+                    <li class="gb-navbar-mobile-item"><a href="blog.html" class="gb-navbar-mobile-link">Blog</a></li>
+                    <li class="gb-navbar-mobile-item"><a href="contact.html" class="gb-navbar-mobile-link">Contact
+                            Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="gb-navbar-mobile-divider"></div>
+
+            <!-- Mobile Utility Footer Matrix -->
+            <div class="gb-navbar-mobile-utilities">
+                <button class="gb-navbar-mobile-util-btn" aria-label="Search Catalog">
+                    <i data-lucide="search"></i>
+                    <span>Search</span>
+                </button>
+                <a href="/account" class="gb-navbar-mobile-util-btn" aria-label="My Profile">
+                    <i data-lucide="user"></i>
+                    <span>Account</span>
+                </a>
+                <a href="/cart" class="gb-navbar-mobile-util-btn" aria-label="Shopping Cart">
+                    <div class="gb-navbar-mobile-cart-wrapper">
+                        <i data-lucide="shopping-bag"></i>
+                        <span class="gb-navbar-mobile-badge">3</span>
+                    </div>
+                    <span>Bag</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<!-- =========================================================
+   GLITTER BOUTIQUE - LUXURY MEMBER DASHBOARD RESCALE
+========================================================= -->
+<div class="gb-account-viewport">
+    
+    <!-- CONTEXT BREADCRUMB RUNWAY -->
+    <nav class="gb-account-breadcrumb" aria-label="Breadcrumb Pathway Track">
+        <div class="gb-account-layout-container">
+            <ol class="gb-account-breadcrumb-list">
+                <li><a href="index.html" class="gb-account-breadcrumb-link">Home</a></li>
+                <li class="gb-account-breadcrumb-current" aria-current="page">My Luxury Profile</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- MAIN INTERACTIVE RUNWAY WRAPPER -->
+    <main class="gb-account-runway-main">
+        <div class="gb-account-runway-mesh" aria-hidden="true"></div>
+        <div class="gb-account-glitter-field" aria-hidden="true"></div>
+
+        <div class="gb-account-layout-container">
+
+            <!-- =========================================================
+               SECTION 1: THE HIGH-SPEC PREMIUM COMPACT PROFILE HERO
+            ========================================================= -->
+            <section class="gb-account-hero-card gb-account-reveal" aria-label="Customer Elite Profile Summary">
+                <div class="gb-account-hero-border" aria-hidden="true"></div>
+                <div class="gb-account-hero-aurora" aria-hidden="true"></div>
+                
+                <div class="gb-account-hero-upper-core">
+                    <!-- Profile Avatar Block -->
+                    <div class="gb-account-hero-avatar-zone">
+                        <div class="gb-account-avatar-frame">
+                            <img class="gb-account-avatar" id="gb-account-avatar-target" src="assets/images/team/team-1.jpg" alt="Riya Malhotra Portrait">
+                            <div class="gb-account-avatar-glow" aria-hidden="true"></div>
+                        </div>
+                        <div class="gb-account-avatar-actions">
+                            <button type="button" class="gb-account-avatar-btn" id="gb-account-trigger-photo" aria-label="Change Profile Photo"><i data-lucide="camera"></i></button>
+                            <button type="button" class="gb-account-avatar-btn" id="gb-account-trigger-edit" aria-label="Modify Profile Context Credentials"><i data-lucide="edit-3"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Meta Typography Coordinates -->
+                    <div class="gb-account-hero-user-meta">
+                        <div class="gb-account-badge-row">
+                            <span class="gb-account-tier-badge"><i data-lucide="crown"></i><span>Gold Member</span></span>
+                            <span class="gb-account-since-lbl">Member Since Nov 2025</span>
+                        </div>
+                        <h1 class="gb-account-user-name" id="gb-account-display-fullname">Riya Malhotra</h1>
+                        <p class="gb-account-user-comms"><span id="gb-account-display-email">riya@luxuryedit.com</span> &bull; <span id="gb-account-display-phone">+91 98765 43210</span></p>
+                    </div>
+
+                    <!-- Quick Navigation Wires Hub -->
+                    <div class="gb-account-hero-quick-wires" aria-label="Profile Quick Shortcuts Link Matrix">
+                        <button type="button" class="gb-account-wire-link" data-link-panel="panel-orders"><i data-lucide="shopping-bag"></i><span>My Orders</span></button>
+                        <button type="button" class="gb-account-wire-link" data-link-panel="panel-wishlist"><i data-lucide="heart"></i><span>Wishlist</span></button>
+                        <button type="button" class="gb-account-wire-link" data-link-panel="panel-orders"><i data-lucide="map-pin"></i><span>Track Order</span></button>
+                        <a href="/support" class="gb-account-wire-link"><i data-lucide="help-circle"></i><span>Support</span></a>
+                    </div>
+                </div>
+
+                <div class="gb-account-hero-divider" aria-hidden="true"></div>
+
+                <!-- COMPACT HIGH-END STATISTICAL EMBED CARD MATRICES -->
+                <div class="gb-account-hero-stats-grid" id="gb-account-stats-observer-gate">
+                    
+                    <div class="gb-account-hero-mini-stat" data-target-value="14" data-suffix="">
+                        <div class="gb-account-stat-bg-ghost" aria-hidden="true">14</div>
+                        <div class="gb-account-stat-inner">
+                            <span class="gb-account-stat-lbl">Completed Orders</span>
+                            <span class="gb-account-stat-num" id="stat-lbl-1">0</span>
+                        </div>
+                    </div>
+
+                    <div class="gb-account-hero-mini-stat" data-target-value="12" data-suffix="">
+                        <div class="gb-account-stat-bg-ghost" aria-hidden="true">12</div>
+                        <div class="gb-account-stat-inner">
+                            <span class="gb-account-stat-lbl">Wishlist Products</span>
+                            <span class="gb-account-stat-num" id="stat-lbl-2">0</span>
+                        </div>
+                    </div>
+
+                    <div class="gb-account-hero-mini-stat" data-target-value="2450" data-suffix=" pts">
+                        <div class="gb-account-stat-bg-ghost" aria-hidden="true">2.4K</div>
+                        <div class="gb-account-stat-inner">
+                            <span class="gb-account-stat-lbl">Reward Points</span>
+                            <span class="gb-account-stat-num" id="stat-lbl-3">0</span>
+                        </div>
+                    </div>
+
+                    <div class="gb-account-hero-mini-stat" data-target-value="4" data-suffix="">
+                        <div class="gb-account-stat-bg-ghost" aria-hidden="true">04</div>
+                        <div class="gb-account-stat-inner">
+                            <span class="gb-account-stat-lbl">Coupons Available</span>
+                            <span class="gb-account-stat-num" id="stat-lbl-4">0</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- MOBILE NAVIGATION TOGGLE BAR INTERCEPT -->
+            <div class="gb-account-mobile-toggle-bar">
+                <button type="button" class="gb-account-mobile-drawer-btn" id="gb-account-drawer-trigger-open" aria-expanded="false" aria-controls="gb-account-sidebar-context">
+                    <i data-lucide="sliders"></i><span>Open Account Menu Map</span>
+                </button>
+            </div>
+
+            <!-- =========================================================
+               SECTION 2: CORE WORKSPACE GRID ASYMMETRICAL RUNWAY
+            ========================================================= -->
+            <div class="gb-account-workspace-grid">
+                
+                <!-- LEFT SIDEBAR: STICKY CONCIERGE NAVIGATION MATRICES PANEL -->
+                <aside class="gb-account-sidebar" id="gb-account-sidebar-context" role="navigation" aria-label="Account Settings Routing Map">
+                    <div class="gb-account-drawer-header">
+                        <h3 class="gb-account-drawer-title">Profile Navigation</h3>
+                        <button type="button" class="gb-account-drawer-close" id="gb-account-drawer-trigger-close" aria-label="Close Account Menu"><i data-lucide="x"></i></button>
+                    </div>
+                    <ul class="gb-account-menu-list" role="tablist">
+                        <li><button type="button" class="gb-account-menu-link gb-account-menu-active" role="tab" aria-selected="true" data-panel-target="panel-dashboard"><i data-lucide="layout-dashboard"></i><span>Dashboard</span></button></li>
+                        <li><button type="button" class="gb-account-menu-link" role="tab" aria-selected="false" data-panel-target="panel-orders"><i data-lucide="shopping-bag"></i><span>My Orders</span></button></li>
+                        <li><button type="button" class="gb-account-menu-link" role="tab" aria-selected="false" data-panel-target="panel-wishlist"><i data-lucide="heart"></i><span>Wishlist</span></button></li>
+                        <li><button type="button" class="gb-account-menu-link" role="tab" aria-selected="false" data-panel-target="panel-addresses"><i data-lucide="map-pin"></i><span>Addresses</span></button></li>
+                        <li><button type="button" class="gb-account-menu-link" role="tab" aria-selected="false" data-panel-target="panel-payments"><i data-lucide="credit-card"></i><span>Payment Methods</span></button></li>
+                        <li><button type="button" class="gb-account-menu-link" role="tab" aria-selected="false" data-panel-target="panel-notifications"><i data-lucide="bell"></i><span>Notifications</span></button></li>
+                        <li><button type="button" class="gb-account-menu-link" role="tab" aria-selected="false" data-panel-target="panel-rewards"><i data-lucide="award"></i><span>Reward Points</span></button></li>
+                        <li><button type="button" class="gb-account-menu-link" role="tab" aria-selected="false" data-panel-target="panel-settings"><i data-lucide="user"></i><span>Personal Information</span></button></li>
+                        <li><button type="button" class="gb-account-menu-link" role="tab" aria-selected="false" data-panel-target="panel-security"><i data-lucide="shield-check"></i><span>Security Matrix</span></button></li>
+                        <li><button type="button" class="gb-account-menu-link" role="tab" aria-selected="false" data-panel-target="panel-newsletters"><i data-lucide="mail-check"></i><span>Communication Hub</span></button></li>
+                        <li class="gb-account-menu-divider" aria-hidden="true"></li>
+                        <li><a href="/logout" class="gb-account-menu-link gb-account-menu-logout-action"><i data-lucide="log-out"></i><span>Logout</span></a></li>
+                    </ul>
+                </aside>
+
+                <!-- RIGHT CONTENT BLOCK VIEWPORTS HUB MATRIX -->
+                <div class="gb-account-panel-viewport-hub">
+                    
+                    <!-- PANEL A: LANDING DASHBOARD LANDING OVERVIEW SPECIFICATION -->
+                    <div class="gb-account-tab-panel gb-account-panel-active" id="panel-dashboard" role="tabpanel">
+                        <article class="gb-account-glass-card gb-account-p-large">
+                            <div class="gb-account-card-border" aria-hidden="true"></div>
+                            <header class="gb-account-block-header">
+                                <div>
+                                    <h2 class="gb-account-panel-heading">Welcome Back, Diamond Member</h2>
+                                    <p class="gb-account-panel-subtext">Last login verified session coordinates: Today, 10:24 AM</p>
+                                </div>
+                            </header>
+                            <div class="gb-account-dashboard-overview-row">
+                                <p class="gb-account-dashboard-welcome-msg">
+                                    Your account context tier portfolio is active. Enjoy exclusive allocation access keys, zero priority courier fees, and premium private drops updates natively processed via your customer panel environment runway.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- PANEL B: MY ORDERS COLLECTION SECTION -->
+                    <div class="gb-account-tab-panel" id="panel-orders" role="tabpanel">
+                        <div class="gb-account-block-header">
+                            <h2 class="gb-account-panel-heading">Recent Order Histories</h2>
+                        </div>
+                        <div class="gb-account-orders-stack">
+                            
+                            <!-- Order Entry 1 -->
+                            <article class="gb-account-order-card">
+                                <div class="gb-account-order-border" aria-hidden="true"></div>
+                                <div class="gb-account-order-media">
+                                    <img src="assets/images/products/product-1.png" alt="Crystal Crown Face Gems Order">
+                                </div>
+                                <div class="gb-account-order-info-core">
+                                    <div class="gb-account-order-upper-row">
+                                        <div>
+                                            <h3 class="gb-account-order-title">Crystal Crown Face Gems</h3>
+                                            <p class="gb-account-order-num-date">Order Code: <span class="gb-account-id-txt">GB-2026-9843</span> &bull; May 14, 2026</p>
+                                        </div>
+                                        <span class="gb-account-status-badge gb-account-status-delivered">Delivered</span>
+                                    </div>
+                                    <div class="gb-account-order-footer-row">
+                                        <span class="gb-account-order-price-lbl">₹499</span>
+                                        <div class="gb-account-order-actions">
+                                            <button type="button" class="gb-account-action-btn gb-account-btn-accent">Track Package</button>
+                                            <button type="button" class="gb-account-action-btn gb-account-btn-sub">View Details</button>
+                                            <button type="button" class="gb-account-action-btn gb-account-btn-sub">Reorder</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Order Entry 2 -->
+                            <article class="gb-account-order-card">
+                                <div class="gb-account-order-border" aria-hidden="true"></div>
+                                <div class="gb-account-order-media">
+                                    <img src="assets/images/products/product-2.png" alt="Aurora Body Gems Order">
+                                </div>
+                                <div class="gb-account-order-info-core">
+                                    <div class="gb-account-order-upper-row">
+                                        <div>
+                                            <h3 class="gb-account-order-title">Aurora Body Gems</h3>
+                                            <p class="gb-account-order-num-date">Order Code: <span class="gb-account-id-txt">GB-2026-9912</span> &bull; May 28, 2026</p>
+                                        </div>
+                                        <span class="gb-account-status-badge gb-account-status-processing">Processing</span>
+                                    </div>
+                                    <div class="gb-account-order-footer-row">
+                                        <span class="gb-account-order-price-lbl">₹599</span>
+                                        <div class="gb-account-order-actions">
+                                            <button type="button" class="gb-account-action-btn gb-account-btn-accent">Track Package</button>
+                                            <button type="button" class="gb-account-action-btn gb-account-btn-sub">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+
+                    <!-- PANEL C: WISHLIST HORIZONTAL PREMIUM SLIDER PREVIEW -->
+                    <div class="gb-account-tab-panel" id="panel-wishlist" role="tabpanel">
+                        <div class="gb-account-block-header">
+                            <h2 class="gb-account-panel-heading">Wishlist Portfolio</h2>
+                        </div>
+                        <div class="gb-account-slider-workspace">
+                            <div class="gb-account-slider-track" id="gb-account-wishlist-track-node">
+                                
+                                <!-- Wishlist Item Card 1 (Product Page Consistent Blueprint Syntax Form) -->
+                                <article class="gb-account-wishlist-card">
+                                    <div class="gb-account-wish-border" aria-hidden="true"></div>
+                                    <button type="button" class="gb-account-wish-remove-btn" aria-label="Extract Item"><i data-lucide="x"></i></button>
+                                    <div class="gb-account-wish-media">
+                                        <img src="assets/images/products/product-4.png" alt="Moonlight Gems Look Link" draggable="false">
+                                    </div>
+                                    <div class="gb-account-wish-body">
+                                        <h3 class="gb-account-wish-title">Moonlight Gems</h3>
+                                        <span class="gb-account-wish-price">₹649</span>
+                                        <button type="button" class="gb-account-wish-cta-btn"><i data-lucide="shopping-bag"></i><span>Move To Bag</span></button>
+                                    </div>
+                                </article>
+
+                                <!-- Wishlist Item Card 2 -->
+                                <article class="gb-account-wishlist-card">
+                                    <div class="gb-account-wish-border" aria-hidden="true"></div>
+                                    <button type="button" class="gb-account-wish-remove-btn" aria-label="Extract Item"><i data-lucide="x"></i></button>
+                                    <div class="gb-account-wish-media">
+                                        <img src="assets/images/products/product-5.png" alt="Festival Sparkle Kit" draggable="false">
+                                    </div>
+                                    <div class="gb-account-wish-body">
+                                        <h3 class="gb-account-wish-title">Festival Sparkle Kit</h3>
+                                        <span class="gb-account-wish-price">₹799</span>
+                                        <button type="button" class="gb-account-wish-cta-btn"><i data-lucide="shopping-bag"></i><span>Move To Bag</span></button>
+                                    </div>
+                                </article>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PANEL D: SAVED SHIPPING DIRECTORY ADDRESSES -->
+                    <div class="gb-account-tab-panel" id="panel-addresses" role="tabpanel">
+                        <div class="gb-account-block-header">
+                            <h2 class="gb-account-panel-heading">Saved Shipments Addresses</h2>
+                            <button type="button" class="gb-account-action-btn gb-account-btn-accent"><i data-lucide="plus"></i><span>Add New</span></button>
+                        </div>
+                        <div class="gb-account-address-directory-grid">
+                            
+                            <!-- Address 1: Default Home -->
+                            <div class="gb-account-address-card gb-account-address-card-default">
+                                <div class="gb-account-address-border" aria-hidden="true"></div>
+                                <span class="gb-account-address-badge">Default Home Address</span>
+                                <h3 class="gb-account-address-identity">Riya Malhotra</h3>
+                                <p class="gb-account-address-text">Luxury Wing Sector 4, Connaught Place Block C, New Delhi, 110001, India</p>
+                                <div class="gb-account-address-actions">
+                                    <button type="button" class="gb-account-action-link-btn"><i data-lucide="edit-2"></i><span>Edit</span></button>
+                                    <button type="button" class="gb-account-action-link-btn gb-account-link-btn-danger"><i data-lucide="trash-2"></i><span>Delete</span></button>
+                                </div>
+                            </div>
+
+                            <!-- Address 2: Office -->
+                            <div class="gb-account-address-card">
+                                <div class="gb-account-address-border" aria-hidden="true"></div>
+                                <span class="gb-account-address-badge">Corporate Office</span>
+                                <h3 class="gb-account-address-identity">Riya Malhotra (C/O Design Studio)</h3>
+                                <p class="gb-account-address-text">Okhla Industrial Runway Phase III, Luxury Retail Development Wing, New Delhi, 110020, India</p>
+                                <div class="gb-account-address-actions">
+                                    <button type="button" class="gb-account-action-link-btn"><i data-lucide="edit-2"></i><span>Edit</span></button>
+                                    <button type="button" class="gb-account-action-link-btn gb-account-link-btn-danger"><i data-lucide="trash-2"></i><span>Delete</span></button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- PANEL E: PAYMENT VAULTS INVENTORIES -->
+                    <div class="gb-account-tab-panel" id="panel-payments" role="tabpanel">
+                        <div class="gb-account-block-header">
+                            <h2 class="gb-account-panel-heading">Payment Methods</h2>
+                        </div>
+                        <p class="gb-account-panel-fallback-msg">No active payment methods tokenized inside vault configurations layers currently.</p>
+                    </div>
+
+                    <!-- PANEL F: NOTIFICATIONS INTEGRITY REGISTRY LOGGER -->
+                    <div class="gb-account-tab-panel" id="panel-notifications" role="tabpanel">
+                        <div class="gb-account-block-header">
+                            <h2 class="gb-account-panel-heading">Notifications Log</h2>
+                        </div>
+                        <p class="gb-account-panel-fallback-msg">You are completely up to date. No active system log alerts running.</p>
+                    </div>
+
+                    <!-- PANEL G: REWARDS MILESTONE EXPAND DETAILS -->
+                    <div class="gb-account-tab-panel" id="panel-rewards" role="tabpanel">
+                        <div class="gb-account-block-header">
+                            <h2 class="gb-account-panel-heading">Rewards Balancer Milestone</h2>
+                        </div>
+                        <p class="gb-account-panel-fallback-msg">Historical trace values point tracking logs show total baseline balance locks at 2,450 points.</p>
+                    </div>
+
+                    <!-- PANEL H: PERSONAL INFORMATION / ACCOUNT SETTINGS -->
+                    <div class="gb-account-tab-panel" id="panel-settings" role="tabpanel">
+                        <article class="gb-account-glass-card gb-account-p-large">
+                            <div class="gb-account-card-border" aria-hidden="true"></div>
+                            <header class="gb-account-block-header">
+                                <h2 class="gb-account-panel-heading">Personal Information Configuration</h2>
+                            </header>
+                            
+                            <form class="gb-account-glass-form" id="gb-account-form-profile-settings" novalidate>
+                                <div class="gb-account-form-row">
+                                    <div class="gb-account-input-group">
+                                        <label for="gb-settings-name" class="gb-account-form-label">Full Name</label>
+                                        <input type="text" id="gb-settings-name" class="gb-account-form-field" value="Riya Malhotra" required>
+                                    </div>
+                                    <div class="gb-account-input-group">
+                                        <label for="gb-settings-email" class="gb-account-form-label">Email Address</label>
+                                        <input type="email" id="gb-settings-email" class="gb-account-form-field" value="riya@luxuryedit.com" required>
+                                    </div>
+                                </div>
+
+                                <div class="gb-account-form-row">
+                                    <div class="gb-account-input-group">
+                                        <label for="gb-settings-phone" class="gb-account-form-label">Phone Reference Parameter</label>
+                                        <input type="text" id="gb-settings-phone" class="gb-account-form-field" value="+91 98765 43210">
+                                    </div>
+                                    <div class="gb-account-input-group">
+                                        <label for="gb-settings-birthday" class="gb-account-form-label">Date of Birth</label>
+                                        <input type="date" id="gb-settings-birthday" class="gb-account-form-field" value="1998-04-12">
+                                    </div>
+                                </div>
+
+                                <div class="gb-account-input-group">
+                                    <label for="gb-settings-gender" class="gb-account-form-label">Gender Identity Preference</label>
+                                    <select id="gb-settings-gender" class="gb-account-form-field gb-account-select">
+                                        <option value="female" selected>Female</option>
+                                        <option value="male">Male</option>
+                                        <option value="non-binary">Non-Binary</option>
+                                        <option value="prefer-not-to-say">Prefer Not To Disclose</option>
+                                    </select>
+                                </div>
+
+                                <button type="submit" class="gb-account-form-submit-btn">Save Personal Profile Modifications</button>
+                                <div class="gb-account-form-msg-banner" id="gb-account-settings-banner" role="status"></div>
+                            </form>
+                        </article>
+                    </div>
+
+                    <!-- PANEL I: SECURITY CONFIGURATION VAULT FORM -->
+                    <div class="gb-account-tab-panel" id="panel-security" role="tabpanel">
+                        <article class="gb-account-glass-card gb-account-p-large">
+                            <div class="gb-account-card-border" aria-hidden="true"></div>
+                            <header class="gb-account-block-header">
+                                <h2 class="gb-account-panel-heading">Security Matrix Configuration</h2>
+                            </header>
+                            
+                            <form class="gb-account-glass-form" id="gb-account-form-security-settings" novalidate>
+                                <div class="gb-account-form-row">
+                                    <div class="gb-account-input-group">
+                                        <label for="gb-security-currpass" class="gb-account-form-label">Current Password</label>
+                                        <input type="password" id="gb-security-currpass" class="gb-account-form-field" placeholder="••••••••••••">
+                                    </div>
+                                    <div class="gb-account-input-group">
+                                        <label for="gb-security-newpass" class="gb-account-form-label">New Password Matrix</label>
+                                        <input type="password" id="gb-security-newpass" class="gb-account-form-field" placeholder="Create complex alphanumeric sequence">
+                                    </div>
+                                </div>
+
+                                <div class="gb-account-security-toggles-stack">
+                                    <div class="gb-account-security-toggle-row">
+                                        <div>
+                                            <h4 class="gb-account-toggle-row-title">Two Factor Authentication (2FA)</h4>
+                                            <p class="gb-account-toggle-row-desc">Secure logins loops verification utilizing encrypted multi-tier mobile SMS tracking paths hooks.</p>
+                                        </div>
+                                        <label class="gb-account-switch-control" aria-label="Toggle Two Factor Verification">
+                                            <input type="checkbox" id="gb-toggle-2fa" checked>
+                                            <span class="gb-account-switch-slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="gb-account-security-toggle-row">
+                                        <div>
+                                            <h4 class="gb-account-toggle-row-title">Email Verified Token State</h4>
+                                            <p class="gb-account-toggle-row-desc">Confirms verified coordinate status for secure order tracking links handshakes.</p>
+                                        </div>
+                                        <span class="gb-account-status-badge gb-account-status-delivered">Verified Secure</span>
+                                    </div>
+
+                                    <div class="gb-account-security-toggle-row">
+                                        <div>
+                                            <h4 class="gb-account-toggle-row-title">Active Logged Sessions Devices</h4>
+                                            <p class="gb-account-toggle-row-desc">Currently running active sessions tracked bounds: 1 Desktop Node (New Delhi, India)</p>
+                                        </div>
+                                        <button type="button" class="gb-account-action-btn gb-account-btn-sub" id="gb-account-logout-all-trigger">Logout From All Alternative Devices</button>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="gb-account-form-submit-btn">Apply Security Locks Changes</button>
+                                <div class="gb-account-form-msg-banner" id="gb-account-security-banner" role="status"></div>
+                            </form>
+                        </article>
+                    </div>
+
+                    <!-- PANEL J: LUXURY COMMUNICATION TOGGLES HUB (NEWSLETTERS PREFERENCES) -->
+                    <div class="gb-account-tab-panel" id="panel-newsletters" role="tabpanel">
+                        <article class="gb-account-glass-card gb-account-p-large">
+                            <div class="gb-account-card-border" aria-hidden="true"></div>
+                            <header class="gb-account-block-header">
+                                <h2 class="gb-account-panel-heading">Communication Hub Preferences</h2>
+                            </header>
+                            
+                            <div class="gb-account-security-toggles-stack">
+                                
+                                <div class="gb-account-security-toggle-row">
+                                    <div>
+                                        <h4 class="gb-account-toggle-row-title">Email Offers Lookbooks</h4>
+                                        <p class="gb-account-toggle-row-desc">Receive curated private sales clearance vectors notifications directly to inbox.</p>
+                                    </div>
+                                    <label class="gb-account-switch-control" aria-label="Toggle Email Offers Lookbooks">
+                                        <input type="checkbox" checked>
+                                        <span class="gb-account-switch-slider"></span>
+                                    </label>
+                                </div>
+
+                                <div class="gb-account-security-toggle-row">
+                                    <div>
+                                        <h4 class="gb-account-toggle-row-title">SMS Alerts Channels</h4>
+                                        <p class="gb-account-toggle-row-desc">Instant real-time logistics dispatch tracks notifications routed straight onto cellular paths.</p>
+                                    </div>
+                                    <label class="gb-account-switch-control" aria-label="Toggle SMS Alerts Channels">
+                                        <input type="checkbox">
+                                        <span class="gb-account-switch-slider"></span>
+                                    </label>
+                                </div>
+
+                                <div class="gb-account-security-toggle-row">
+                                    <div>
+                                        <h4 class="gb-account-toggle-row-title">Product Launch Notifications Wires</h4>
+                                        <p class="gb-account-toggle-row-desc">Be part of the immediate inner circle drops parameters for avant-garde limited edition crystal masterworks sets.</p>
+                                    </div>
+                                    <label class="gb-account-switch-control" aria-label="Toggle Product Launch Notifications Wires">
+                                        <input type="checkbox" checked>
+                                        <span class="gb-account-switch-slider"></span>
+                                    </label>
+                                </div>
+
+                                <div class="gb-account-security-toggle-row">
+                                    <div>
+                                        <h4 class="gb-account-toggle-row-title">Festival Aesthetic Campaign Wire Offers</h4>
+                                        <p class="gb-account-toggle-row-desc">Custom targeted trend lookbooks tailored contextually to upcoming global concert grids calendars maps.</p>
+                                    </div>
+                                    <label class="gb-account-switch-control" aria-label="Toggle Festival Aesthetic Campaign Wire Offers">
+                                        <input type="checkbox" checked>
+                                        <span class="gb-account-switch-slider"></span>
+                                    </label>
+                                </div>
+
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SECTION 6: RECENTLY VIEWED PRODUCTS REUSABLE COMPACT CAROUSEL SLIDER TRACK -->
+            <section class="gb-account-dashboard-subblock gb-account-reveal" aria-labelledby="gb-account-recents-heading" style="margin-top: 50px;">
+                <div class="gb-account-block-header">
+                    <h2 id="gb-account-recents-heading" class="gb-account-block-title">Recently Viewed Masterpieces</h2>
+                </div>
+                <div class="gb-account-slider-workspace">
+                    <div class="gb-account-slider-track" id="gb-account-recents-track-node">
+                        
+                        <!-- Product 1 -->
+                        <article class="gb-account-recent-product-card">
+                            <div class="gb-account-recent-prod-border" aria-hidden="true"></div>
+                            <div class="gb-account-recent-prod-media">
+                                <img src="assets/images/products/product-2.png" alt="Aurora Body Gems Look Variant Link" draggable="false">
+                            </div>
+                            <div class="gb-account-recent-prod-meta">
+                                <h3 class="gb-account-recent-prod-title">Aurora Body Gems</h3>
+                                <span class="gb-account-recent-prod-price">₹599</span>
+                            </div>
+                        </article>
+
+                        <!-- Product 2 -->
+                        <article class="gb-account-recent-product-card">
+                            <div class="gb-account-recent-prod-border" aria-hidden="true"></div>
+                            <div class="gb-account-recent-prod-media">
+                                <img src="assets/images/products/product-3.png" alt="Galaxy Shine Gems Look Variant Link" draggable="false">
+                            </div>
+                            <div class="gb-account-recent-prod-meta">
+                                <h3 class="gb-account-recent-prod-title">Galaxy Shine Gems</h3>
+                                <span class="gb-account-recent-prod-price">₹549</span>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- SECTION 10: HIGH REFRACTION PREMIUM EXTENDED CTA BANNER CLOSING STRIP -->
+        <section class="gb-account-final-cta" aria-labelledby="gb-account-cta-heading" style="margin-top: 60px;">
+            <div class="gb-account-cta-mesh" aria-hidden="true"></div>
+            <div class="gb-account-cta-sparkles" aria-hidden="true"></div>
+            <div class="gb-account-cta-content">
+                <h2 id="gb-account-cta-heading" class="gb-account-cta-title">Thank You For Being Part Of Glitter Boutique</h2>
+                <p class="gb-account-cta-desc">Continue shopping and unlock exclusive member benefits.</p>
+                <div class="gb-account-cta-actions">
+                    <a href="products.html" class="gb-account-btn-lux gb-account-btn-accent-gradient">
+                        <span>Continue Shopping</span><i data-lucide="arrow-right"></i>
+                    </a>
+                    <a href="products.html?tab=new-arrivals" class="gb-account-btn-lux gb-account-btn-outline-white">
+                        <span>Explore New Collection</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MOBILE MODAL DIALOG DRAWER OVERLAY FLOATING FIXED NAVIGATION BAR SKEW -->
+    <div class="gb-account-mobile-fixed-sticky-nav-bar" id="gb-account-mobile-dock">
+        <div class="gb-account-mobile-dock-container">
+            <button type="button" class="gb-account-dock-item gb-account-dock-active" data-dock-target="panel-dashboard"><i data-lucide="layout-dashboard"></i><span>Home</span></button>
+            <button type="button" class="gb-account-dock-item" data-dock-target="panel-orders"><i data-lucide="shopping-bag"></i><span>Orders</span></button>
+            <button type="button" class="gb-account-dock-item" data-dock-target="panel-wishlist"><i data-lucide="heart"></i><span>Wishlist</span></button>
+            <button type="button" class="gb-account-dock-item" id="gb-account-mobile-profile-toggle"><i data-lucide="user"></i><span>Profile</span></button>
+        </div>
+    </div>
+
+</div>
+
+  <!-- ======================================================
+   FOOTER START
+====================================================== -->
+    <footer class="gb-footer" aria-labelledby="gb-footer-community-heading">
+        <!-- Luxury Ambient Gradient Mesh & Sparkle Effects -->
+        <div class="gb-footer-ambient-mesh" aria-hidden="true"></div>
+        <div class="gb-footer-sparkle-overlay" aria-hidden="true"></div>
+
+        <div class="gb-footer-wrapper">
+
+            <!-- TOP AREA: Premium Glassmorphism Newsletter Subsystem -->
+            <div class="gb-footer-newsletter-zone">
+                <header class="gb-footer-newsletter-header">
+                    <span class="gb-footer-label">Join Our Community</span>
+                    <h2 id="gb-footer-community-heading" class="gb-footer-newsletter-title">Stay Sparkling With Glitter
+                        Boutique</h2>
+                    <p class="gb-footer-newsletter-desc">
+                        Get exclusive product launches, festival inspiration and special offers delivered directly to
+                        your inbox.
+                    </p>
+                </header>
+
+                <form class="gb-footer-form" id="gb-footer-newsletter-form" novalidate>
+                    <div class="gb-footer-input-wrapper">
+                        <i data-lucide="mail" class="gb-footer-input-icon" aria-hidden="true"></i>
+                        <input type="email" class="gb-footer-input" id="gb-footer-newsletter-email"
+                            placeholder="Enter your luxury email address" aria-label="Luxury email address input field"
+                            required>
+                        <div class="gb-footer-input-glow"></div>
+                    </div>
+                    <button type="submit" class="gb-footer-submit-btn">
+                        <span>Subscribe</span>
+                        <i data-lucide="arrow-right" class="gb-footer-btn-icon" aria-hidden="true"></i>
+                    </button>
+                </form>
+                <div class="gb-footer-status-msg" id="gb-footer-status-message" role="status" aria-live="polite"></div>
+            </div>
+
+            <!-- MAIN AREA: Structural 4-Column Balanced Grid Link Matrix -->
+            <div class="gb-footer-grid">
+
+                <!-- COLUMN 1: Brand Ecosystem & Glowing Social Clusters -->
+                <div class="gb-footer-column">
+                    <a href="/" class="gb-footer-logo-link" aria-label="Glitter Boutique Home">
+                        <img src="assets/home_img/logo/Glitter Beauty LOGO PNG.png" alt="Glitter Boutique Logo"
+                            class="gb-footer-logo-img">
+                    </a>
+                    <p class="gb-footer-brand-desc">
+                        Elevating the art of body ornamentation through premium, medical-grade multi-faceted crystal
+                        design matrices. Designed for mainstages, spotlight events, and unparalleled individual cosmic
+                        expressions.
+                    </p>
+                    <div class="gb-footer-social-cluster" aria-label="Glitter Boutique Social Media Links">
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/glitterboutique.in" class="gb-footer-social-btn" aria-label="Follow us on Instagram"
+                            target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/share/1GfUeUdVkB/" class="gb-footer-social-btn" aria-label="Follow us on Facebook"
+                            target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+
+
+                    </div>
+                </div>
+
+                <!-- COLUMN 2: Quick Navigation Links Runway -->
+                <nav class="gb-footer-column" aria-label="Footer Quick Links Navigation">
+                    <h3 class="gb-footer-column-title">Quick Links</h3>
+                    <ul class="gb-footer-links-list">
+                        <li><a href="./index.html" class="gb-footer-link">Home</a></li>
+                        <li><a href="./about_us.html" class="gb-footer-link">About Us</a></li>
+                        <li><a href="./products.html" class="gb-footer-link">Products</a></li>
+                        <li><a href="./index.html" class="gb-footer-link">Collections</a></li>
+                        <li><a href="./blog.html" class="gb-footer-link">Blog</a></li>
+                        <li><a href="./contact.html" class="gb-footer-link">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <!-- COLUMN 3: Core Curated Product Collections Links Runway -->
+                <nav class="gb-footer-column" aria-label="Footer Collections Navigation">
+                    <h3 class="gb-footer-column-title">Collections</h3>
+                    <ul class="gb-footer-links-list">
+                        <li><a href="/collections/face-gems" class="gb-footer-link">Face Gems</a></li>
+                        <li><a href="/collections/body-gems" class="gb-footer-link">Body Gems</a></li>
+                        <li><a href="/collections/festival" class="gb-footer-link">Festival Collection</a></li>
+                        <li><a href="/collections/concert" class="gb-footer-link">Concert Collection</a></li>
+                        <li><a href="/collections/bridal" class="gb-footer-link">Bridal Collection</a></li>
+                        <li><a href="/collections/new-arrivals" class="gb-footer-link">New Arrivals</a></li>
+                    </ul>
+                </nav>
+
+                <!-- COLUMN 4: Corporate Customer Support Infrastructure Links Runway -->
+                <nav class="gb-footer-column" aria-label="Footer Customer Support Navigation">
+                    <h3 class="gb-footer-column-title">Customer Support</h3>
+                    <ul class="gb-footer-links-list">
+                        <li><a href="/shipping" class="gb-footer-link">Shipping Policy</a></li>
+                        <li><a href="/returns" class="gb-footer-link">Return Policy</a></li>
+                        <li><a href="/privacy" class="gb-footer-link">Privacy Policy</a></li>
+                        <li><a href="/terms" class="gb-footer-link">Terms &amp; Conditions</a></li>
+                        <li><a href="#faq" class="gb-footer-link">FAQs</a></li>
+                        <li><a href="/track" class="gb-footer-link">Track Order</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <!-- BOTTOM AREA: Gradient Dividers, Copyright & Encrypted Payment Vector Array -->
+            <div class="gb-footer-bottom-bar">
+                <div class="gb-footer-divider" aria-hidden="true"></div>
+                <div class="gb-footer-bottom-content">
+                    <span class="gb-footer-copyright">&copy; 2026 Glitter Boutique. All Rights Reserved.</span>
+
+                    <div class="gb-footer-payment-vault" aria-label="Supported Secure Checkout Methods">
+
+                        <!-- Visa -->
+                        <div class="gb-footer-payment-card" title="Visa Secured Payments">
+                            <svg viewBox="0 0 48 32" width="44" height="28">
+                                <rect width="48" height="32" rx="4" fill="#FFFFFF" />
+                                <rect width="48" height="32" rx="4" fill="none" stroke="#EAEAEA" />
+                                <text x="24" y="21" text-anchor="middle" font-family="Arial, sans-serif"
+                                    font-weight="900" font-style="italic" font-size="13" fill="#1A1F71">VISA</text>
+                            </svg>
+                        </div>
+
+                        <!-- Mastercard -->
+                        <div class="gb-footer-payment-card" title="Mastercard Secured Payments">
+                            <svg viewBox="0 0 48 32" width="44" height="28">
+                                <rect width="48" height="32" rx="4" fill="#FFFFFF" />
+                                <rect width="48" height="32" rx="4" fill="none" stroke="#EAEAEA" />
+                                <circle cx="20" cy="16" r="8.5" fill="#EB001B" />
+                                <circle cx="28" cy="16" r="8.5" fill="#F79E1B" />
+                                <path d="M24 9.5a8.48 8.48 0 010 13 8.48 8.48 0 010-13z" fill="#FF5F00" />
+                            </svg>
+                        </div>
+
+                        <!-- PayPal -->
+                        <div class="gb-footer-payment-card" title="PayPal Express Checkout">
+                            <svg viewBox="0 0 48 32" width="44" height="28">
+                                <rect width="48" height="32" rx="4" fill="#FFFFFF" />
+                                <rect width="48" height="32" rx="4" fill="none" stroke="#EAEAEA" />
+                                <text x="24" y="20" text-anchor="middle" font-family="Arial, sans-serif"
+                                    font-weight="700" font-style="italic" font-size="10.5" fill="#003087">Pay</text>
+                                <text x="24" y="20" text-anchor="middle" font-family="Arial, sans-serif"
+                                    font-weight="700" font-style="italic" font-size="10.5" fill="#009CDE"
+                                    dx="10">Pal</text>
+                            </svg>
+                        </div>
+
+                        <!-- Apple Pay -->
+                        <div class="gb-footer-payment-card" title="Apple Pay Instant Pass">
+                            <svg viewBox="0 0 48 32" width="44" height="28">
+                                <rect width="48" height="32" rx="4" fill="#000000" />
+                                <g fill="#FFFFFF">
+                                    <path
+                                        d="M15.8 12.3c-.5.6-1.3 1.1-2.1 1-.1-.8.3-1.7.7-2.2.5-.6 1.4-1.1 2.1-1.1.1.9-.2 1.7-.7 2.3zm.7 1.1c-1.2-.1-2.2.7-2.7.7-.6 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.2.6.9 1.3 1.9 2.3 1.8.9 0 1.3-.6 2.4-.6s1.4.6 2.3.6c1 0 1.6-.9 2.2-1.8.7-1 1-2 1-2 0 0-1.9-.8-1.9-3 0-1.9 1.5-2.8 1.6-2.8-.9-1.3-2.2-1.4-2.9-1.5z" />
+                                </g>
+                                <text x="27" y="20.5" font-family="Arial, sans-serif" font-weight="600" font-size="8.5"
+                                    fill="#FFFFFF">Pay</text>
+                            </svg>
+                        </div>
+
+                        <!-- Google Pay -->
+                        <div class="gb-footer-payment-card" title="Google Pay Secure Port">
+                            <svg viewBox="0 0 48 32" width="44" height="28">
+                                <rect width="48" height="32" rx="4" fill="#FFFFFF" />
+                                <rect width="48" height="32" rx="4" fill="none" stroke="#EAEAEA" />
+                                <text x="9" y="20.5" font-family="Arial, sans-serif" font-weight="500" font-size="12"
+                                    fill="#5F6368">G</text>
+                                <text x="17" y="20.5" font-family="Arial, sans-serif" font-weight="400" font-size="12"
+                                    fill="#5F6368">Pay</text>
+                                <circle cx="10" cy="15.2" r="1" fill="#4285F4" />
+                            </svg>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Floating WhatsApp Button -->
+        <a href="919215566440" id="whatsapp-float" target="_blank" rel="noopener noreferrer">
+            <i class="wa-icon">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="#FFFFFF">
+                    <path
+                        d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0012.04 2m0 1.67c2.2 0 4.26.86 5.82 2.42a8.22 8.22 0 012.42 5.82c0 4.53-3.69 8.23-8.24 8.23a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 01-1.26-4.37c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.16 0-.43.06-.66.31s-.87.85-.87 2.07.89 2.4 1.01 2.56 1.76 2.83 4.38 3.85c2.17.85 2.61.68 3.08.64.47-.04 1.51-.62 1.72-1.21s.21-1.1.15-1.21-.23-.17-.47-.3-1.51-.74-1.74-.83-.4-.13-.57.13-.66.83-.81 1-.3.19-.55.06a6.9 6.9 0 01-2.05-1.26 7.68 7.68 0 01-1.42-1.77c-.15-.25-.02-.39.11-.52.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44s-.57-1.37-.79-1.87c-.19-.47-.4-.42-.57-.43z" />
+                </svg>
+            </i>
+            <span class="wa-tooltip">Chat with us</span>
+        </a>
+    </footer>
+    <!-- ======================================================
+   FOOTER END
+====================================================== -->
+    <!-- Component Logic Injection -->
+    <script src="cart-manager.js"></script>
+    <script src="script.js"></script>
+    <script src="account.js"></script>
+</body>
+
+</html>
