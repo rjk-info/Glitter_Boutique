@@ -17,8 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeFilterButtons = Array.from(document.querySelectorAll('[data-gb-products-close-filters]'));
     const resetButtons = Array.from(document.querySelectorAll('[data-gb-products-reset]'));
 
-    if (!productGrid || !resultsCount || !sortSelect || filterForms.length === 0) return;
-
     const products = [
         // Belly Tattoo
         { id: 'belly-tattoo-crystal-1', name: 'Crystal Belly Tattoo Design', description: 'Glamorous crystal temporary tattoo perfect for beachside celebrations.', mainCategory: 'face-body-jewels', mainCategoryLabel: 'Face & Body Jewels', subCategory: 'belly-naval-tattoos', subCategoryLabel: 'Belly / Naval Tattoos', price: 349, oldPrice: 449, availability: 'in-stock', availabilityLabel: 'In Stock', status: ['best-seller'], statusLabel: 'Best Seller', rating: 4.8, popularity: 85, createdAt: '2026-07-22', image: 'assets/products/Belly Tattoo/171.jpg' },
@@ -70,6 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'party-stick-night-3', name: 'Night Party Glitter Gems', description: 'Shimmering glitter gems perfect for night parties.', mainCategory: 'face-body-jewels', mainCategoryLabel: 'Face & Body Jewels', subCategory: 'party-stickers', subCategoryLabel: 'Party Stickers', price: 399, oldPrice: 529, availability: 'in-stock', availabilityLabel: 'In Stock', status: ['new-arrival'], statusLabel: 'New Arrival', rating: 4.7, popularity: 87, createdAt: '2026-07-21', image: 'assets/products/Party Stickers/112.jpg' },
         { id: 'party-stick-premium-4', name: 'Premium Party Bling', description: 'Premium party collection for exclusive celebrations.', mainCategory: 'face-body-jewels', mainCategoryLabel: 'Face & Body Jewels', subCategory: 'party-stickers', subCategoryLabel: 'Party Stickers', price: 379, oldPrice: 499, availability: 'coming-soon', availabilityLabel: 'Coming Soon', status: ['limited-edition'], statusLabel: 'Limited Edition', rating: 4.6, popularity: 80, createdAt: '2026-07-20', image: 'assets/products/Party Stickers/116.jpg' }
     ];
+
+    window.GB_PRODUCTS = products;
+    window.GB_FIND_PRODUCT = (productId) => products.find((product) => product.id === productId);
+
+    if (!productGrid || !resultsCount || !sortSelect || filterForms.length === 0) return;
 
     const mainCategories = [
         { value: 'face-body-jewels', label: 'Face & Body Jewels' },
@@ -315,7 +318,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const quickViewButton = event.target.closest('[data-gb-products-quick-view]');
             const addCartButton = event.target.closest('[data-gb-products-add-cart]');
             if (wishlistButton) { wishlistButton.classList.toggle('gb-products-card-icon-active'); wishlistButton.setAttribute('aria-pressed', String(wishlistButton.classList.contains('gb-products-card-icon-active'))); }
-            if (quickViewButton) { const card = quickViewButton.closest('[data-gb-products-product-id]'); if (card) card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
+            if (quickViewButton) {
+                const card = quickViewButton.closest('[data-gb-products-product-id]');
+                const productId = card?.getAttribute('data-gb-products-product-id');
+                if (productId) {
+                    window.location.href = `single_product.html?id=${encodeURIComponent(productId)}`;
+                }
+            }
             if (addCartButton) { 
                 const card = addCartButton.closest('[data-gb-products-card]');
                 const productName = card?.querySelector('.gb-products-card-title')?.textContent || 'Product';
