@@ -321,9 +321,19 @@ document.addEventListener('DOMContentLoaded', () => {
      * Binds downstream interactive click listeners to trigger visual operations
      */
     productGrid.addEventListener('click', (event) => {
+        const titleNode = event.target.closest('.gb-product-title');
         const quickViewBtn = event.target.closest('.gb-product-quickview-trigger');
         const wishlistBtn = event.target.closest('.gb-product-wishlist-btn');
         const addCartBtn = event.target.closest('[data-gb-home-add-cart]');
+        const productCard = event.target.closest('.gb-product-card');
+
+        if (titleNode && productCard) {
+            const productId = productCard.getAttribute('data-gb-home-product-id');
+            if (productId) {
+                window.location.href = `single_product.html?id=${encodeURIComponent(productId)}`;
+                return;
+            }
+        }
 
         if (quickViewBtn) {
             const productTitle = quickViewBtn.closest('.gb-product-card').querySelector('.gb-product-title').textContent;

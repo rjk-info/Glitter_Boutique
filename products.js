@@ -75,8 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'bags-makeup-pouch-1', name: 'Luxe Makeup Pouch', description: 'Soft, polished makeup pouch for everyday storage and travel.', mainCategory: 'bags', mainCategoryLabel: 'Bags', subCategory: 'luxe-makeup-pouches', subCategoryLabel: 'Luxe Makeup Pouches', price: 999, oldPrice: 1299, availability: 'in-stock', availabilityLabel: 'In Stock', status: ['limited-edition'], statusLabel: 'Limited Edition', rating: 4.8, popularity: 86, createdAt: '2026-07-21', image: 'https://rukminim1.flixcart.com/image/480/480/xif0q/tattoo-kit/d/a/o/crystal-tears-face-decoration-sticker-glitter-eye-bindi-stickers-original-imagv3zyc4pen9qg.jpeg?q=80' }
     ];
 
-    window.GB_PRODUCTS = products;
-    window.GB_FIND_PRODUCT = (productId) => products.find((product) => product.id === productId);
+    const homeProducts = Array.isArray(window.GB_HOME_PRODUCTS) ? window.GB_HOME_PRODUCTS : [];
+    const findHomeProduct = typeof window.GB_FIND_HOME_PRODUCT === 'function'
+        ? window.GB_FIND_HOME_PRODUCT
+        : (productId) => homeProducts.find((product) => product.id === productId) || null;
+
+    window.GB_PRODUCTS = [...products, ...homeProducts];
+    window.GB_FIND_PRODUCT = (productId) => products.find((product) => product.id === productId) || findHomeProduct(productId);
 
     if (!productGrid || !resultsCount || !sortSelect || filterForms.length === 0) return;
 

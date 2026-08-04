@@ -147,6 +147,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.lucide) {
             window.lucide.createIcons();
         }
+
+        const breadcrumbCurrent = document.querySelector('.gb-pdp-breadcrumb-current');
+        if (breadcrumbCurrent) {
+            breadcrumbCurrent.textContent = product.name;
+        }
     };
 
     const product = getProductFromRoute();
