@@ -265,14 +265,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const quantity = parseInt(document.getElementById('gb-pdp-qty-stepper')?.value || '1', 10);
             if (typeof GlitterCartManager !== 'undefined') {
-                const productId = GlitterCartManager.createProductId
+                const productId = product.id || (GlitterCartManager.createProductId
                     ? GlitterCartManager.createProductId(product.name)
-                    : `product-${String(product.name).toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+                    : `product-${String(product.name).toLowerCase().replace(/[^a-z0-9]+/g, '-')}`);
 
-                GlitterCartManager.addToCart(productId, product.name, product.price, quantity, {
+                GlitterCartManager.addToCart(productId, product.name, Number(product.price || 0), quantity, {
                     image: product.image,
                     alt: product.alt || product.name,
                     category: product.mainCategoryLabel || product.category || '',
+                    productId,
                     sourceUrl: window.location.href
                 });
             }

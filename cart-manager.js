@@ -39,7 +39,17 @@ const GlitterCartManager = (() => {
      */
     const getCartItems = () => {
         try {
-            return JSON.parse(localStorage.getItem(CART_STORAGE_KEY) || '[]');
+            const parsedItems = JSON.parse(localStorage.getItem(CART_STORAGE_KEY) || '[]');
+            if (!Array.isArray(parsedItems)) return [];
+
+            return parsedItems.filter((item) => {
+                const isBrokenProductsPagePlaceholder = item?.id === 'product-product'
+                    && String(item?.name || '').trim().toLowerCase() === 'product'
+                    && parsePrice(item?.price) === 0
+                    && !item?.image;
+
+                return !isBrokenProductsPagePlaceholder;
+            });
         } catch (e) {
             return [];
         }
@@ -78,16 +88,20 @@ const GlitterCartManager = (() => {
      */
     const addToCart = (productId, productName, price = 0, quantity = 1, metadata = {}) => {
         const items = getCartItems();
-        const normalizedPrice = parsePrice(price);
+        const normalizedPrice = parsePrice(price || metadata.price);
         const normalizedQuantity = normalizeQuantity(quantity);
-        const safeProductId = productId || slugify(productName);
+        const safeProductId = metadata.productId || productId || slugify(productName);
         
         // Check if product already exists
         const existingItem = items.find(item => item.id === safeProductId);
         
         if (existingItem) {
             existingItem.quantity = normalizeQuantity(existingItem.quantity) + normalizedQuantity;
-            existingItem.price = normalizedPrice || existingItem.price || 0;
+            if (normalizedPrice > 0) {
+                existingItem.price = normalizedPrice;
+            } else if (!Number.isFinite(parsePrice(existingItem.price))) {
+                existingItem.price = 0;
+            }
             existingItem.name = productName || existingItem.name;
             if (metadata.image) existingItem.image = metadata.image;
             if (metadata.alt) existingItem.alt = metadata.alt;
@@ -103,6 +117,7 @@ const GlitterCartManager = (() => {
                 image: metadata.image || '',
                 alt: metadata.alt || productName || 'Cart item image',
                 category: metadata.category || '',
+                productId: metadata.productId || safeProductId,
                 sourceUrl: metadata.sourceUrl || '',
                 addedAt: Date.now()
             });

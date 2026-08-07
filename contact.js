@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             particle.style.position = 'absolute';
             particle.style.width = Math.random() * 4 + 2 + 'px';
             particle.style.height = particle.style.width;
-            particle.style.backgroundColor = Math.random() > 0.4 ? '#D4AF37' : '#FFFFFF';
+            particle.style.backgroundColor = Math.random() > 0.66 ? '#EC1E79' : (Math.random() > 0.5 ? '#9B4F96' : '#FFFFFF');
             particle.style.borderRadius = '50%';
             particle.style.opacity = Math.random() * 0.5 + 0.2;
             
@@ -83,10 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
        2. CONCIERGE FORM DYNAMIC INPUTS FIELD VALIDATORSHANDSHAKE
        ========================================================================== */
     const fieldValidationMetricsRules = {
-        fullname: { required: true, msg: 'Full name parameter coordinate is required.' },
-        email: { required: true, pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, msg: 'Please provide a valid luxury email address.' },
-        subject: { required: true, msg: 'Subject mapping context parameter is missing.' },
-        message: { required: true, minLength: 10, msg: 'Please clarify your message context further (Minimum 10 characters).' }
+        fullname: { required: true, msg: 'Please enter your full name.' },
+        email: { required: true, pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, msg: 'Please enter a valid email address.' },
+        subject: { required: true, msg: 'Please add a subject.' },
+        message: { required: true, minLength: 10, msg: 'Please write at least 10 characters.' }
     };
 
     const clearFieldAlertState = (fieldName) => {
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitTriggerBtn.disabled = false;
                 submitTriggerBtn.classList.remove('loading-active');
                 
-                formFeedbackBanner.textContent = 'Thank you. Your message has been Flawlessly dispatched to our team.';
+                formFeedbackBanner.textContent = 'Thank you. Your message has been sent to our team.';
                 formFeedbackBanner.classList.add('success');
                 
                 conciergeForm.reset();
@@ -233,17 +233,17 @@ document.addEventListener('DOMContentLoaded', () => {
             newsStatus.textContent = '';
 
             if (mailVal === '' || !regex.test(mailVal)) {
-                newsStatus.textContent = 'Please clarify a valid luxury email parameter.';
+                newsStatus.textContent = 'Please enter a valid email address.';
                 newsStatus.classList.add('error');
                 newsEmail.focus();
                 return;
             }
 
-            newsStatus.textContent = 'Dispatched...';
+            newsStatus.textContent = 'Subscribing...';
             newsStatus.classList.add('success');
 
             setTimeout(() => {
-                newsStatus.textContent = 'Welcome to the inner circle. Your journey begins.';
+                newsStatus.textContent = 'You are subscribed. Welcome to Glitter Boutique.';
                 newsEmail.value = '';
                 setTimeout(() => { newsStatus.textContent = ''; newsStatus.className = 'gb-contact-news-status'; }, 4000);
             }, 1200);
@@ -255,7 +255,10 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
     if (scrollCtaTrigger) {
         scrollCtaTrigger.addEventListener('click', () => {
-            window.scrollTo({ top: 380, behavior: 'smooth' });
+            const formTitle = document.getElementById('gb-contact-form-section-title');
+            if (formTitle) {
+                formTitle.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         });
     }
 

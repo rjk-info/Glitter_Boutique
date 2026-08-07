@@ -337,23 +337,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
             if (addCartButton) { 
-                const card = addCartButton.closest('[data-gb-products-card]');
-                const productName = card?.querySelector('.gb-products-card-title')?.textContent || 'Product';
-                const productPrice = parseInt(card?.querySelector('.gb-products-card-price')?.textContent?.replace(/[^\d]/g, '') || '0');
-                const productImage = card?.querySelector('.gb-products-card-image')?.src || '';
-                const productImageAlt = card?.querySelector('.gb-products-card-image')?.alt || productName;
+                const card = addCartButton.closest('[data-gb-products-product-id]');
+                if (!card) return;
+
+                const productId = card.getAttribute('data-gb-products-product-id') || '';
+                const product = products.find((catalogProduct) => catalogProduct.id === productId);
+                const productName = product?.name || card.querySelector('.gb-products-card-title')?.textContent || 'Product';
+                const productPrice = product?.price ?? parseInt(card.querySelector('.gb-products-card-price')?.textContent?.replace(/[^\d]/g, '') || '0', 10);
+                const productImage = product?.image || card.querySelector('.gb-products-card-image')?.getAttribute('src') || '';
+                const productImageAlt = product?.alt || card.querySelector('.gb-products-card-image')?.alt || productName;
+                const productCategory = product?.subCategoryLabel || product?.mainCategoryLabel || '';
                 const label = addCartButton.querySelector('span'); 
                 addCartButton.classList.add('gb-products-card-link-added'); 
                 if (label) label.textContent = 'Added';
                 
                 // Use unified cart manager for consistent badge updates
                 if (typeof GlitterCartManager !== 'undefined') {
-                    const productId = GlitterCartManager.createProductId
+                    const cartProductId = productId || (GlitterCartManager.createProductId
                         ? GlitterCartManager.createProductId(productName)
-                        : `product-${String(productName).toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
-                    GlitterCartManager.addToCart(productId, productName, productPrice, 1, {
+                        : `product-${String(productName).toLowerCase().replace(/[^a-z0-9]+/g, '-')}`);
+                    GlitterCartManager.addToCart(cartProductId, productName, productPrice, 1, {
                         image: productImage,
                         alt: productImageAlt,
+                        category: productCategory,
+                        productId: cartProductId,
                         sourceUrl: window.location.href
                     });
                 }
